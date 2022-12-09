@@ -9,10 +9,9 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class ItemInformation extends AppCompatActivity {
 
-    Button button;
-
+    Button button4;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,31 +20,19 @@ public class MainActivity extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide(); //this line hides the action bar
 
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_item_information);
+        button4 = (Button) findViewById(R.id.button4);
 
-        button = (Button) findViewById(R.id.button);
-
-        button.setOnClickListener(new View.OnClickListener() {
+        button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                //CAll function for login page
-                openLoginPage();
-
+                //call function for next page temporary
+                openStudentFoundItem();
             }
         });
-
-
-
     }
-
-
-
-
-    public void openLoginPage(){
-        Intent intent = new Intent(this, LoginPage.class);
+    public void openStudentFoundItem(){
+        Intent intent = new Intent(this, StudentFoundItem.class);
         startActivity(intent);
     }
-
-
 }

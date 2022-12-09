@@ -9,10 +9,9 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class LoginPage extends AppCompatActivity {
 
-    Button button;
-
+    Button button2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,31 +20,21 @@ public class MainActivity extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide(); //this line hides the action bar
 
-        setContentView(R.layout.activity_main);
 
-        button = (Button) findViewById(R.id.button);
+        setContentView(R.layout.activity_login_page);
+        button2 = (Button) findViewById(R.id.button2);
 
-        button.setOnClickListener(new View.OnClickListener() {
+        button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                //CAll function for login page
-                openLoginPage();
-
+                //call function para malipat sa next page (temporary sa new report)
+                openNewReport();
             }
         });
 
-
-
     }
-
-
-
-
-    public void openLoginPage(){
-        Intent intent = new Intent(this, LoginPage.class);
+    public void openNewReport(){
+        Intent intent=new Intent(this, NewReport.class);
         startActivity(intent);
     }
-
-
 }

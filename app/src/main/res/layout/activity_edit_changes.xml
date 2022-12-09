@@ -1,0 +1,865 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_newreport"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="-14dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="1dp"
+        android:paddingLeft="1dp"
+        android:paddingEnd="1dp"
+        android:paddingRight="1dp"
+        android:paddingBottom="50dp"
+        tools:context=".EditChanges">
+
+        <ImageButton
+            android:id="@+id/imageButton3"
+            android:layout_width="44dp"
+            android:layout_height="54dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/bg_newreport"
+            app:layout_constraintBottom_toBottomOf="@+id/textView28"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView28"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24" />
+
+        <TextView
+            android:id="@+id/textView28"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:layout_marginEnd="92dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="Edit Changes"
+            android:textColor="#17395C"
+            android:textSize="34sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/imageButton4"
+            android:layout_width="128dp"
+            android:layout_height="134dp"
+            android:layout_marginTop="28dp"
+            android:background="@drawable/bg_newreport"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView28"
+            app:srcCompat="@drawable/ic_baseline_add_circle_24" />
+
+        <TextView
+            android:id="@+id/textView29"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="Add Item Photo"
+            android:textColor="#636363"
+            android:textSize="18dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageButton4" />
+
+        <TextView
+            android:id="@+id/textView30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="Status"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.066"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView29" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName6"
+            android:layout_width="353dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/bgshape_inputtextforms"
+            android:ems="10"
+            android:fontFamily="@font/montserrat_light"
+            android:hint="Found/Lost"
+            android:inputType="textPersonName"
+            android:paddingStart="10dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView30" />
+
+        <TextView
+            android:id="@+id/textView31"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="Item Name"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.066"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName6" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName8"
+            android:layout_width="353dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/bgshape_inputtextforms"
+            android:ems="10"
+            android:fontFamily="@font/montserrat_light"
+            android:hint="Red Aquaflask"
+            android:inputType="textPersonName"
+            android:paddingStart="10dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView31" />
+
+        <TextView
+            android:id="@+id/textView33"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="Location"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.066"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName8" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName9"
+            android:layout_width="353dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/bgshape_inputtextforms"
+            android:ems="10"
+            android:fontFamily="@font/montserrat_light"
+            android:hint="Gazebo 1"
+            android:inputType="textPersonName"
+            android:paddingStart="10dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView33" />
+
+        <TextView
+            android:id="@+id/textView34"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="Date Reported"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.066"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName9" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName19"
+            android:layout_width="353dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/bgshape_inputtextforms"
+            android:ems="10"
+            android:fontFamily="@font/montserrat_light"
+            android:hint="Month/Day/Year"
+            android:inputType="date|textPersonName"
+            android:paddingStart="10dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView34" />
+
+        <TextView
+            android:id="@+id/textView35"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="Description"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.066"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName19" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName20"
+            android:layout_width="353dp"
+            android:layout_height="101dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/bgshape_inputtextforms"
+            android:ems="10"
+            android:fontFamily="@font/montserrat_light"
+            android:hint="Condition of the Item"
+            android:inputType="textMultiLine|textPersonName"
+            android:paddingStart="10dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.55"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView35" />
+
+        <TextView
+            android:id="@+id/textView36"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="Surrendered By"
+            android:textColor="#17395C"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.084"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName20" />
+
+        <TextView
+            android:id="@+id/textView37"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="Last Name"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.066"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView36" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName21"
+            android:layout_width="353dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/bgshape_inputtextforms"
+            android:ems="10"
+            android:fontFamily="@font/montserrat_light"
+            android:hint="Dela Cruz"
+            android:inputType="textPersonName"
+            android:paddingStart="10dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView37" />
+
+        <TextView
+            android:id="@+id/textView38"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="First Name"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.066"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName21" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName22"
+            android:layout_width="353dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/bgshape_inputtextforms"
+            android:ems="10"
+            android:fontFamily="@font/montserrat_light"
+            android:hint="Juan"
+            android:inputType="textPersonName"
+            android:paddingStart="10dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView38" />
+
+        <TextView
+            android:id="@+id/textView39"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="Middle Name"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.066"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName22" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName23"
+            android:layout_width="353dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/bgshape_inputtextforms"
+            android:ems="10"
+            android:fontFamily="@font/montserrat_light"
+            android:hint="Santos"
+            android:inputType="textPersonName"
+            android:paddingStart="10dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView39" />
+
+        <TextView
+            android:id="@+id/textView40"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="Student Number"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.066"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName23" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName24"
+            android:layout_width="353dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/bgshape_inputtextforms"
+            android:ems="10"
+            android:fontFamily="@font/montserrat_light"
+            android:hint="202212345"
+            android:inputType="number|textPersonName"
+            android:paddingStart="10dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView40" />
+
+        <TextView
+            android:id="@+id/textView41"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="College"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.066"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName24" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName25"
+            android:layout_width="353dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/bgshape_inputtextforms"
+            android:ems="10"
+            android:fontFamily="@font/montserrat_light"
+            android:hint="CET"
+            android:inputType="textPersonName"
+            android:paddingStart="10dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView41" />
+
+        <TextView
+            android:id="@+id/textView42"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="Year"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.066"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName25" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName26"
+            android:layout_width="353dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/bgshape_inputtextforms"
+            android:ems="10"
+            android:fontFamily="@font/montserrat_light"
+            android:hint="First Year"
+            android:inputType="textPersonName"
+            android:paddingStart="10dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView42" />
+
+        <TextView
+            android:id="@+id/textView43"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="Course"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.066"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName26" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName27"
+            android:layout_width="353dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/bgshape_inputtextforms"
+            android:ems="10"
+            android:fontFamily="@font/montserrat_light"
+            android:hint="BSIT"
+            android:inputType="textPersonName"
+            android:paddingStart="10dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView43" />
+
+        <TextView
+            android:id="@+id/textView45"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="Block"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.066"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName27" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName28"
+            android:layout_width="353dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/bgshape_inputtextforms"
+            android:ems="10"
+            android:fontFamily="@font/montserrat_light"
+            android:hint="1"
+            android:inputType="number|textPersonName"
+            android:paddingStart="10dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView45" />
+
+        <TextView
+            android:id="@+id/textView46"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="Contact Number"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.066"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName28" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName29"
+            android:layout_width="353dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/bgshape_inputtextforms"
+            android:ems="10"
+            android:fontFamily="@font/montserrat_light"
+            android:hint="09123456789"
+            android:inputType="textPersonName|phone"
+            android:paddingStart="10dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView46" />
+
+        <TextView
+            android:id="@+id/textView47"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="Received By"
+            android:textColor="#17395C"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.084"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName29" />
+
+        <TextView
+            android:id="@+id/textView48"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="Last Name"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.066"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView47" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName30"
+            android:layout_width="353dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/bgshape_inputtextforms"
+            android:ems="10"
+            android:fontFamily="@font/montserrat_light"
+            android:hint="Dela Cruz"
+            android:inputType="textPersonName"
+            android:paddingStart="10dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView48" />
+
+        <TextView
+            android:id="@+id/textView49"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="First Name"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.066"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName30" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName31"
+            android:layout_width="353dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/bgshape_inputtextforms"
+            android:ems="10"
+            android:fontFamily="@font/montserrat_light"
+            android:hint="Juan"
+            android:inputType="textPersonName"
+            android:paddingStart="10dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView49" />
+
+        <TextView
+            android:id="@+id/textView50"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="Middle Name"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.066"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName31" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName32"
+            android:layout_width="353dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/bgshape_inputtextforms"
+            android:ems="10"
+            android:fontFamily="@font/montserrat_light"
+            android:hint="Santos"
+            android:inputType="textPersonName"
+            android:paddingStart="10dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView50" />
+
+        <TextView
+            android:id="@+id/textView51"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="Student Number"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.066"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName32" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName33"
+            android:layout_width="353dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/bgshape_inputtextforms"
+            android:ems="10"
+            android:fontFamily="@font/montserrat_light"
+            android:hint="202212345"
+            android:inputType="number|textPersonName"
+            android:paddingStart="10dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView51" />
+
+        <TextView
+            android:id="@+id/textView52"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="College"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.066"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName33" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName34"
+            android:layout_width="353dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/bgshape_inputtextforms"
+            android:ems="10"
+            android:fontFamily="@font/montserrat_light"
+            android:hint="CET"
+            android:inputType="textPersonName"
+            android:paddingStart="10dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView52" />
+
+        <TextView
+            android:id="@+id/textView53"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="Year"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.066"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName34" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName35"
+            android:layout_width="353dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/bgshape_inputtextforms"
+            android:ems="10"
+            android:fontFamily="@font/montserrat_light"
+            android:hint="First Year"
+            android:inputType="textPersonName"
+            android:paddingStart="10dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView53" />
+
+        <TextView
+            android:id="@+id/textView54"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="Course"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.066"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName35" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName36"
+            android:layout_width="353dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/bgshape_inputtextforms"
+            android:ems="10"
+            android:fontFamily="@font/montserrat_light"
+            android:hint="BSIT"
+            android:inputType="textPersonName"
+            android:paddingStart="10dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView54" />
+
+        <TextView
+            android:id="@+id/textView55"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="Block"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.066"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName36" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName37"
+            android:layout_width="353dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/bgshape_inputtextforms"
+            android:ems="10"
+            android:fontFamily="@font/montserrat_light"
+            android:hint="1"
+            android:inputType="number|textPersonName"
+            android:paddingStart="10dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView55" />
+
+        <TextView
+            android:id="@+id/textView56"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="Contact Number"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.066"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName37" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName38"
+            android:layout_width="353dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/bgshape_inputtextforms"
+            android:ems="10"
+            android:fontFamily="@font/montserrat_light"
+            android:hint="09123456789"
+            android:inputType="textPersonName|phone"
+            android:paddingStart="10dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView56" />
+
+        <TextView
+            android:id="@+id/DateReceieved"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="Date Received"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.066"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName38" />
+
+        <EditText
+            android:id="@+id/inputDateReceieved"
+            android:layout_width="353dp"
+            android:layout_height="41dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/bgshape_inputtextforms"
+            android:ems="10"
+            android:fontFamily="@font/montserrat_light"
+            android:hint="Month/Day/Year"
+            android:inputType="date|textPersonName|phone"
+            android:paddingStart="10dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/DateReceieved" />
+
+        <TextView
+            android:id="@+id/textView57"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="Upload Valid ID"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.066"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inputDateReceieved" />
+
+        <ImageButton
+            android:id="@+id/imageButton5"
+            android:layout_width="353dp"
+            android:layout_height="173dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/button_rectanglegray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView57"
+            app:srcCompat="@drawable/ic_baseline_add_circle_24white" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="149dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/button_signin"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="Save"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageButton5" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

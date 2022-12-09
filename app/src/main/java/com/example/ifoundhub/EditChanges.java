@@ -9,9 +9,9 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class EditChanges extends AppCompatActivity {
 
-    Button button;
+    Button button5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,31 +21,19 @@ public class MainActivity extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide(); //this line hides the action bar
 
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_edit_changes);
+        button5 = (Button) findViewById(R.id.button5);
 
-        button = (Button) findViewById(R.id.button);
-
-        button.setOnClickListener(new View.OnClickListener() {
+        button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                //CAll function for login page
-                openLoginPage();
-
+                //call function for next page temporary
+                openItemInformation();
             }
         });
-
-
-
     }
-
-
-
-
-    public void openLoginPage(){
-        Intent intent = new Intent(this, LoginPage.class);
+    public void openItemInformation(){
+        Intent intent = new Intent(this, ItemInformation.class);
         startActivity(intent);
     }
-
-
 }
