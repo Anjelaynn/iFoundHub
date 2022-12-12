@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">iFoundHub</string>
+    <string name="select">Status</string>
+
+    <string-array name="status">
+        <item>Found</item>
+        <item>Lost</item>
+    </string-array>
 
 </resources>

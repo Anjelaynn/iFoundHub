@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF9E3"
+    tools:context=".Profile">
+    <ImageButton
+        android:id="@+id/backbuttonprofile"
+        android:layout_width="44dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/bg_newreport"
+        android:layout_marginTop="22dp"
+        app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="625dp"
+        android:layout_gravity="center"
+        android:fontFamily="@font/montserrat_semibold"
+        android:text="Profile"
+        android:textColor="#17395C"
+        android:textSize="34sp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="410dp"
+        android:layout_height="548dp"
+        android:layout_marginTop="200dp"
+        android:background="@drawable/shape_profile" />
+
+    <TextView
+        android:id="@+id/EmployeeName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="325dp"
+        android:fontFamily="@font/montserrat_medium"
+        android:text="Employee Name"
+        android:textColor="#8C979B"
+        android:textSize="17sp" />
+
+    <TextView
+        android:id="@+id/line"
+        android:layout_width="210dp"
+        android:layout_height="496dp"
+        android:layout_marginTop="150dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/lineshape_profile"
+        />
+
+    <TextView
+        android:id="@+id/DatabaseName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="365dp"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="[Name]"
+        android:textSize="18sp"/>
+
+
+    <TextView
+        android:id="@+id/EmployeeNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="425dp"
+        android:textColor="#8C979B"
+        android:fontFamily="@font/montserrat_medium"
+        android:text="Employee Number"
+        android:textSize="17sp"
+
+        />
+
+
+    <TextView
+        android:id="@+id/DatabaseNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="465dp"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="[Employee Number]"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/line2"
+        android:layout_width="210dp"
+        android:layout_height="496dp"
+        android:layout_marginTop="250dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/lineshape_profile"
+        />
+
+    <TextView
+        android:id="@+id/ContactNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#8C979B"
+        android:layout_marginTop="530dp"
+        android:fontFamily="@font/montserrat_medium"
+        android:text="Contact Number"
+        android:textSize="17sp"
+        />
+    <TextView
+        android:id="@+id/DatabaseContact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="565dp"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="[Contact Number]"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/line3"
+        android:layout_width="210dp"
+        android:layout_height="496dp"
+        android:layout_marginTop="350dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/lineshape_profile"
+        />
+
+
+
+    <ImageView
+        android:id="@+id/userprofile"
+        android:layout_width="197dp"
+        android:layout_height="291dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        app:srcCompat="@drawable/userprofile" />
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:backgroundTint="#17395C"
+        app:fabCradleMargin="14dp"
+        app:fabCradleRoundedCornerRadius="38dp"
+        app:fabCradleVerticalOffset="10dp">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigationView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/transparent_background"
+            app:itemIconTint="@color/bottom_item_backgroundcolor"
+            app:itemTextColor="@color/bottom_item_backgroundcolor"
+            android:layout_marginRight="13dp"
+            app:itemIconSize="22dp"
+            app:menu="@menu/bottom_nav_menu">
+
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    </com.google.android.material.bottomappbar.BottomAppBar>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/plus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_round_add_24"
+        app:maxImageSize="50dp"
+        app:backgroundTint="#EFB758"
+        app:layout_anchor="@id/bottomAppBar" />
+
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -18,7 +18,7 @@ public class LoginPage extends AppCompatActivity {
         //code for removing action bar and title bar
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        getSupportActionBar().hide(); //this line hides the action bar
+//        getSupportActionBar().hide(); //this line hides the action bar
 
 
         setContentView(R.layout.activity_login_page);
@@ -28,13 +28,13 @@ public class LoginPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //call function para malipat sa next page (temporary sa new report)
-                openNewReport();
+                openHome();
             }
         });
 
     }
-    public void openNewReport(){
-        Intent intent=new Intent(this, NewReport.class);
+    public void openHome(){
+        Intent intent=new Intent(this, Admin_Home.class);
         startActivity(intent);
     }
 }

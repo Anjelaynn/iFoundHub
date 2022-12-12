@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF9E3"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="410dp"
+        android:layout_height="650dp"
+        android:layout_marginTop="110dp"
+        android:background="@drawable/shape_profile" />
+
+    <ImageButton
+        android:id="@+id/backbuttonnotif"
+        android:layout_width="44dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/bg_newreport"
+        android:layout_marginTop="22dp"
+        app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_semibold"
+        android:layout_marginTop="22dp"
+        android:layout_marginLeft="130dp"
+        android:text="Settings"
+        android:textColor="#17395C"
+        android:textSize="34sp" />
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:backgroundTint="#17395C"
+        app:fabCradleMargin="14dp"
+        app:fabCradleRoundedCornerRadius="38dp"
+        app:fabCradleVerticalOffset="10dp">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigationView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/transparent_background"
+            app:itemIconTint="@color/bottom_item_backgroundcolor"
+            app:itemTextColor="@color/bottom_item_backgroundcolor"
+            android:layout_marginRight="13dp"
+            app:itemIconSize="22dp"
+            app:menu="@menu/bottom_nav_menu">
+
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    </com.google.android.material.bottomappbar.BottomAppBar>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/plus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_round_add_24"
+        app:maxImageSize="50dp"
+        app:backgroundTint="#EFB758"
+        app:layout_anchor="@id/bottomAppBar" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="180dp"
+        android:layout_marginLeft="60dp"
+        android:background="E1DCC9"
+        android:text="Privacy" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
