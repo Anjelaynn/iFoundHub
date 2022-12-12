@@ -76,7 +76,6 @@
         android:layout_height="100dp"
         android:layout_marginTop="180dp"
         android:layout_marginLeft="60dp"
-        android:background="E1DCC9"
         android:text="Privacy" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
