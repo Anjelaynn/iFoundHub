@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Item_Information">
+    tools:context=".Admin_Item_Information">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -12,6 +12,7 @@
         android:paddingStart="1dp"
         android:paddingLeft="1dp"
         android:paddingEnd="1dp"
+        android:background="@drawable/bg_newreport"
         android:paddingRight="1dp"
         android:paddingBottom="50dp"
         tools:context=".ItemInformation">
@@ -25,7 +26,7 @@
             android:id="@+id/image_single_view_activity"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:src="@drawable/ic_launcher_background"
+            android:background="@drawable/ic_add"
             app:civ_border_width="2dp"
             app:civ_border_color="#FF000000"
             />

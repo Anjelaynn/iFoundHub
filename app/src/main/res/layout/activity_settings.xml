@@ -8,6 +8,14 @@
     android:background="#FFF9E3"
     tools:context=".MainActivity">
 
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="410dp"
+        android:layout_height="650dp"
+        android:layout_marginTop="110dp"
+        android:background="@drawable/shape_profile" />
+
     <ImageButton
         android:id="@+id/backbuttonnotif"
         android:layout_width="44dp"
@@ -21,10 +29,10 @@
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="22dp"
         android:fontFamily="@font/montserrat_semibold"
-        android:text="Notification"
+        android:layout_marginTop="22dp"
+        android:layout_marginLeft="130dp"
+        android:text="Settings"
         android:textColor="#17395C"
         android:textSize="34sp" />
 
@@ -61,5 +69,14 @@
         app:maxImageSize="50dp"
         app:backgroundTint="#EFB758"
         app:layout_anchor="@id/bottomAppBar" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="180dp"
+        android:layout_marginLeft="60dp"
+        android:background="E1DCC9"
+        android:text="Privacy" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

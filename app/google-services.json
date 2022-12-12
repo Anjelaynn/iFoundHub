@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "686359175382",
+    "project_id": "ifoundhub-18aa4",
+    "storage_bucket": "ifoundhub-18aa4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:686359175382:android:d35034500642128e79a977",
+        "android_client_info": {
+          "package_name": "com.example.ifoundhub"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "686359175382-a5q9nhco1q39giak0tjlf9fsre0gvop3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqYaTOlhH10ZQAKOr9Iwt3jwevaCVbyyM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "686359175382-a5q9nhco1q39giak0tjlf9fsre0gvop3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

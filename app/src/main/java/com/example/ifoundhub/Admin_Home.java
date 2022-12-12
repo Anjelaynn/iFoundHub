@@ -24,7 +24,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.squareup.picasso.Picasso;
 
-public class HomeActivity extends AppCompatActivity {
+public class Admin_Home extends AppCompatActivity {
 
     EditText inputSearch;
     RecyclerView recyclerView;
@@ -36,23 +36,25 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        super.onCreate(savedInstanceState);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        getSupportActionBar().hide(); //this line hides the action bar
-        setContentView(R.layout.activity_home);
+      //  getSupportActionBar().hide(); //this line hides the action bar
+        super.onCreate(savedInstanceState);
+         setContentView(R.layout.activity_home);
 
         dataRef = FirebaseDatabase.getInstance().getReference().child("Items");
         inputSearch = findViewById(R.id.inputSearch);
         recyclerView = findViewById(R.id.recyclerView);
         floatingBtn = findViewById(R.id.floatingBtn);
 
+        //
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         recyclerView.setHasFixedSize(true);
 
         floatingBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), Add_Report.class));
+                startActivity(new Intent(getApplicationContext(), Admin_NewReport.class));
+
             }
         });
 
@@ -106,7 +108,7 @@ public class HomeActivity extends AppCompatActivity {
                 holder.view.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent = new Intent(HomeActivity.this, ViewActivity.class);
+                        Intent intent = new Intent(Admin_Home.this, ViewActivity.class);
                         intent.putExtra("ItemKey", getRef(position).getKey());
                         startActivity(intent);
                     }

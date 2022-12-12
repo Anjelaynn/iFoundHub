@@ -33,21 +33,28 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".ItemInformation"
+            android:name=".Admin_Item_Information"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".EditChanges"
+            android:name=".ViewActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".NewReport"
+            android:name=".Admin_EditChanges"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Admin_NewReport"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -61,7 +68,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Home"
+            android:name=".Admin_Home"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

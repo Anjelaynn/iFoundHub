@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFF9E3"
-    tools:context=".MainActivity">
+    tools:context=".Profile">
     <ImageButton
         android:id="@+id/backbuttonprofile"
         android:layout_width="44dp"
@@ -75,7 +75,9 @@
         android:fontFamily="@font/montserrat_medium"
         android:text="Employee Number"
         android:textSize="17sp"
+
         />
+
 
     <TextView
         android:id="@+id/DatabaseNumber"
@@ -107,7 +109,6 @@
         android:text="Contact Number"
         android:textSize="17sp"
         />
-
     <TextView
         android:id="@+id/DatabaseContact"
         android:layout_width="wrap_content"

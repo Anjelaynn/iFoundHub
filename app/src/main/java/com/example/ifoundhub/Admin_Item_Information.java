@@ -9,7 +9,6 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.ifoundhub.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -19,7 +18,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
-public class Item_Information extends AppCompatActivity {
+public class Admin_Item_Information extends AppCompatActivity {
 
     //    TextView spinnerstatus1;
     ImageView imageViewAdd_view;
@@ -65,6 +64,7 @@ public class Item_Information extends AppCompatActivity {
         btnDeletes = findViewById(R.id.btnDeletes);
 
 
+
         ref = FirebaseDatabase.getInstance().getReference().child("Items");
 
         String itemKey = getIntent().getStringExtra("ItemKey");
@@ -101,16 +101,16 @@ public class Item_Information extends AppCompatActivity {
                     inputItemDateReported_view.setText(itemDate);
                     inputItemLocation_view.setText(itemLocation);
 
-//                    firstName_view.setText(fname);
-//                    lastName_view.setText(lname);
-//                    middleName_view.setText(mname);
-//                    studentNumber_view.setText(studentnum);
-//                    college_view.setText(colleges);
-//
-//                    year_view.setText(year1);
-//                    course_view.setText(course1);
-//                    block_view.setText(block1);
-//                    contactNumber_view.setText(contactnum);
+                    firstName_view.setText(fname);
+                    lastName_view.setText(lname);
+                    middleName_view.setText(mname);
+                    studentNumber_view.setText(studentnum);
+                    college_view.setText(colleges);
+
+                    year_view.setText(year1);
+                    course_view.setText(course1);
+                    block_view.setText(block1);
+                    contactNumber_view.setText(contactnum);
 
                 }
 

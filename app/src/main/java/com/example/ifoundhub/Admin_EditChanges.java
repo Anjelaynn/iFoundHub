@@ -9,7 +9,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 
-public class EditChanges extends AppCompatActivity {
+public class Admin_EditChanges extends AppCompatActivity {
 
     Button button5;
 
@@ -33,7 +33,7 @@ public class EditChanges extends AppCompatActivity {
         });
     }
     public void openItemInformation(){
-        Intent intent = new Intent(this, ItemInformation.class);
+        Intent intent = new Intent(this, Admin_Item_Information.class);
         startActivity(intent);
     }
 }
