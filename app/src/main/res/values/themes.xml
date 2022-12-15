@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.IFoundHub" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.IFoundHub" parent="Theme.AppCompat.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">#EFB758</item>
         <item name="colorPrimaryVariant">#EFB758</item>
