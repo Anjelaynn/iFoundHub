@@ -44,49 +44,122 @@
     <!--        android:scaleType="fitXY"-->
     <!--        android:src="@drawable/item1" />-->
 
+
+
     <TextView
         android:id="@+id/itemName_single_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Item Name"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="48dp"
+        android:paddingLeft="28dp"
+        android:layout_marginTop="27dp"
         android:layout_toRightOf="@id/image_single_view"
-        android:layout_marginTop="30dp"/>
-<!--        android:drawableLeft="@drawable/ic_phone"/>-->
 
-    <TextView
-        android:id="@+id/itemDescription_single_view"
+        android:hint="Item Name" />
+
+
+<!--    item Name icon-->
+    <ImageView
+        android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Description"
-        android:layout_marginLeft="10dp"
-        android:layout_toRightOf="@id/image_single_view"
-        android:layout_below="@id/itemName_single_view"
-        android:layout_marginTop="5dp"/>
-<!--        android:drawableLeft="@drawable/ic_description"/>-->
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="160dp"
+
+        app:srcCompat="@drawable/ic_phone" />
+
 
     <TextView
         android:id="@+id/itemDate_single_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Date"
-        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/itemName_single_view"
+        android:layout_marginLeft="75dp"
+        android:layout_marginTop="16dp"
         android:layout_toRightOf="@id/image_single_view"
-        android:layout_below="@id/itemDescription_single_view"
-        android:layout_marginTop="5dp"/>
-<!--        android:drawableLeft="@drawable/ic_calendar"/>-->
+
+        android:hint="Date" />
+
+
+    <!--    Celendar icon-->
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="160dp"
+        app:srcCompat="@drawable/ic_calendar" />
+
+
+    <!--    location icon-->
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/imageView4"
+        android:layout_marginLeft="160dp"
+        app:srcCompat="@drawable/ic_location" />
 
 
     <TextView
         android:id="@+id/itemLocation_single_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Location"
-        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/itemDate_single_view"
+        android:layout_marginLeft="75dp"
+        android:layout_marginTop="16dp"
         android:layout_toRightOf="@id/image_single_view"
-        android:layout_below="@id/itemDate_single_view"
-        android:layout_marginTop="5dp"/>
-<!--        android:drawableLeft="@drawable/ic_location"/>-->
+        android:hint="Location" />
+
+    <!--    Lost and found icon-->
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/imageView5"
+        android:layout_marginLeft="160dp"
+        app:srcCompat="@drawable/ic_description" />
+
+    <TextView
+        android:id="@+id/itemDescription_single_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/itemLocation_single_view"
+        android:layout_marginLeft="75dp"
+        android:layout_marginTop="16dp"
+        android:layout_toRightOf="@id/image_single_view"
+        android:hint="Lost/Found" />
+
+
+
+
+
+
+    <!--    <TextView-->
+<!--        android:id="@+id/itemLocation_single_view"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/itemDate_single_view"-->
+<!--        android:layout_marginLeft="43dp"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:layout_toRightOf="@id/image_single_view"-->
+<!--        android:drawableLeft="@drawable/ic_location"-->
+<!--        android:hint="Location" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/itemDescription_single_view"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/itemLocation_single_view"-->
+<!--        android:layout_marginStart="43dp"-->
+<!--        android:layout_marginTop="6dp"-->
+<!--        android:layout_toEndOf="@+id/image_single_view"-->
+<!--        android:layout_toRightOf="@id/image_single_view"-->
+<!--        android:drawableLeft="@drawable/ic_description"-->
+<!--        android:hint="Status" />-->
+
 
 
 

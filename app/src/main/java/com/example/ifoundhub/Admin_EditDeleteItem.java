@@ -2,22 +2,20 @@ package com.example.ifoundhub;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 
-import com.firebase.ui.database.FirebaseRecyclerAdapter;
-import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -28,17 +26,17 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
-public class ViewActivity extends AppCompatActivity {
+import java.util.HashMap;
+
+public class Admin_EditDeleteItem extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
 
-    FirebaseRecyclerOptions<Items> options;
-    FirebaseRecyclerAdapter<Items, MyViewHolder> adapter;
-    RecyclerView recyclerView;
+
 
     DatabaseReference ref, DataRef;
     StorageReference storageRef;
 
-
+    Spinner spinnerstatus1;
     ImageView image_single_view_activity;
     TextView itemName_single_view_activity, itemDescription_single_view_activity,itemDate_single_view_activity,itemLocation_single_view_activity;
     TextView lname, fname, mname, studentnum, college, year, course, block, contactnum;
@@ -55,7 +53,16 @@ public class ViewActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_viewinfoadmin);
+        setContentView(R.layout.activity_admin_edit_delete);
+
+
+        spinnerstatus1 = findViewById(R.id.spinnerstatus1_view);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.status, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerstatus1.setAdapter(adapter);
+        spinnerstatus1.setOnItemSelectedListener(this);
+
+
 
         image_single_view_activity = findViewById(R.id.image_single_view_activity);
 
@@ -64,15 +71,15 @@ public class ViewActivity extends AppCompatActivity {
         itemDate_single_view_activity = findViewById(R.id.itemDate_single_view_activity);
         itemLocation_single_view_activity = findViewById(R.id.itemLocation_single_view_activity);
 
-        fname = findViewById(R.id.firstName_view_information);
-        lname = findViewById(R.id.lastName_view_information);
-        mname = findViewById(R.id.middleName_view_information);
-        studentnum = findViewById(R.id.studentNumber_view_information);
-        college = findViewById(R.id.college_view_information);
-        year = findViewById(R.id.year_view_information);
-        course = findViewById(R.id.course_view_information);
-        block = findViewById(R.id.block_view_information);
-        contactnum = findViewById(R.id.contactNumber_view_information);
+        fname = findViewById(R.id.firstName_view);
+        lname = findViewById(R.id.lastName_view);
+        mname = findViewById(R.id.middleName_view);
+        studentnum = findViewById(R.id.studentNumber_view);
+        college = findViewById(R.id.college_view);
+        year = findViewById(R.id.year_view);
+        course = findViewById(R.id.course_view);
+        block = findViewById(R.id.block_view);
+        contactnum = findViewById(R.id.contactNumber_view);
 
 
         btnBack = findViewById(R.id.btnBack);
@@ -87,8 +94,9 @@ public class ViewActivity extends AppCompatActivity {
 
 
         btnDelete = findViewById(R.id.btnDelete);
-        btneditChanges = findViewById(R.id.btnEditChanges);
-//        btnUpdate = findViewById(R.id.btnUpdate);
+        btnUpdate = findViewById(R.id.btnUpdate);
+//        btneditChanges = findViewById(R.id.btnEdit);
+
 
         ref = FirebaseDatabase.getInstance().getReference().child("Items");
 
@@ -116,6 +124,7 @@ public class ViewActivity extends AppCompatActivity {
                     String Course = snapshot.child("Course").getValue().toString();
                     String Block = snapshot.child("Block").getValue().toString();
                     String Contactnum = snapshot.child("Contact_Number").getValue().toString();
+                    String status =  snapshot.child("Status").toString();
 
 
 
@@ -130,16 +139,21 @@ public class ViewActivity extends AppCompatActivity {
                     fname.setText(Fname);
                     lname.setText(Lname);
                     mname.setText(Mname);
-                    studentnum.setText(Studentnum);
+
                     college.setText(College);
                     year.setText(Year);
                     course.setText(Course);
                     block.setText(Block);
                     contactnum.setText(Contactnum);
 
+
+
+
+
                 }
 
             }
+
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
@@ -148,28 +162,41 @@ public class ViewActivity extends AppCompatActivity {
         });
 
 
-//        btnUpdate.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//
-//                HashMap hashMap = new HashMap();
-//                hashMap.put("Item_Name", itemName_single_view_activity.getText().toString());
-//                hashMap.put("Item_Desciprion", itemDescription_single_view_activity.getText().toString());
-//                hashMap.put("Location", itemLocation_single_view_activity.getText().toString());
-//                hashMap.put("Date_Reported", itemDate_single_view_activity.getText().toString());
-//
-//                DataRef.updateChildren(hashMap).addOnSuccessListener(new OnSuccessListener() {
-//                    @Override
-//                    public void onSuccess(Object o) {
-//                        Toast.makeText(ViewActivity.this, "Your Data is Succesfully Updated", Toast.LENGTH_SHORT).show();
-//                        startActivity(new Intent(getApplicationContext(), HomeActivity.class));
-//
-//                    }
-//                });
-//            }
-//        });
-//
+        btnUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                HashMap hashMap = new HashMap();
+                hashMap.put("Item_Name", itemName_single_view_activity.getText().toString());
+                hashMap.put("Item_Desciprion", itemDescription_single_view_activity.getText().toString());
+                hashMap.put("Location", itemLocation_single_view_activity.getText().toString());
+                hashMap.put("Date_Reported", itemDate_single_view_activity.getText().toString());
+
+                hashMap.put("First_Name", fname.getText().toString());
+                hashMap.put("Last_Name", lname.getText().toString());
+                hashMap.put("Middle_Name", mname.getText().toString());
+                hashMap.put("Student_Number", studentnum.getText().toString());
+                hashMap.put("Year", year.getText().toString());
+                hashMap.put("Course", course.getText().toString());
+                hashMap.put("College", college.getText().toString());
+                hashMap.put("Block", block.getText().toString());
+                hashMap.put("Contact_Number", contactnum.getText().toString());
+                hashMap.put("Status", spinnerstatus1.getSelectedItem().toString());
+
+
+                DataRef.updateChildren(hashMap).addOnSuccessListener(new OnSuccessListener() {
+                    @Override
+                    public void onSuccess(Object o) {
+                        Toast.makeText(Admin_EditDeleteItem.this, "Your Data is Succesfully Updated", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(getApplicationContext(), Admin_Home.class));
+
+                    }
+                });
+            }
+        });
+
+
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -180,7 +207,7 @@ public class ViewActivity extends AppCompatActivity {
                         storageRef.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void unused) {
-                                Toast.makeText(ViewActivity.this, "Your Data is Succesfully Deleted", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Admin_EditDeleteItem.this, "Your Data is Succesfully Deleted", Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(getApplicationContext(), Admin_Home.class));
                             }
                         });
@@ -192,43 +219,22 @@ public class ViewActivity extends AppCompatActivity {
 
 
 
+    }
+
+
+    //Spinner status
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+        String text = adapterView.getItemAtPosition(i).toString();
 
 
     }
 
-    private void loadData(){
 
 
-        options = new FirebaseRecyclerOptions.Builder<Items>().setQuery(ref, Items.class).build();
-        adapter = new FirebaseRecyclerAdapter<Items, MyViewHolder>(options) {
-
-            @Override
-            protected void onBindViewHolder(@NonNull MyViewHolder holder, int position, @NonNull Items model) {
-
-
-                //To edit or delete, open view of the item
-                holder.view.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent intent = new Intent(ViewActivity.this, Admin_EditChanges.class);
-                        intent.putExtra("ItemKey", getRef(position).getKey());
-                        startActivity(intent);
-                    }
-                });
-
-            }
-            @NonNull
-            @Override
-            public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
-                View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.single_view,parent,false);
-
-                return new MyViewHolder(v);
-            }
-        };
-
-        adapter.startListening();
-//        recyclerView.setAdapter(adapter);
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
 

@@ -66,6 +66,7 @@ public class Admin_NewReport extends AppCompatActivity implements AdapterView.On
         setContentView(R.layout.activity_new_report);
 
 
+        //Spinner
         spinnerstatus1 = findViewById(R.id.spinnerstatus1_view);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.status, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -96,7 +97,7 @@ public class Admin_NewReport extends AppCompatActivity implements AdapterView.On
         textViewProgress = findViewById(R.id.textViewProgress);
         progressBar = findViewById(R.id.progressBar);
         btnUpload = findViewById(R.id.btnUpload);
-        imageButton2 = findViewById(R.id.imageButton2);
+        imageButton2 = findViewById(R.id.btnBack);
 
         textViewProgress.setVisibility(View.GONE);
         progressBar.setVisibility(View.GONE);
