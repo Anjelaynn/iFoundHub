@@ -25,7 +25,7 @@
         android:id="@+id/image_single_view"
         android:layout_width="96dp"
         android:layout_height="96dp"
-        android:src="@drawable/item1"
+        android:src="@drawable/ic_add"
         app:civ_border_width="2dp"
         app:civ_border_color="#FF000000"
         android:layout_marginTop="34dp"

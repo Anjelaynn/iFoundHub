@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -130,6 +131,92 @@ public class Admin_NewReport extends AppCompatActivity implements AdapterView.On
         btnUpload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
+                if (TextUtils.isEmpty(imageViewAdd.toString()){
+                    imageViewAdd.setError("This field is required");
+                    return;
+                }
+
+                if (TextUtils.isEmpty(inputItemName.getText().toString())){
+                    inputItemName.setError("This field is required");
+                    return;
+                }
+
+                if (TextUtils.isEmpty(inputItemName.getText().toString())){
+                    inputItemName.setError("This field is required");
+                    return;
+                }
+
+                if (TextUtils.isEmpty(inputItemLocation.getText().toString())){
+                    inputItemLocation.setError("This field is required");
+                    return;
+                }
+
+                if (TextUtils.isEmpty(inputItemDateReported.getText().toString())){
+                    inputItemDateReported.setError("This field is required");
+                    return;
+                }
+
+                if (TextUtils.isEmpty(inputItemDescription.getText().toString())){
+                    inputItemDescription.setError("This field is required");
+                    return;
+                }
+
+
+                if (TextUtils.isEmpty(firstName.getText().toString())){
+                    firstName.setError("This field is required");
+                    return;
+                }
+
+                if (TextUtils.isEmpty(lastName.getText().toString())){
+                    lastName.setError("This field is required");
+                    return;
+                }
+
+                if (TextUtils.isEmpty(middleName.getText().toString())){
+                    middleName.setError("This field is required");
+                    return;
+                }
+
+
+                if (TextUtils.isEmpty(studentNumber.getText().toString())){
+                    studentNumber.setError("This field is required");
+                    return;
+                }
+
+
+                if (TextUtils.isEmpty(college.getText().toString())){
+                    college.setError("This field is required");
+                    return;
+                }
+
+                if (TextUtils.isEmpty(year.getText().toString())){
+                    year.setError("This field is required");
+                    return;
+                }
+
+
+                if (TextUtils.isEmpty(course.getText().toString())){
+                    course.setError("This field is required");
+                    return;
+                }
+
+                if (TextUtils.isEmpty(block.getText().toString())){
+                    block.setError("This field is required");
+                    return;
+                }
+
+
+                if (TextUtils.isEmpty(contactNumber.getText().toString())){
+                    contactNumber.setError("This field is required");
+                    return;
+                }
+
+
+
+
+
                 String imageItem  = inputItemName.getText().toString();
                 if(isImageAddded!=false && imageItem!=null){
                     uploadImage(imageItem);
@@ -180,6 +267,9 @@ public class Admin_NewReport extends AppCompatActivity implements AdapterView.On
                         dataRef.child(key).setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void unused) {
+
+
+
                                 startActivity(new Intent(getApplicationContext(), Admin_Home.class));
                                 Toast.makeText(Admin_NewReport.this, "Data Successfully Uploaded!", Toast.LENGTH_SHORT).show();
                             }
