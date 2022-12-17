@@ -4,6 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -14,6 +16,7 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -30,6 +33,7 @@ import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import java.util.Calendar;
 import java.util.HashMap;
 
 public class Admin_NewReport extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
@@ -37,6 +41,9 @@ public class Admin_NewReport extends AppCompatActivity implements AdapterView.On
 
 
     private static final int REQUEST_CODE_IMAGE = 101;
+
+    DatePickerDialog datePickerDialog;
+    Button datePickerButton;
 
     Spinner spinnerstatus1;
     ImageView imageViewAdd;
@@ -75,13 +82,17 @@ public class Admin_NewReport extends AppCompatActivity implements AdapterView.On
         spinnerstatus1.setOnItemSelectedListener(this);
 
 
+        //DatePicker
+        initDatePicker();
+        datePickerButton = findViewById(R.id.itemDate_single_view_activity);
+        datePickerButton.setText(getTodaysDate());
 
 
         imageViewAdd = findViewById(R.id.image_single_view_activity);
 
         inputItemName = findViewById(R.id.itemName_single_view_activity);
         inputItemLocation = findViewById(R.id.itemLocation_single_view_activity);
-        inputItemDateReported = findViewById(R.id.itemDate_single_view_activity);
+//        inputItemDateReported = findViewById(R.id.itemDate_single_view_activity);
         inputItemDescription = findViewById(R.id.itemDescription_single_view_activity);
 
         firstName = findViewById(R.id.firstName_view);
@@ -133,10 +144,6 @@ public class Admin_NewReport extends AppCompatActivity implements AdapterView.On
             public void onClick(View view) {
 
 
-                if (TextUtils.isEmpty(imageViewAdd.toString()){
-                    imageViewAdd.setError("This field is required");
-                    return;
-                }
 
                 if (TextUtils.isEmpty(inputItemName.getText().toString())){
                     inputItemName.setError("This field is required");
@@ -153,8 +160,8 @@ public class Admin_NewReport extends AppCompatActivity implements AdapterView.On
                     return;
                 }
 
-                if (TextUtils.isEmpty(inputItemDateReported.getText().toString())){
-                    inputItemDateReported.setError("This field is required");
+                if (TextUtils.isEmpty(datePickerButton.getText().toString())){
+                    datePickerButton.setError("This field is required");
                     return;
                 }
 
@@ -229,6 +236,88 @@ public class Admin_NewReport extends AppCompatActivity implements AdapterView.On
     }
 
 
+//    Date picker
+
+    private String getTodaysDate()
+    {
+        Calendar cal = Calendar.getInstance();
+        int year = cal.get(Calendar.YEAR);
+        int month = cal.get(Calendar.MONTH);
+        month = month + 1;
+        int day = cal.get(Calendar.DAY_OF_MONTH);
+        return makeDateString(day, month, year);
+    }
+
+    private void initDatePicker() {
+        DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener()
+        {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day)
+            {
+                month = month + 1;
+                String date = makeDateString(day, month, year);
+                datePickerButton.setText(date);
+            }
+        };
+
+        Calendar cal = Calendar.getInstance();
+        int year = cal.get(Calendar.YEAR);
+        int month = cal.get(Calendar.MONTH);
+        int day = cal.get(Calendar.DAY_OF_MONTH);
+
+        int style = AlertDialog.THEME_HOLO_LIGHT;
+
+        datePickerDialog = new DatePickerDialog(this, style, dateSetListener, year, month, day);
+        //datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis());
+    }
+
+
+    private String makeDateString(int day, int month, int year)
+    {
+        return getMonthFormat(month) + " " + day + " " + year;
+    }
+
+    private String getMonthFormat(int month)
+    {
+        if(month == 1)
+            return "JAN";
+        if(month == 2)
+            return "FEB";
+        if(month == 3)
+            return "MAR";
+        if(month == 4)
+            return "APR";
+        if(month == 5)
+            return "MAY";
+        if(month == 6)
+            return "JUN";
+        if(month == 7)
+            return "JUL";
+        if(month == 8)
+            return "AUG";
+        if(month == 9)
+            return "SEP";
+        if(month == 10)
+            return "OCT";
+        if(month == 11)
+            return "NOV";
+        if(month == 12)
+            return "DEC";
+
+        //default should never happen
+        return "JAN";
+    }
+
+    public void openDatePicker(View view)
+    {
+        datePickerDialog.show();
+    }
+
+
+
+
+
+
     //Upload image
     private void uploadImage(String imageItem) {
         textViewProgress.setVisibility(View.VISIBLE);
@@ -249,7 +338,7 @@ public class Admin_NewReport extends AppCompatActivity implements AdapterView.On
                         hashMap.put("Item_Name", imageItem);
                         hashMap.put("Image_Url", uri.toString());
                         hashMap.put("Item_Description", inputItemDescription.getText().toString());
-                        hashMap.put("Date_Reported", inputItemDateReported.getText().toString());
+                        hashMap.put("Date_Reported", datePickerButton.getText().toString());
                         hashMap.put("Location", inputItemLocation.getText().toString());
                         hashMap.put("First_Name", firstName.getText().toString());
                         hashMap.put("Last_Name", lastName.getText().toString());
