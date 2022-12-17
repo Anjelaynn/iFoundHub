@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:background="@color/gray02">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/image_single_view"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/item1"
+            app:civ_border_width="2dp"
+            app:civ_border_color="#FF000000"
+            android:layout_marginTop="34dp"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gray02"
+        android:gravity="left"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/txt_itemname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_extrabold"
+            android:gravity="center_horizontal"
+            android:text="[Item Name]"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+            android:textColor="#17395C" />
+
+        <TextView
+            android:id="@+id/txt_itemnumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_light"
+            android:gravity="center"
+            android:text="[Item Number]"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="#636363" />
+
+        <TextView
+            android:id="@+id/txt_itemstatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_light"
+            android:gravity="center"
+            android:text="[Status]"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="#17395C" />
+
+
+        <TextView
+            android:id="@+id/txt_itemlocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_semibold"
+            android:gravity="left"
+            android:text="Location: [Location]"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="#17395C" />
+
+        <TextView
+            android:id="@+id/txt_datereported"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_semibold"
+            android:gravity="left"
+            android:text="Date Reported: [Date]"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="#17395C" />
+
+        <TextView
+            android:id="@+id/txt_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_semibold"
+            android:gravity="left"
+            android:text="Description: [Description]"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="#17395C" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonClose"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_signin"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="Close"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+
+    </LinearLayout>
+
+</LinearLayout>
