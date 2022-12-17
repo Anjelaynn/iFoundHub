@@ -3,8 +3,8 @@
     <string name="select">Status</string>
 
     <string-array name="status">
-        <item>Found</item>
         <item>Lost</item>
+        <item>Found</item>
     </string-array>
 
 </resources>

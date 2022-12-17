@@ -1,18 +1,21 @@
 package com.example.ifoundhub;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -27,7 +30,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
 import java.util.Calendar;
@@ -44,17 +49,28 @@ public class Admin_EditDeleteItem extends AppCompatActivity implements AdapterVi
 
     //Date picker
     DatePickerDialog datePickerDialog;
-    Button datePickerButton;
+    Button datePickerButton, datePickerButtonReceived;
 
-    DatabaseReference ref, DataRef;
-    StorageReference storageRef;
+    DatabaseReference ref, DataRef, receivedByRef;
+    StorageReference storageRef, receivedByStorageRef;
 
+    //iteminformation
     Spinner spinnerstatus1;
     ImageView image_single_view_activity;
-    TextView itemName_single_view_activity, itemDescription_single_view_activity,itemDate_single_view_activity,itemLocation_single_view_activity;
+    TextView itemName_single_view_activity, itemDescription_single_view_activity,itemDate_single_view_activity,itemLocation_single_view_activity, received_date;
     TextView lname, fname, mname, studentnum, college, year, course, block, contactnum;
 
     TextView status;
+
+    //Received by variable
+    EditText received_lastName, received_firstName, received_middleName, received_studentNumber,
+            received_college, received_year, received_course, received_block, received_contactNumber;
+    ImageView received_uploadValidId;
+    private static final int REQUEST_CODE_IMAGE = 101;
+    Uri imageUri;
+    boolean isImageAddded = false;
+
+    Button btnReceivedUpload;
 
 
     ImageButton btnBack;
@@ -79,6 +95,8 @@ public class Admin_EditDeleteItem extends AppCompatActivity implements AdapterVi
         initDatePicker();
         datePickerButton = findViewById(R.id.itemDate_single_view_activity);
         datePickerButton.setText(getTodaysDate());
+        datePickerButtonReceived = findViewById(R.id.received_date);
+        datePickerButtonReceived.setText(getTodaysDate());
 
 
         image_single_view_activity = findViewById(R.id.image_single_view_activity);
@@ -99,6 +117,24 @@ public class Admin_EditDeleteItem extends AppCompatActivity implements AdapterVi
         contactnum = findViewById(R.id.contactNumber_view);
 
 
+
+        //Recevied by
+        received_firstName = findViewById(R.id.received_firstName);
+        received_middleName = findViewById(R.id.received_middleName);
+        received_lastName = findViewById(R.id.received_lastName);
+        received_studentNumber = findViewById(R.id.received_stundentNumber);
+        received_college = findViewById(R.id.received_college);
+        received_year = findViewById(R.id.received_year);
+        received_course = findViewById(R.id.received_course);
+        received_block = findViewById(R.id.received_block);
+        received_contactNumber = findViewById(R.id.received_contactNumber);
+        received_date = findViewById(R.id.received_date);
+        btnReceivedUpload = findViewById(R.id.btnReceivedUpload);
+        received_uploadValidId = findViewById(R.id.received_uploadValidId);
+
+
+
+
         btnBack = findViewById(R.id.btnBack);
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -113,6 +149,7 @@ public class Admin_EditDeleteItem extends AppCompatActivity implements AdapterVi
 
         btnDelete = findViewById(R.id.btnDelete);
         btnUpdate = findViewById(R.id.btnUpdate);
+
 //        btneditChanges = findViewById(R.id.btnEdit);
 
 
@@ -120,7 +157,11 @@ public class Admin_EditDeleteItem extends AppCompatActivity implements AdapterVi
 
         String itemKey = getIntent().getStringExtra("ItemKey");
         DataRef = FirebaseDatabase.getInstance().getReference().child("Items").child(itemKey);
+        receivedByRef = FirebaseDatabase.getInstance().getReference().child("Items").child(itemKey).child("Received By");
+
         storageRef = FirebaseStorage.getInstance().getReference().child("ItemImage").child(itemKey+".jpg");
+        receivedByStorageRef = FirebaseStorage.getInstance().getReference().child("Valid_ID").child(itemKey+".jpg");
+
 
         ref.child(itemKey).addValueEventListener(new ValueEventListener() {
             @Override
@@ -178,8 +219,108 @@ public class Admin_EditDeleteItem extends AppCompatActivity implements AdapterVi
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
+
+
             }
         });
+
+
+        //--------received By
+
+
+        received_uploadValidId.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setType("image/*");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+
+                startActivityForResult(intent, REQUEST_CODE_IMAGE);
+
+            }
+        });
+
+
+
+        receivedByRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()){
+
+                    String valid_id = snapshot.child("Valid_ID").getValue().toString();
+                    String Fname = snapshot.child("firstName").getValue().toString();
+                    String Mname = snapshot.child("middleName").getValue().toString();
+                    String Lname = snapshot.child("lastName").getValue().toString();
+                    String Studentnum = snapshot.child("studentnumber").getValue().toString();
+                    String College = snapshot.child("college").getValue().toString();
+                    String Year = snapshot.child("year").getValue().toString();
+                    String Course = snapshot.child("course").getValue().toString();
+                    String Block = snapshot.child("block").getValue().toString();
+                    String Contactnum = snapshot.child("contactnumber").getValue().toString();
+                    String date_received = snapshot.child("DateReceived").getValue().toString();
+
+
+                    Picasso.get().load(valid_id).into(received_uploadValidId);
+                    received_firstName.setText(Fname);
+                    received_lastName.setText(Lname);
+                    received_middleName.setText(Mname);
+
+                    received_studentNumber.setText(Studentnum);
+                    received_college.setText(College);
+                    received_year.setText(Year);
+                    received_course.setText(Course);
+                    received_block.setText(Block);
+                    received_contactNumber.setText(Contactnum);
+
+                    datePickerButtonReceived.setText(date_received);
+
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+        //--------received By
+        btnReceivedUpload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if(isImageAddded!=false){
+                    uploadImage();
+                }
+
+
+//                HashMap hashMap = new HashMap();
+//                hashMap.put("firstName", received_firstName.getText().toString());
+//                hashMap.put("lastName", received_lastName.getText().toString());
+//                hashMap.put("middleName", received_middleName.getText().toString());
+//                hashMap.put("studentnumber", received_studentNumber.getText().toString());
+//                hashMap.put("college", received_college.getText().toString());
+//                hashMap.put("year", received_year.getText().toString());
+//                hashMap.put("block", received_block.getText().toString());
+//                hashMap.put("course", received_course.getText().toString());
+//                hashMap.put("contactnumber", received_contactNumber.getText().toString());
+//                hashMap.put("DateReceived", datePickerButtonReceived.getText().toString());
+//
+//
+//                receivedByRef.updateChildren(hashMap).addOnSuccessListener(new OnSuccessListener() {
+//                    @Override
+//                    public void onSuccess(Object o) {
+//                        Toast.makeText(Admin_EditDeleteItem.this, "Your Data is Succesfully Uploaded", Toast.LENGTH_SHORT).show();
+//
+//                    }
+//                });
+
+
+            }
+        });
+        //--------received By
+
 
 
         btnUpdate.setOnClickListener(new View.OnClickListener() {
@@ -219,6 +360,7 @@ public class Admin_EditDeleteItem extends AppCompatActivity implements AdapterVi
         });
 
 
+
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -242,6 +384,68 @@ public class Admin_EditDeleteItem extends AppCompatActivity implements AdapterVi
 
 
     }
+
+
+
+
+    //------------------ //Upload image-------------
+
+    private void uploadImage() {
+
+        //image upload to storage reference
+        receivedByStorageRef.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+
+                receivedByStorageRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    @Override
+                    public void onSuccess(Uri uri) {
+
+                        //Addded image on storage
+                        HashMap hashMap = new HashMap();
+                        hashMap.put("Valid_ID", uri.toString());
+                        hashMap.put("firstName", received_firstName.getText().toString());
+                        hashMap.put("lastName", received_lastName.getText().toString());
+                        hashMap.put("middleName", received_middleName.getText().toString());
+                        hashMap.put("studentnumber", received_studentNumber.getText().toString());
+                        hashMap.put("college", received_college.getText().toString());
+                        hashMap.put("year", received_year.getText().toString());
+                        hashMap.put("block", received_block.getText().toString());
+                        hashMap.put("course", received_course.getText().toString());
+                        hashMap.put("contactnumber", received_contactNumber.getText().toString());
+                        hashMap.put("DateReceived", datePickerButtonReceived.getText().toString());
+
+
+                        receivedByRef.setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void unused) {
+
+                                Toast.makeText(Admin_EditDeleteItem.this, "Data Successfully Uploaded!", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+
+                    }
+                });
+
+
+            }
+        });
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode==REQUEST_CODE_IMAGE && data != null){
+            imageUri = data.getData();
+            isImageAddded = true;
+            received_uploadValidId.setImageURI(imageUri);
+        }
+    }
+    //------------------ //Upload image-------------
+
+
+
 
 
     //------------------Delete Dialog-------------
@@ -332,6 +536,7 @@ public class Admin_EditDeleteItem extends AppCompatActivity implements AdapterVi
                 month = month + 1;
                 String date = makeDateString(day, month, year);
                 datePickerButton.setText(date);
+                datePickerButtonReceived.setText(date);
             }
         };
 
