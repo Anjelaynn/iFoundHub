@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -31,6 +32,7 @@ public class Admin_Home extends AppCompatActivity {
     FloatingActionButton floatingBtn;
     FirebaseRecyclerOptions<Items> options;
     FirebaseRecyclerAdapter<Items, MyViewHolder>adapter;
+    ImageButton sorting;
     DatabaseReference dataRef;
 
     @Override
@@ -42,6 +44,7 @@ public class Admin_Home extends AppCompatActivity {
          setContentView(R.layout.activity_home);
 
         dataRef = FirebaseDatabase.getInstance().getReference().child("Items");
+        sorting = findViewById(R.id.sorting);
         inputSearch = findViewById(R.id.inputSearch);
         recyclerView = findViewById(R.id.recyclerView);
         floatingBtn = findViewById(R.id.floatingBtn);
@@ -100,7 +103,7 @@ public class Admin_Home extends AppCompatActivity {
 
                 Picasso.get().load(model.getImage_Url()).into(holder.image_single_view);
                 holder.itemName_single_view.setText(model.getItem_Name());
-                holder.itemDescription_single_view.setText(model.getItem_Description());
+                holder.itemDescription_single_view.setText(model.getStatus());
                 holder.itemDate_single_view.setText(model.getDate_Reported());
                 holder.itemLocation_single_view.setText(model.getLocation());
 
@@ -108,7 +111,7 @@ public class Admin_Home extends AppCompatActivity {
                 holder.view.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent = new Intent(Admin_Home.this, ViewActivity.class);
+                        Intent intent = new Intent(Admin_Home.this, Admin_EditDeleteItem.class);
                         intent.putExtra("ItemKey", getRef(position).getKey());
                         startActivity(intent);
                     }

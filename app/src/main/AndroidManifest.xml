@@ -40,14 +40,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".ViewActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".Admin_EditChanges"
+            android:name=".Admin_EditDeleteItem"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
