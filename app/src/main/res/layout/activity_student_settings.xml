@@ -37,39 +37,19 @@
         android:textColor="#17395C"
         android:textSize="34sp" />
 
-    <com.google.android.material.bottomappbar.BottomAppBar
-        android:id="@+id/bottomAppBar"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        app:backgroundTint="#17395C"
-        app:fabCradleMargin="14dp"
-        app:fabCradleRoundedCornerRadius="38dp"
-        app:fabCradleVerticalOffset="10dp">
+        android:layout_marginTop="675dp"
+        android:background="@drawable/bottom_nav_student"
+        android:elevation="2dp"
+        app:itemIconSize="28dp"
+        app:itemIconTint="@color/bottom_item_backgroundcolor"
+        app:itemTextColor="@color/bottom_item_backgroundcolor"
+        app:menu="@menu/bottom_nav_student">
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottomNavigationView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="13dp"
-            android:background="@drawable/transparent_background"
-            app:itemIconSize="22dp"
-            app:itemIconTint="@color/bottom_item_backgroundcolor"
-            app:itemTextColor="@color/bottom_item_backgroundcolor"
-            app:menu="@menu/bottom_nav_menu">
-
-        </com.google.android.material.bottomnavigation.BottomNavigationView>
-
-    </com.google.android.material.bottomappbar.BottomAppBar>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/plus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_round_add_24"
-        app:backgroundTint="#EFB758"
-        app:layout_anchor="@id/bottomAppBar"
-        app:maxImageSize="50dp" />
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 
     <Button
         android:id="@+id/privacysettings"
