@@ -153,10 +153,12 @@ public class Admin_EditDeleteItem extends AppCompatActivity implements AdapterVi
 //        btneditChanges = findViewById(R.id.btnEdit);
 
 
-        ref = FirebaseDatabase.getInstance().getReference().child("Items");
 
+        ref = FirebaseDatabase.getInstance().getReference().child("Items");
         String itemKey = getIntent().getStringExtra("ItemKey");
+
         DataRef = FirebaseDatabase.getInstance().getReference().child("Items").child(itemKey);
+
         receivedByRef = FirebaseDatabase.getInstance().getReference().child("Items").child(itemKey).child("Received By");
 
         storageRef = FirebaseStorage.getInstance().getReference().child("ItemImage").child(itemKey+".jpg");
@@ -239,6 +241,8 @@ public class Admin_EditDeleteItem extends AppCompatActivity implements AdapterVi
 
             }
         });
+
+
 
 
 
@@ -420,7 +424,7 @@ public class Admin_EditDeleteItem extends AppCompatActivity implements AdapterVi
                             @Override
                             public void onSuccess(Void unused) {
 
-                                Toast.makeText(Admin_EditDeleteItem.this, "Data Successfully Uploaded!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Admin_EditDeleteItem.this, "Congratulations the item ", Toast.LENGTH_SHORT).show();
                             }
                         });
 

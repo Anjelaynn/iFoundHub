@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E1DCC9"
-    tools:context="">
+    tools:context=".User_Home">
 
     <androidx.recyclerview.widget.RecyclerView
 
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="500dp"
         android:layout_marginTop="184dp"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="0dp" />
@@ -38,8 +38,6 @@
         app:menu="@menu/bottom_nav_student">
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
-
-
 
     <ImageView
         android:id="@+id/imageView6"

@@ -26,8 +26,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
@@ -41,6 +44,7 @@ public class Admin_NewReport extends AppCompatActivity implements AdapterView.On
 
 
     private static final int REQUEST_CODE_IMAGE = 101;
+    long maxid = 0;
 
     DatePickerDialog datePickerDialog;
     Button datePickerButton;
@@ -116,6 +120,23 @@ public class Admin_NewReport extends AppCompatActivity implements AdapterView.On
 
 
         dataRef = FirebaseDatabase.getInstance().getReference().child("Items");
+
+        //maxid
+//        dataRef.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                if(snapshot.exists()){
+//                    maxid = (snapshot.getChildrenCount());
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//
+//            }
+//        });
+
+
         storageRef = FirebaseStorage.getInstance().getReference().child("ItemImage");
 
         imageButton2.setOnClickListener(new View.OnClickListener() {
@@ -351,6 +372,18 @@ public class Admin_NewReport extends AppCompatActivity implements AdapterView.On
                         hashMap.put("Contact_Number", contactNumber.getText().toString());
                         hashMap.put("Status", spinnerstatus1.getSelectedItem().toString());
 
+
+                        //maxid
+//                        dataRef.child(String.valueOf(maxid+1)).child(key).setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
+//                            @Override
+//                            public void onSuccess(Void unused) {
+//
+//
+//
+//                                startActivity(new Intent(getApplicationContext(), Admin_Home.class));
+//                                Toast.makeText(Admin_NewReport.this, "Data Successfully Uploaded!", Toast.LENGTH_SHORT).show();
+//                            }
+//                        });
 
 
                         dataRef.child(key).setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {

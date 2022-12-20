@@ -93,7 +93,7 @@
 
     <!--    location icon-->
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/itemImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -118,7 +118,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:layout_below="@id/imageView5"
+        android:layout_below="@id/itemImageView"
         android:layout_marginLeft="160dp"
         app:srcCompat="@drawable/ic_description" />
 
