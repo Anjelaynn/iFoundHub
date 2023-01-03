@@ -4,42 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_newreport"
     tools:context=".Admin_Register">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="410dp"
+        android:layout_height="650dp"
+        android:background="@drawable/shape_registration"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <EditText
         android:id="@+id/editTextUserRole"
         android:layout_width="312dp"
         android:layout_height="51dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/bgshape_inputtextforms"
         android:ems="10"
-        android:hint="as"
-        android:inputType="textPersonName"
-        android:paddingStart="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="REGISTRATION"
-        android:textColor="#6D9197"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/editTextfullName"
-        android:layout_width="312dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="72dp"
-        android:ems="10"
-        android:hint="Full Name"
+        android:fontFamily="@font/montserrat_light"
+        android:hint="Role"
         android:inputType="textPersonName"
         android:paddingStart="15dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -48,15 +35,48 @@
         app:layout_constraintTop_toBottomOf="@+id/textView"
         tools:ignore="TouchTargetSizeCheck" />
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Registration"
+        android:textColor="#17395C"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextfullName"
+        android:layout_width="312dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bgshape_inputtextforms"
+        android:ems="10"
+        android:fontFamily="@font/montserrat_light"
+        android:hint="Full Name"
+        android:inputType="textPersonName"
+        android:paddingStart="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextUserRole"
+        tools:ignore="TouchTargetSizeCheck" />
+
     <EditText
         android:id="@+id/editTextcontactNumber"
         android:layout_width="312dp"
         android:layout_height="51dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bgshape_inputtextforms"
         android:ems="10"
-        android:paddingStart="15dp"
+        android:fontFamily="@font/montserrat_light"
         android:hint="Contact Number"
         android:inputType="textPersonName"
+        android:paddingStart="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -65,13 +85,15 @@
 
     <EditText
         android:id="@+id/editTextage"
-        android:paddingStart="15dp"
         android:layout_width="312dp"
         android:layout_height="51dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bgshape_inputtextforms"
         android:ems="10"
+        android:fontFamily="@font/montserrat_light"
         android:hint="Age"
         android:inputType="textPersonName"
+        android:paddingStart="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -82,13 +104,15 @@
         android:id="@+id/editTextcourse"
         android:layout_width="312dp"
         android:layout_height="51dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bgshape_inputtextforms"
         android:ems="10"
+        android:fontFamily="@font/montserrat_light"
         android:hint="Course"
         android:inputType="textPersonName"
         android:paddingStart="15dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextage"
         tools:ignore="TouchTargetSizeCheck" />
@@ -97,14 +121,16 @@
         android:id="@+id/editTextyear"
         android:layout_width="312dp"
         android:layout_height="51dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bgshape_inputtextforms"
         android:ems="10"
+        android:fontFamily="@font/montserrat_light"
         android:hint="Year"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:paddingStart="15dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextcourse" />
 
@@ -112,14 +138,16 @@
         android:id="@+id/editTextstudentNumber"
         android:layout_width="312dp"
         android:layout_height="51dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bgshape_inputtextforms"
         android:ems="10"
+        android:fontFamily="@font/montserrat_light"
         android:hint="Student Number"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:paddingStart="15dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextyear" />
 
@@ -127,36 +155,43 @@
         android:id="@+id/editTextpassWord"
         android:layout_width="312dp"
         android:layout_height="51dp"
-        android:layout_marginTop="124dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bgshape_inputtextforms"
         android:ems="10"
+        android:fontFamily="@font/montserrat_light"
         android:hint="Password"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         android:minHeight="48dp"
         android:paddingStart="15dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextyear" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextemail" />
 
     <EditText
         android:id="@+id/editTextemail"
         android:layout_width="312dp"
         android:layout_height="51dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bgshape_inputtextforms"
         android:ems="10"
-        android:hint="email"
+        android:fontFamily="@font/montserrat_light"
+        android:hint="Email"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:paddingStart="15dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextyear" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextstudentNumber" />
+
 
     <Button
         android:id="@+id/btnRegUser"
         android:layout_width="200dp"
         android:layout_height="50dp"
+        android:background="@drawable/button_signin"
+        android:fontFamily="@font/montserrat_medium"
         android:paddingLeft="20dp"
         android:paddingTop="10dp"
         android:paddingRight="20dp"
@@ -164,28 +199,26 @@
         android:text="Register"
         android:textAllCaps="false"
         android:textColor="#F3F3F3"
-        android:textSize="20sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextstudentNumber"
-        app:layout_constraintVertical_bias="0.905" />
-
-
+        app:layout_constraintTop_toBottomOf="@+id/editTextpassWord"
+        app:layout_constraintVertical_bias="0.404" />
 
     <ProgressBar
         android:id="@+id/progressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.502"
-        android:visibility="gone"
-        tools:ignore="MissingConstraints"/>
+        tools:ignore="MissingConstraints" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
