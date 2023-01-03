@@ -6,13 +6,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class Admin_Settings extends AppCompatActivity {
+
+    private Button logoutadmin;
+    Button privacysettingsadmin,aboutussettingsadmin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,12 +49,13 @@ public class Admin_Settings extends AppCompatActivity {
                         return true;
 
                     case R.id.notification:
-
+                        startActivity(new Intent(getApplicationContext(), Admin_Notification.class));
+                        overridePendingTransition(0,0);
                         return true;
 
+
                     case R.id.settings:
-                        startActivity(new Intent(getApplicationContext(), Admin_Settings.class));
-                        overridePendingTransition(0,0);
+
                         return true;
 
                     case R.id.profile:
@@ -61,7 +68,31 @@ public class Admin_Settings extends AppCompatActivity {
             }
         });
 
+        privacysettingsadmin = findViewById(R.id.privacysettingsadmin);
+        privacysettingsadmin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), PrivacyPolicy.class));
+            }
+        });
 
+        aboutussettingsadmin = findViewById(R.id.aboutussettingsadmin);
+        aboutussettingsadmin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), AboutUs.class));
+            }
+        });
+
+
+        logoutadmin = findViewById(R.id.logoutAdmin);
+        logoutadmin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(Admin_Settings.this, LoginPage.class));
+            }
+        });
 
     }
 }

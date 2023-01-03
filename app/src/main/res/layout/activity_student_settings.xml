@@ -35,34 +35,22 @@
         android:textColor="#17395C"
         android:textSize="34sp" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="725dp"
-        android:background="@drawable/bottom_nav_student"
-        android:elevation="2dp"
-        app:itemIconSize="28dp"
-        app:itemIconTint="@color/bottom_item_backgroundcolor"
-        app:itemTextColor="@color/bottom_item_backgroundcolor"
-        app:menu="@menu/bottom_nav_student">
-
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
 
     <Button
-        android:id="@+id/privacysettings"
+        android:id="@+id/privacysettingsstudent"
         android:layout_width="300dp"
         android:layout_height="100dp"
-        android:layout_marginLeft="60dp"
+        android:layout_marginLeft="50dp"
         android:layout_marginTop="180dp"
         android:backgroundTint="#E1DCC9"
         android:text="Privacy" />
 
+
     <Button
-        android:id="@+id/aboutussettings"
+        android:id="@+id/aboutussettingsstudent"
         android:layout_width="300dp"
         android:layout_height="100dp"
-        android:layout_marginLeft="60dp"
+        android:layout_marginLeft="50dp"
         android:layout_marginTop="300dp"
         android:backgroundTint="#E1DCC9"
         android:text="About Us" />
@@ -79,7 +67,20 @@
         android:textSize="16sp"
         android:layout_marginLeft="130dp"
         android:layout_marginTop="500dp"
-        app:layout_constraintTop_toBottomOf="@+id/aboutussettings"
-        app:layout_constraintVertical_bias="0.106" />
+      />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="725dp"
+        android:background="@drawable/bottom_nav_student"
+        android:elevation="2dp"
+        app:itemIconSize="28dp"
+        app:itemIconTint="@color/bottom_item_backgroundcolor"
+        app:itemTextColor="@color/bottom_item_backgroundcolor"
+        app:menu="@menu/bottom_nav_student">
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

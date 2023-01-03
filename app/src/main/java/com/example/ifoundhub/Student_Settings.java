@@ -18,9 +18,11 @@ import com.google.firebase.auth.FirebaseAuth;
 public class Student_Settings extends AppCompatActivity {
 
     private Button btnlogout;
-
+    Button privacysettingsstudent,aboutussettingsstudent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         //  getSupportActionBar().hide(); //this line hides the action bar
@@ -64,8 +66,21 @@ public class Student_Settings extends AppCompatActivity {
         });
 
 
+        privacysettingsstudent = findViewById(R.id.privacysettingsstudent);
+        privacysettingsstudent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), PrivacyPolicyStudents.class));
+            }
+        });
 
-
+        aboutussettingsstudent = findViewById(R.id.aboutussettingsstudent);
+        aboutussettingsstudent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), AboutUsStudents.class));
+            }
+        });
 
 
 
