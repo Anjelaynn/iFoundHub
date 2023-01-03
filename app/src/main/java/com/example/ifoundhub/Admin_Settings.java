@@ -12,7 +12,7 @@ import android.view.WindowManager;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
-public class Admin_Notification extends AppCompatActivity {
+public class Admin_Settings extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,13 +21,16 @@ public class Admin_Notification extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 //        getSupportActionBar().hide(); //this line hides the action bar
-        setContentView(R.layout.activity_admin_notification);
+        setContentView(R.layout.activity_admin_settings);
+
+
+
 
         //BottomNavigation
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
         //Set Home Selected
-        bottomNavigationView.setSelectedItemId(R.id.notification);
+        bottomNavigationView.setSelectedItemId(R.id.settings);
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
@@ -57,5 +60,8 @@ public class Admin_Notification extends AppCompatActivity {
                 return true;
             }
         });
+
+
+
     }
 }

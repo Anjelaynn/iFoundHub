@@ -9,7 +9,7 @@
         />
 
     <item
-        android:id="@+id/notification"
+        android:id="@+id/itemCheck"
         android:title="List"
         app:showAsAction="ifRoom"
         android:icon="@drawable/check"

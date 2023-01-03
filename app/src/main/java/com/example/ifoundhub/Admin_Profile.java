@@ -11,23 +11,30 @@ import android.view.WindowManager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
-public class Admin_Notification extends AppCompatActivity {
+public class Admin_Profile extends AppCompatActivity {
+
+    private FirebaseDatabase database;
+    private DatabaseReference databaseReference;
+    private static final String LOGIN = "Users";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //code for removing action bar and title bar
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 //        getSupportActionBar().hide(); //this line hides the action bar
-        setContentView(R.layout.activity_admin_notification);
+        setContentView(R.layout.activity_admin_profile);
+
 
         //BottomNavigation
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
         //Set Home Selected
-        bottomNavigationView.setSelectedItemId(R.id.notification);
+        bottomNavigationView.setSelectedItemId(R.id.home);
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
@@ -40,7 +47,8 @@ public class Admin_Notification extends AppCompatActivity {
                         return true;
 
                     case R.id.notification:
-
+                        startActivity(new Intent(getApplicationContext(), Admin_Notification.class));
+                        overridePendingTransition(0,0);
                         return true;
 
                     case R.id.settings:
@@ -49,13 +57,17 @@ public class Admin_Notification extends AppCompatActivity {
                         return true;
 
                     case R.id.profile:
-                        startActivity(new Intent(getApplicationContext(), Admin_Profile.class));
-                        overridePendingTransition(0,0);
+
                         return true;
                 }
 
                 return true;
             }
         });
+
+
+
+
+
     }
 }

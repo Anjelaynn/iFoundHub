@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -19,13 +20,14 @@ import android.widget.ImageButton;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.squareup.picasso.Picasso;
 
-public class User_Home extends AppCompatActivity {
+public class Student_Home extends AppCompatActivity {
 
     EditText inputSearch;
     RecyclerView recyclerView;
@@ -34,18 +36,65 @@ public class User_Home extends AppCompatActivity {
     ImageButton sorting;
     DatabaseReference dataRef;
 
+
+
+    private ImageButton btnprofile;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         //  getSupportActionBar().hide(); //this line hides the action bar
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_home);
+        setContentView(R.layout.activity_student_home);
+
+
+        //BottomNavigation
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+
+        //Set Home Selected
+        bottomNavigationView.setSelectedItemId(R.id.home);
+
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch (item.getItemId()){
+                    case R.id.home:
+
+                        return true;
+
+                    case R.id.itemCheck:
+                        startActivity(new Intent(getApplicationContext(), Notification.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+                    case R.id.settings:
+                        startActivity(new Intent(getApplicationContext(), Student_Settings.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+                    case R.id.profile:
+                        startActivity(new Intent(getApplicationContext(), Student_Profile.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+
+                return true;
+            }
+        });
+
+
+
+
+
 
         dataRef = FirebaseDatabase.getInstance().getReference().child("Items");
         sorting = findViewById(R.id.found_lost_sort);
         inputSearch = findViewById(R.id.inputSearch);
         recyclerView = findViewById(R.id.recyclerView);
+
+
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         recyclerView.setHasFixedSize(true);
@@ -101,7 +150,7 @@ public class User_Home extends AppCompatActivity {
                 holder.view.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent = new Intent(User_Home.this, User_view_Item_Information.class);
+                        Intent intent = new Intent(Student_Home.this, User_view_Item_Information.class);
                         intent.putExtra("ItemKey", getRef(position).getKey());
                         startActivity(intent);
                     }

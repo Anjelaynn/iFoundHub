@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -19,7 +20,9 @@ import android.widget.ImageButton;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
@@ -42,6 +45,53 @@ public class Admin_Home extends AppCompatActivity {
       //  getSupportActionBar().hide(); //this line hides the action bar
         super.onCreate(savedInstanceState);
          setContentView(R.layout.activity_home);
+
+
+        //BottomNavigation
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+
+        //Set Home Selected
+        bottomNavigationView.setSelectedItemId(R.id.home);
+
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch (item.getItemId()){
+                    case R.id.home:
+
+                        return true;
+
+                    case R.id.notification:
+                        startActivity(new Intent(getApplicationContext(), Admin_Notification.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+                    case R.id.settings:
+                        startActivity(new Intent(getApplicationContext(), Admin_Settings.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+                    case R.id.profile:
+                        startActivity(new Intent(getApplicationContext(), Admin_Profile.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+
+                return true;
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
 
         dataRef = FirebaseDatabase.getInstance().getReference().child("Items");
         sorting = findViewById(R.id.sorting);

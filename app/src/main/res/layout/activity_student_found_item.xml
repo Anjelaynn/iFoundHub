@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_newreport"
-    tools:context=".StudentFoundItem">
+    tools:context=".Student_FoundItem">
 
     <ImageButton
         android:id="@+id/userBtnBack"
