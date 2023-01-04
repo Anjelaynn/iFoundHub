@@ -65,7 +65,7 @@ public class Student_Home extends AppCompatActivity {
                         return true;
 
                     case R.id.itemCheck:
-                        startActivity(new Intent(getApplicationContext(), Notification.class));
+                        startActivity(new Intent(getApplicationContext(), Student_ListOfClaim.class));
                         overridePendingTransition(0,0);
                         return true;
 
@@ -150,7 +150,7 @@ public class Student_Home extends AppCompatActivity {
                 holder.view.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent = new Intent(Student_Home.this, User_view_Item_Information.class);
+                        Intent intent = new Intent(Student_Home.this, Student_viewItemInformation.class);
                         intent.putExtra("ItemKey", getRef(position).getKey());
                         startActivity(intent);
                     }

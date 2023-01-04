@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_newreport"
-    tools:context=".Student_FoundItem">
+    tools:context=".Student_viewItemInformation">
 
     <ImageButton
         android:id="@+id/userBtnBack"
@@ -34,15 +33,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/itemImageView" />
 
-    <ImageView
+
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/itemImageView"
-        android:layout_width="286dp"
-        android:layout_height="147dp"
-        android:layout_marginTop="4dp"
+        android:layout_width="180dp"
+        android:layout_height="174dp"
+        android:layout_marginTop="84dp"
+        android:background="@drawable/ic_add"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userBtnBack"
-        app:srcCompat="@drawable/ic_baseline_image_24blue" />
+        app:layout_constraintTop_toTopOf="parent"
+         />
 
     <TextView
         android:id="@+id/user_itemKeyNumber"
@@ -166,6 +168,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/user_itemDescription"
         app:layout_constraintVertical_bias="0.106" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
