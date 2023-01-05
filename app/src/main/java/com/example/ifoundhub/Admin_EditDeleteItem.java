@@ -424,7 +424,7 @@ public class Admin_EditDeleteItem extends AppCompatActivity implements AdapterVi
                             @Override
                             public void onSuccess(Void unused) {
 
-                                Toast.makeText(Admin_EditDeleteItem.this, "Congratulations the item ", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Admin_EditDeleteItem.this, "Successfully Updated! ", Toast.LENGTH_SHORT).show();
                             }
                         });
 

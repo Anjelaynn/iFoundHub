@@ -69,22 +69,37 @@
         app:maxImageSize="50dp" />
 
     <Button
-        android:id="@+id/privacysettings"
+        android:id="@+id/privacysettingsadmin"
         android:layout_width="300dp"
         android:layout_height="100dp"
-        android:layout_marginLeft="60dp"
+        android:layout_marginLeft="50dp"
         android:layout_marginTop="180dp"
         android:backgroundTint="#E1DCC9"
         android:text="Privacy" />
 
     <Button
-        android:id="@+id/aboutussettings"
+        android:id="@+id/aboutussettingsadmin"
         android:layout_width="300dp"
         android:layout_height="100dp"
-        android:layout_marginLeft="60dp"
+        android:layout_marginLeft="50dp"
         android:layout_marginTop="300dp"
         android:backgroundTint="#E1DCC9"
         android:text="About Us" />
+
+    <Button
+        android:id="@+id/logoutAdmin"
+        android:layout_width="149dp"
+        android:layout_height="40dp"
+        android:background="@drawable/button_signin"
+        android:fontFamily="@font/montserrat_medium"
+        android:text="Logout"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="500dp"
+        />
+
 
 
     <Button
