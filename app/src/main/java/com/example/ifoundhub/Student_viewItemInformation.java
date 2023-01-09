@@ -24,7 +24,9 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
-public class User_view_Item_Information extends AppCompatActivity {
+import java.util.HashMap;
+
+public class Student_viewItemInformation extends AppCompatActivity {
 
     //Dialog Variables
     AlertDialog.Builder builderDialog;
@@ -50,7 +52,7 @@ public class User_view_Item_Information extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         //  getSupportActionBar().hide(); //this line hides the action bar
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_view_item_information);
+        setContentView(R.layout.activity_student_view_item_information);
 
 
         itemImageView = findViewById(R.id.itemImageView);
@@ -74,6 +76,10 @@ public class User_view_Item_Information extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 showAlertDialog(R.layout.custom_founddialog);
+
+                HashMap hashMap = new HashMap();
+
+
             }
         });
 

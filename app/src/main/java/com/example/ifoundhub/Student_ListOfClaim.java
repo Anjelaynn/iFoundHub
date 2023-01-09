@@ -6,35 +6,28 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
-import com.google.firebase.auth.FirebaseAuth;
 
-public class Student_Settings extends AppCompatActivity {
+public class Student_ListOfClaim extends AppCompatActivity {
 
-    private Button btnlogout;
-    Button privacysettingsstudent,aboutussettingsstudent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         //  getSupportActionBar().hide(); //this line hides the action bar
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_student_settings);
+        setContentView(R.layout.activity_student_list_of_claim);
 
 
         //BottomNavigation
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
         //Set Home Selected
-        bottomNavigationView.setSelectedItemId(R.id.settings);
+        bottomNavigationView.setSelectedItemId(R.id.itemCheck);
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
@@ -46,13 +39,13 @@ public class Student_Settings extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
 
-
                     case R.id.itemCheck:
-                        startActivity(new Intent(getApplicationContext(), Student_ListOfClaim.class));
-                        overridePendingTransition(0,0);
+
                         return true;
 
                     case R.id.settings:
+                        startActivity(new Intent(getApplicationContext(), Student_Settings.class));
+                        overridePendingTransition(0,0);
                         return true;
 
                     case R.id.profile:
@@ -66,33 +59,6 @@ public class Student_Settings extends AppCompatActivity {
         });
 
 
-        privacysettingsstudent = findViewById(R.id.privacysettingsstudent);
-        privacysettingsstudent.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), PrivacyPolicyStudents.class));
-            }
-        });
-
-        aboutussettingsstudent = findViewById(R.id.aboutussettingsstudent);
-        aboutussettingsstudent.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), AboutUsStudents.class));
-            }
-        });
-
-
-
-
-        btnlogout = findViewById(R.id.btnLogout);
-        btnlogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(Student_Settings.this, LoginPage.class));
-            }
-        });
 
 
 

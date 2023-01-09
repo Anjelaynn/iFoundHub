@@ -17,7 +17,7 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
     public MyViewHolder(@NonNull View itemView) {
         super(itemView);
 
-        image_single_view = itemView.findViewById(R.id.image_single_view);
+        image_single_view = itemView.findViewById(R.id.image_single_view_notification);
         itemName_single_view = itemView.findViewById(R.id.itemName_single_view);
         itemDescription_single_view = itemView.findViewById(R.id.itemDescription_single_view);
         itemDate_single_view = itemView.findViewById(R.id.itemDate_single_view);

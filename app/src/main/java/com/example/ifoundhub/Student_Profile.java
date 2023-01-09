@@ -65,7 +65,7 @@ public class Student_Profile extends AppCompatActivity {
                         return true;
 
                     case R.id.itemCheck:
-                        startActivity(new Intent(getApplicationContext(), Notification.class));
+                        startActivity(new Intent(getApplicationContext(), Student_ListOfClaim.class));
                         overridePendingTransition(0,0);
                         return true;
 
