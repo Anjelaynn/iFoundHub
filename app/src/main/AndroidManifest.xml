@@ -32,7 +32,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".Admin_Register"
             android:exported="false">

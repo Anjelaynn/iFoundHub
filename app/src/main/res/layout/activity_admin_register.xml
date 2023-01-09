@@ -9,28 +9,11 @@
     tools:context=".Admin_Register">
 
 
-    <EditText
-        android:id="@+id/editTextUserRole"
-        android:layout_width="312dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/bg_register"
-        android:ems="10"
-        android:fontFamily="@font/montserrat_light"
-        android:hint="Role"
-        android:inputType="textPersonName"
-        android:paddingStart="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        tools:ignore="TouchTargetSizeCheck" />
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="48dp"
         android:fontFamily="@font/montserrat_bold"
         android:text="Registration"
         android:textColor="#17395C"
@@ -41,129 +24,9 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextfullName"
-        android:layout_width="312dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/bg_register"
-        android:ems="10"
-        android:fontFamily="@font/montserrat_light"
-        android:hint="Full Name"
-        android:inputType="textPersonName"
-        android:paddingStart="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextUserRole"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <EditText
-        android:id="@+id/editTextcontactNumber"
-        android:layout_width="312dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/bg_register"
-        android:ems="10"
-        android:fontFamily="@font/montserrat_light"
-        android:hint="Contact Number"
-        android:inputType="textPersonName"
-        android:paddingStart="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextfullName"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <EditText
-        android:id="@+id/editTextage"
-        android:layout_width="312dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/bg_register"
-        android:ems="10"
-        android:fontFamily="@font/montserrat_light"
-        android:hint="Age"
-        android:inputType="textPersonName"
-        android:paddingStart="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextcontactNumber"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <EditText
-        android:id="@+id/editTextcourse"
-        android:layout_width="312dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/bg_register"
-        android:ems="10"
-        android:fontFamily="@font/montserrat_light"
-        android:hint="Course"
-        android:inputType="textPersonName"
-        android:paddingStart="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextage"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <EditText
-        android:id="@+id/editTextyear"
-        android:layout_width="312dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/bg_register"
-        android:ems="10"
-        android:fontFamily="@font/montserrat_light"
-        android:hint="Year"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:paddingStart="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextcourse" />
-
-    <EditText
-        android:id="@+id/editTextstudentNumber"
-        android:layout_width="312dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/bg_register"
-        android:ems="10"
-        android:fontFamily="@font/montserrat_light"
-        android:hint="Student Number"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:paddingStart="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextyear" />
-
-    <EditText
-        android:id="@+id/editTextpassWord"
-        android:layout_width="312dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/bg_register"
-        android:ems="10"
-        android:fontFamily="@font/montserrat_light"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:minHeight="48dp"
-        android:paddingStart="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextemail" />
-
-    <EditText
         android:id="@+id/editTextemail"
         android:layout_width="312dp"
         android:layout_height="51dp"
-        android:layout_marginTop="10dp"
         android:background="@drawable/bg_register"
         android:ems="10"
         android:fontFamily="@font/montserrat_light"
@@ -171,11 +34,124 @@
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:paddingStart="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextstudentNumber" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextstudentNumber"
+        app:layout_constraintVertical_bias="0.047" />
 
+    <EditText
+        android:id="@+id/editTextcontactNumber"
+        android:layout_width="312dp"
+        android:layout_height="51dp"
+        android:background="@drawable/bg_register"
+        android:ems="10"
+        android:fontFamily="@font/montserrat_light"
+        android:hint="Contact Number"
+        android:inputType="textPersonName"
+        android:paddingStart="15dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextyear"
+        app:layout_constraintVertical_bias="0.083"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/editTextfullName"
+        android:layout_width="312dp"
+        android:layout_height="51dp"
+        android:background="@drawable/bg_register"
+        android:ems="10"
+        android:fontFamily="@font/montserrat_light"
+        android:hint="Full Name"
+        android:inputType="textPersonName"
+        android:paddingStart="15dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.062"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/editTextcourse"
+        android:layout_width="312dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_register"
+        android:ems="10"
+        android:fontFamily="@font/montserrat_light"
+        android:hint="Course"
+        android:inputType="textPersonName"
+
+        android:paddingStart="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnRegUser"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextcontactNumber"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/editTextyear"
+        android:layout_width="312dp"
+        android:layout_height="51dp"
+        android:background="@drawable/bg_register"
+        android:ems="10"
+        android:fontFamily="@font/montserrat_light"
+        android:hint="Year"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:paddingStart="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextpassWord"
+        app:layout_constraintVertical_bias="0.058" />
+
+    <EditText
+        android:id="@+id/editTextstudentNumber"
+        android:layout_width="312dp"
+        android:layout_height="51dp"
+        android:background="@drawable/bg_register"
+        android:ems="10"
+        android:fontFamily="@font/montserrat_light"
+        android:hint="Student Number"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:paddingStart="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextfullName"
+        app:layout_constraintVertical_bias="0.032" />
+
+    <EditText
+        android:id="@+id/editTextpassWord"
+        android:layout_width="312dp"
+        android:layout_height="51dp"
+        android:background="@drawable/bg_register"
+        android:ems="10"
+        android:fontFamily="@font/montserrat_light"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:paddingStart="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextemail"
+        app:layout_constraintVertical_bias="0.051" />
 
     <Button
         android:id="@+id/btnRegUser"
@@ -195,8 +171,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextpassWord"
-        app:layout_constraintVertical_bias="0.404" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.942" />
 
     <ProgressBar
         android:id="@+id/progressBar"

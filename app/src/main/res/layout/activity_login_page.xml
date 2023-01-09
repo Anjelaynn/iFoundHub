@@ -52,8 +52,8 @@
 
     <EditText
         android:id="@+id/editTextusername"
-        android:layout_width="343dp"
-        android:layout_height="49dp"
+        android:layout_width="360dp"
+        android:layout_height="50dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/bgshape_inputtextlogin"
         android:drawableStart="@drawable/ic_baseline_person_outline_24"
@@ -62,7 +62,8 @@
         android:fontFamily="@font/montserrat_light"
         android:hint="201900000"
         android:inputType="textPersonName"
-        android:paddingStart="15dp"
+        android:paddingRight="15dp"
+        android:paddingLeft="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.455"
         app:layout_constraintStart_toStartOf="parent"
@@ -70,8 +71,8 @@
 
     <EditText
         android:id="@+id/editTextpassword"
-        android:layout_width="343dp"
-        android:layout_height="49dp"
+        android:layout_width="360dp"
+        android:layout_height="50dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/bgshape_inputtextlogin"
         android:drawableStart="@drawable/ic_baseline_password_24"

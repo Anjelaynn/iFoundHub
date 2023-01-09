@@ -30,8 +30,8 @@ public class Admin_Register extends AppCompatActivity {
     private FirebaseAuth mAuth;
 
     private EditText editTextfullName, editTextcontactNumber,
-            editTextage, editTextcourse, editTextyear,
-            editTextstudentNumber, editTextemail, editTextpassword, editTextUserRole;
+          editTextcourse, editTextyear,
+            editTextstudentNumber, editTextemail, editTextpassword;
 
     //REference to firebase
     ProgressBar progressBar;
@@ -52,13 +52,11 @@ public class Admin_Register extends AppCompatActivity {
 
         editTextfullName = findViewById(R.id.editTextfullName);
         editTextcontactNumber = findViewById(R.id.editTextcontactNumber);
-        editTextage = findViewById(R.id.editTextage);
         editTextcourse = findViewById(R.id.editTextcourse);
         editTextyear = findViewById(R.id.editTextyear);
         editTextstudentNumber = findViewById(R.id.editTextstudentNumber);
         editTextemail = findViewById(R.id.editTextemail);
         editTextpassword = findViewById(R.id.editTextpassWord);
-        editTextUserRole = findViewById(R.id.editTextUserRole);
 
         progressBar = findViewById(R.id.progressBar);
         btnRegUser = findViewById(R.id.btnRegUser);
@@ -85,14 +83,12 @@ public class Admin_Register extends AppCompatActivity {
 
 
         String fullname = editTextfullName.getText().toString().trim();
-        String age = editTextage.getText().toString().trim();
         String course = editTextcourse.getText().toString().trim();
         String year = editTextyear.getText().toString().trim();
         String studentnumber = editTextstudentNumber.getText().toString().trim();
         String email = editTextemail.getText().toString().trim();
         String password = editTextpassword.getText().toString().trim();
-        String contactnumber = editTextcontactNumber.getText().toString().trim();
-        String userRole = editTextUserRole.getText().toString().trim();
+        String contactnumber = editTextcontactNumber.getText().toString().trim();;
 
 
         if(fullname.isEmpty()){
@@ -101,11 +97,6 @@ public class Admin_Register extends AppCompatActivity {
             return;
         }
 
-        if(age.isEmpty()){
-            editTextage.setError("This field is required!");
-            editTextage.requestFocus();
-            return;
-        }
 
         if(course.isEmpty()){
             editTextcourse.setError("This field is required!");
@@ -137,17 +128,19 @@ public class Admin_Register extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    UserClass user = new UserClass(fullname, contactnumber, age, email, studentnumber, year, course, password, userRole);
+                    UserClass user = new UserClass(fullname, contactnumber, email, studentnumber, year, course, password);
 
                     FirebaseDatabase.getInstance().getReference("UsersLoginInformation")
                             .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                             .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
+
                                     if(task.isSuccessful()){
                                         Toast.makeText(Admin_Register.this, "UserClass has been registered succesfully!", Toast.LENGTH_SHORT).show();
                                         progressBar.setVisibility(View.GONE);
                                         startActivity(new Intent(getApplicationContext(), LoginPage.class));
+
 
                                     }else{
                                         Toast.makeText(Admin_Register.this, "Failed To register!", Toast.LENGTH_SHORT).show();
@@ -155,7 +148,8 @@ public class Admin_Register extends AppCompatActivity {
                                     }
                                 }
                             });
-                }else{
+                }
+                else{
                     Toast.makeText(Admin_Register.this, "Failed To register!", Toast.LENGTH_SHORT).show();
                     progressBar.setVisibility(View.GONE);
                 }
