@@ -19,6 +19,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.StorageReference;
@@ -37,6 +38,8 @@ public class Admin_Register extends AppCompatActivity {
     ProgressBar progressBar;
     DatabaseReference dataRef;
     StorageReference storageRef;
+    FirebaseAuth auth = FirebaseAuth.getInstance();
+    FirebaseUser user = auth.getCurrentUser();
 
     private Button btnRegUser;
 
@@ -137,9 +140,19 @@ public class Admin_Register extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<Void> task) {
 
                                     if(task.isSuccessful()){
-                                        Toast.makeText(Admin_Register.this, "UserClass has been registered succesfully!", Toast.LENGTH_SHORT).show();
-                                        progressBar.setVisibility(View.GONE);
-                                        startActivity(new Intent(getApplicationContext(), LoginPage.class));
+                                        auth.getCurrentUser().sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<Void> task) {
+                                                if(task.isSuccessful()) {
+                                                    Toast.makeText(Admin_Register.this, "Please verify your email address.", Toast.LENGTH_SHORT).show();
+                                                    progressBar.setVisibility(View.GONE);
+                                                    startActivity(new Intent(getApplicationContext(), LoginPage.class));
+                                                }else{
+                                                    Toast.makeText(Admin_Register.this, task.getException().getMessage(),Toast.LENGTH_LONG).show();
+                                                }
+                                            }
+                                        });
+
 
 
                                     }else{

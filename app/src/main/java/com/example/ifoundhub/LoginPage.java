@@ -254,18 +254,22 @@ public class LoginPage extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-
-                    //redirect to user profile
+//                    if(mAuth.getCurrentUser().isEmailVerified()){
+//                        Toast.makeText(LoginPage.this, "This is user side", Toast.LENGTH_SHORT).show();
+//                        startActivity(new Intent(LoginPage.this, Student_Home.class));
+//                    }else{
+//                        Toast.makeText(LoginPage.this, "Please verify your email address.", Toast.LENGTH_SHORT).show();
+//                    }
+                        //redirect to user profile
                     if(email.equals("admin@gmail.com") && password.equals("admin123")) {
                         Toast.makeText(LoginPage.this, "This is admin site", Toast.LENGTH_SHORT).show();
 
-                        startActivity(new Intent(LoginPage.this, Admin_Home.class));
+                        startActivity(new Intent(LoginPage.this, Admin_Profile.class));
                     }
                     else{
                         Toast.makeText(LoginPage.this, "This is user side", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(LoginPage.this, Student_Home.class));
+                        startActivity(new Intent(LoginPage.this, Student_Profile.class));
                     }
-
 
                 }else{
                     Toast.makeText(LoginPage.this, "Invalid Information!", Toast.LENGTH_SHORT).show();

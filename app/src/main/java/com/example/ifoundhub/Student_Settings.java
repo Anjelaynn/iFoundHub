@@ -70,7 +70,7 @@ public class Student_Settings extends AppCompatActivity {
         privacysettingsstudent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), PrivacyPolicyStudents.class));
+                startActivity(new Intent(getApplicationContext(), Student_Privacy.class));
             }
         });
 
@@ -78,7 +78,7 @@ public class Student_Settings extends AppCompatActivity {
         aboutussettingsstudent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), AboutUsStudents.class));
+                startActivity(new Intent(getApplicationContext(), Student_aboutus.class));
             }
         });
 

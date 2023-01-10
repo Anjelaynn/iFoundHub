@@ -67,20 +67,6 @@ public class Admin_Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
          setContentView(R.layout.activity_home);
 
-//         Sharedpref = getSharedPreferences("SortSettings", MODE_PRIVATE);
-//         String mSorting =Sharedpref.getString("sort", "newest");
-//
-//
-//         if (mSorting.equals ("newest")){
-//             Laymanager = new LinearLayoutManager(this);
-//             Laymanager.setReverseLayout(true);
-//             Laymanager.setStackFromEnd(true);
-//         }
-//         else if (mSorting.equals("oldest")){
-//             Laymanager = new LinearLayoutManager(this);
-//             Laymanager.setReverseLayout(true);
-//             Laymanager.setStackFromEnd(true);
-//         }
          initWidgets();
         hideSort();
 
@@ -208,100 +194,6 @@ public class Admin_Home extends AppCompatActivity {
 
 
 
-//    public void showPopup(View v){
-//        PopupMenu popup = new PopupMenu(this,v);
-//        popup.setOnMenuItemClickListener(this);
-//        popup.inflate(R.menu.popup_menu);
-//        popup.show();
-//    }
-//
-//    @Override
-//    public boolean onMenuItemClick(MenuItem menuItem) {
-//        switch (menuItem.getItemId()){
-//            case R.id.lost:
-//
-//                Toast.makeText(this, "item", Toast.LENGTH_LONG).show();
-//                return true;
-//            case R.id.found:
-//                Toast.makeText(this, "item", Toast.LENGTH_LONG).show();
-//                return true;
-//
-//
-//        }
-//        return false;
-//    }
-
-//SORTING SHITSSS
-//    public void showSortTapped(View v){
-//        PopupMenu popupMenu = new PopupMenu(this, v);
-//        popupMenu.setOnMenuItemClickListener(this);
-//        popupMenu.inflate(R.menu.sort);
-//        popupMenu.show();
-//    }
-//
-//    @Override
-//    public boolean onMenuItemClick(MenuItem menuItem) {
-//        switch (menuItem.getItemId()){
-//            case R.id.sorting:
-//
-//                Toast.makeText(this, "Item clicked", Toast.LENGTH_SHORT).show();
-//                return true;
-//        }
-//        return false;
-//    }
-//
-//        public boolean onOptionsItemSelected(MenuItem item){
-//        int id = item.getItemId();
-//
-//        if(id == R.id.sorting){
-//            showSortDialog();
-//            return true;
-//        }
-//        return super.onOptionsItemSelected(item);
-//    }
-//
-//    private void showSortDialog()
-//    {
-//        String [] sortOptions ={"Newest", "Oldest"};
-//
-//        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-//        builder.setTitle("Sort by")
-//                .setIcon(R.drawable.ic_action_sort)
-//                .setItems(sortOptions, new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialogInterface, int i) {
-//                        if (i == 0) {
-//
-//                            SharedPreferences.Editor editor = Sharedpref.edit();
-//                            editor.putString("sort", "newest");
-//                            editor.apply();
-//                            recreate();
-//
-//                        } else if (i == 1) {{
-//
-//
-//                            SharedPreferences.Editor editor = Sharedpref.edit();
-//                            editor.putString("sort", "oldest");
-//                            editor.apply();
-//                            recreate();
-//                        }}
-//                    }
-//                });
-//        builder.show();
-//    }
-
-
-    //    private void filterList(String status)
-//    {
-//        selectedFilter = status;
-//
-//        ArrayList<MyViewHolder> filtered = new ArrayList<MyViewHolder>();
-//
-//        for (View view: loadData)
-//        {
-//            if(itemDescription_single_view)
-//        }
-//    }
     private void initWidgets()
     {
         sorting = findViewById(R.id.sorting);
@@ -333,7 +225,6 @@ public class Admin_Home extends AppCompatActivity {
         sortView.setVisibility(View.VISIBLE);
     }
 
-        //SORTING SHITSS
 
 
     private void founddata(String data) {
@@ -398,34 +289,7 @@ public class Admin_Home extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
     }
 
-//    private void allfilter(String data) {
-//        Query query = dataRef.orderByChild("Status").startAt(data).endAt(data + "\uf8ff");
-//
-//        options = new FirebaseRecyclerOptions.Builder<Items>().setQuery(query, Items.class).build();
-//        adapter = new FirebaseRecyclerAdapter<Items, MyViewHolder>(options) {
-//
-//            @Override
-//            protected void onBindViewHolder(@NonNull MyViewHolder holder, int position, @NonNull Items model) {
-//
-//                Picasso.get().load(model.getImage_Url()).into(holder.image_single_view);
-//                holder.itemName_single_view.setText(model.getItem_Name());
-//                holder.itemDescription_single_view.setText(model.getStatus());
-//                holder.itemDate_single_view.setText(model.getDate_Reported());
-//                holder.itemLocation_single_view.setText(model.getLocation());
-//
-//
-//            }
-//
-//            @NonNull
-//            @Override
-//            public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-//
-//                View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.single_view, parent, false);
-//
-//                return new MyViewHolder(v);
-//            }
-//        };
-//    }
+
 
     private void loadData(String data){
         Query query = dataRef.orderByChild("Item_Name").startAt(data).endAt(data+"\uf8ff");
