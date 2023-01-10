@@ -12,8 +12,17 @@
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="400dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="165dp"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/rectanglehide"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:layout_marginTop="64dp"
+        android:background="@drawable/bg_rectangle"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-1dp" />
 
     <TextView
         android:id="@+id/rectangletop"
@@ -22,6 +31,7 @@
         android:background="@drawable/bgshape_homepage"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="-1dp" />
+
 
 
 
@@ -85,7 +95,7 @@
         android:id="@+id/inputSearch"
         android:layout_width="300dp"
         android:layout_height="40dp"
-        android:layout_marginLeft="30dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="105dp"
         android:background="@drawable/bg_searchview"
         android:drawableLeft="@drawable/ic_search"
@@ -95,13 +105,58 @@
 
     <ImageButton
         android:id="@+id/sorting"
-        android:layout_width="66dp"
-        android:layout_height="55dp"
-        android:layout_marginLeft="330dp"
-        android:layout_marginTop="97dp"
-        app:srcCompat="@drawable/ic_round_filter_list_24" />
+        android:layout_width="50dp"
+        android:layout_height="45dp"
+        android:background="#E1DCC9"
+        android:paddingLeft="7dp"
 
-<!--    <TextView-->
+        android:layout_marginLeft="325dp"
+        android:layout_marginTop="103dp"
+        android:src="@drawable/ic_filter"
+        android:onClick="showSortTapped"
+
+       />
+
+    <LinearLayout
+        android:layout_width="3000dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/sortTabsLayout2">
+
+
+    <Button
+        android:id="@+id/lostfilter"
+        android:background="@drawable/button_lost"
+        android:layout_width="132dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="140dp"
+        android:text="LOST"
+        />
+
+    <Button
+        android:id="@+id/foundfilter"
+        android:layout_width="132dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="-132dp"
+        android:layout_marginTop="170dp"
+        android:background="@drawable/button_found"
+        android:text="FOUND"
+        />
+
+    <Button
+        android:id="@+id/allfilter"
+        android:layout_width="132dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="-132dp"
+        android:layout_marginTop="200dp"
+        android:background="@drawable/button_allfilter"
+        android:text="ALL"/>
+
+    </LinearLayout>
+
+
+    <!--    <TextView-->
 <!--        android:layout_width="357dp"-->
 <!--        android:layout_height="166dp"-->
 <!--        android:layout_marginLeft="28dp"-->
