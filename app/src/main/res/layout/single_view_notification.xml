@@ -9,7 +9,7 @@
     android:paddingRight="10dp"
     android:layout_alignParentTop="true"
     android:layout_marginTop="5dp"
-    android:background="@drawable/bg_shapeforitems"
+    android:background="@drawable/bg_notificationshape"
     android:layout_marginBottom="8dp">
 
     <de.hdodenhof.circleimageview.CircleImageView
@@ -55,6 +55,15 @@
         android:layout_below="@id/randomText"
         android:layout_toRightOf="@id/image_single_view_notification"
         android:hint="[Date Reported]"/>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:background="@drawable/line_separator"
+        android:layout_below="@+id/image_single_view_notification"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        />
 
 
 

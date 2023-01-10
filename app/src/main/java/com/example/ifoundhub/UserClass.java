@@ -17,4 +17,12 @@ public class UserClass {
         this.course = course;
         this.password = password;
     }
+
+    public String getFullname() {
+        return fullname;
+    }
+
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
+    }
 }

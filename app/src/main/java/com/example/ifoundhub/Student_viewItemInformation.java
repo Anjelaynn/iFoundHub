@@ -14,7 +14,11 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -28,6 +32,15 @@ import java.util.HashMap;
 
 public class Student_viewItemInformation extends AppCompatActivity {
 
+
+    //user information
+        private FirebaseUser user;
+        private DatabaseReference reference;
+        private String userId;
+
+
+
+
     //Dialog Variables
     AlertDialog.Builder builderDialog;
     AlertDialog alertDialog;
@@ -37,13 +50,16 @@ public class Student_viewItemInformation extends AppCompatActivity {
     ImageView itemImageView;
 
     TextView user_itemName, user_itemStatus, user_itemLocation, user_itemDateReported, user_itemDescription;
+    TextView imageTextUrl;
 
+    private TextView editTextUserName;
 
     ImageButton btnback;
     Button btnFound;
 
-    DatabaseReference ref, DataRef;
-    StorageReference storageRef;
+    DatabaseReference ref, DataRef, notificationReference1, notificationReference2;
+    StorageReference storageRef, notificationReferencePic;
+
 
 
     @Override
@@ -61,6 +77,9 @@ public class Student_viewItemInformation extends AppCompatActivity {
         user_itemLocation = findViewById(R.id.user_item_location);
         user_itemDateReported = findViewById(R.id.user_item_dateReported);
         user_itemDescription = findViewById(R.id.user_itemDescription);
+        imageTextUrl = findViewById(R.id.imageTextUrl);
+        editTextUserName = findViewById(R.id.editTextUserName);
+
 
         btnback = findViewById(R.id.userBtnBack);
         btnFound = findViewById(R.id.user_btnFound);
@@ -72,16 +91,38 @@ public class Student_viewItemInformation extends AppCompatActivity {
             }
         });
 
-        btnFound.setOnClickListener(new View.OnClickListener() {
+
+
+        //user information
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        reference = FirebaseDatabase.getInstance().getReference("UsersLoginInformation");
+        userId = user.getUid();
+
+        reference.child(userId).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onClick(View view) {
-                showAlertDialog(R.layout.custom_founddialog);
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                UserClass userProfile = snapshot.getValue(UserClass.class);
 
-                HashMap hashMap = new HashMap();
+                if(userProfile != null){
+                    String fullname = userProfile.fullname;
+                    editTextUserName.setText(fullname);
 
 
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(Student_viewItemInformation.this, "Something happened!", Toast.LENGTH_LONG).show();
             }
         });
+
+
+
+
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        reference = FirebaseDatabase.getInstance().getReference("UsersLoginInformation");
+        userId = user.getUid();
 
 
         ref = FirebaseDatabase.getInstance().getReference().child("Items");
@@ -98,6 +139,8 @@ public class Student_viewItemInformation extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 if(snapshot.exists()){
+
+                    String imageUrlText1 = snapshot.child("Image_Url").getValue().toString();
                     String imageUrl = snapshot.child("Image_Url").getValue().toString();
                     String itemName = snapshot.child("Item_Name").getValue().toString();
                     String itemDescription = snapshot.child("Item_Description").getValue().toString();
@@ -108,7 +151,9 @@ public class Student_viewItemInformation extends AppCompatActivity {
 
 
 
+
                     Picasso.get().load(imageUrl).into(itemImageView);
+                    imageTextUrl.setText(imageUrlText1);
                     user_itemName.setText(itemName);
                     user_itemStatus.setText(status);
                     user_itemLocation.setText(itemLocation);
@@ -124,6 +169,80 @@ public class Student_viewItemInformation extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
+
+
+            }
+        });
+
+
+        btnFound.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                notificationReference1 = FirebaseDatabase.getInstance().getReference().child("Notification");
+                notificationReference2 = FirebaseDatabase.getInstance().getReference().child("Notification").child(itemKey);
+                notificationReferencePic = FirebaseStorage.getInstance().getReference().child("ItemImage").child(itemKey+".jpg");
+
+//                DatabaseReference ref1 =  FirebaseDatabase.getInstance().getReference().child("UsersLoginInformation");
+//
+//                ref1.child(userId).addValueEventListener(new ValueEventListener() {
+//                    @Override
+//                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+//
+//                        if(snapshot.exists()) {
+//                            String email = snapshot.child("email").getValue().toString();
+//                            HashMap hashMap = new HashMap();
+//                            hashMap.put("UserEmail", email);
+//
+//
+//
+//                            notificationReference1.child(itemKey).setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
+//                                @Override
+//                                public void onSuccess(Void unused) {
+//
+//
+//                                    showAlertDialog(R.layout.custom_founddialog);
+//                                    Toast.makeText(Student_viewItemInformation.this, "Admin have been notified", Toast.LENGTH_SHORT).show();
+//
+//                                }
+//                            });
+//
+//                        }
+//                    }
+//
+//                    @Override
+//                    public void onCancelled(@NonNull DatabaseError error) {
+//
+//                    }
+//                });
+
+
+
+                HashMap hashMap = new HashMap();
+                hashMap.put("Item_Name", user_itemName.getText().toString());
+                hashMap.put("Image_Url", imageTextUrl.getText().toString());
+                hashMap.put("Item_Description", user_itemDescription.getText().toString());
+                hashMap.put("Date_Reported",  user_itemDateReported.getText().toString());
+                hashMap.put("Location",  user_itemLocation.getText().toString());
+                hashMap.put("Status", user_itemStatus.getText().toString());
+                hashMap.put("Student_Name", editTextUserName.getText().toString());
+                hashMap.put("Student_ID", userId);
+
+
+
+
+
+
+                notificationReference1.child(itemKey).setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+
+
+                        showAlertDialog(R.layout.custom_founddialog);
+                        Toast.makeText(Student_viewItemInformation.this, "Admin have been notified", Toast.LENGTH_SHORT).show();
+
+                         }
+                });
 
 
             }
