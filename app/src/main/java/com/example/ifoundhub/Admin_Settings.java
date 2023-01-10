@@ -19,7 +19,6 @@ public class Admin_Settings extends AppCompatActivity {
 
 
     Button btnlogout;
-
     private Button logoutadmin;
     Button privacysettingsadmin,aboutussettingsadmin;
 
@@ -69,6 +68,34 @@ public class Admin_Settings extends AppCompatActivity {
                 return true;
             }
         });
+
+        privacysettingsadmin = findViewById(R.id.privacysettingsadmin);
+        privacysettingsadmin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), PrivacyPolicy.class));
+            }
+        });
+
+        aboutussettingsadmin = findViewById(R.id.aboutussettingsadmin);
+        aboutussettingsadmin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), AboutUs.class));
+            }
+        });
+
+
+        logoutadmin = findViewById(R.id.btnLogout);
+        logoutadmin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(Admin_Settings.this, LoginPage.class));
+            }
+        });
+
+
 
     }
 }

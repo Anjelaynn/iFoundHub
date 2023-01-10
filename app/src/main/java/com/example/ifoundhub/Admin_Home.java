@@ -139,6 +139,7 @@ public class Admin_Home extends AppCompatActivity {
 
     }
 
+
     private void loadData(String data){
         Query query = dataRef.orderByChild("Item_Name").startAt(data).endAt(data+"\uf8ff");
 

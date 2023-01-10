@@ -20,6 +20,22 @@
             app:civ_border_color="#FF000000"
             app:civ_border_width="2dp" />
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonClaimed"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/image_single_view_notification"
+            android:background="@drawable/button_signin"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="Claim"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+
     </RelativeLayout>
 
     <LinearLayout
@@ -70,7 +86,18 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserrat_semibold"
             android:gravity="left"
-            android:text="Location: [Location]"
+            android:text="Location:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+             />
+
+
+        <TextView
+            android:id="@+id/editTextItemLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_semibold"
+            android:gravity="left"
+            android:text="[Location]"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="#17395C" />
 
@@ -80,7 +107,17 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserrat_semibold"
             android:gravity="left"
-            android:text="Date Reported: [Date]"
+            android:text="Date Reported:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+             />
+
+        <TextView
+            android:id="@+id/editTextDateReported"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_semibold"
+            android:gravity="left"
+            android:text="[Date]"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="#17395C" />
 
@@ -90,7 +127,18 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserrat_semibold"
             android:gravity="left"
-            android:text="Description: [Description]"
+            android:text="Description:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+             />
+
+
+        <TextView
+            android:id="@+id/editTextDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_semibold"
+            android:gravity="left"
+            android:text="[Description]"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="#17395C" />
 

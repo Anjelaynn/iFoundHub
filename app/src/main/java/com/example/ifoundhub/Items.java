@@ -3,10 +3,19 @@ package com.example.ifoundhub;
 public class Items {
 
 
-    String Status, Item_Name, Item_Description, Date_Reported, Location;
+    String Status, Item_Name, Item_Description, Date_Reported, Location, userID, user;
     String Last_Name, First_Name, Middle_Name, Student_Number, College, Year, Course, Block;
     String Contact_Number;
     String Image_Url;
+
+    public Items() {
+    }
+
+    public Items(String userID, String user) {
+        this.userID = userID;
+        this.user = user;
+    }
+
 
     public Items(String status, String item_Name, String item_Description, String date_Reported, String location, String last_Name, String first_Name, String middle_Name, String student_Number, String college, String year, String course, String block, String contact_Number, String image_Url) {
         Status = status;
@@ -27,9 +36,20 @@ public class Items {
     }
 
 
+    public String getUserID() {
+        return userID;
+    }
 
+    public void setUserID(String userID) {
+        this.userID = userID;
+    }
 
-    public Items() {
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
     }
 
     public String getContact_Number() {

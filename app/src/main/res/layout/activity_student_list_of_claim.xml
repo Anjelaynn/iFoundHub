@@ -22,8 +22,8 @@
 
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:layout_marginTop="200dp"
+        android:layout_height="550dp"
+        android:layout_marginTop="125dp"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -39,6 +39,8 @@
         app:menu="@menu/bottom_nav_student">
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
