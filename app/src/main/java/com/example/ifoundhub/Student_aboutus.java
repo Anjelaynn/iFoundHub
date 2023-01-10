@@ -9,19 +9,19 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
 
-public class PrivacyPolicyStudents extends AppCompatActivity {
-    ImageButton btnBackSettingStud;
+public class Student_aboutus extends AppCompatActivity {
+    ImageButton btnBackSetting2Stud;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //code for removing action bar and title bar
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-       // getSupportActionBar().hide(); //this line hides the action bar
-        setContentView(R.layout.activity_student_privacy);
+        //getSupportActionBar().hide(); //this line hides the action bar
+        setContentView(R.layout.activity_student_aboutus2);
 
-        btnBackSettingStud = findViewById(R.id.btnBackSettingStud);
-        btnBackSettingStud.setOnClickListener(new View.OnClickListener() {
+        btnBackSetting2Stud = findViewById(R.id.btnBackSetting2Stud);
+        btnBackSetting2Stud.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), Student_Settings.class));

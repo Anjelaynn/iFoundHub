@@ -67,6 +67,8 @@ public class Admin_Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+         initWidgets();
+        hideSort();
 //         Sharedpref = getSharedPreferences("SortSettings", MODE_PRIVATE);
 //         String mSorting =Sharedpref.getString("sort", "newest");
 //
@@ -206,6 +208,37 @@ public class Admin_Home extends AppCompatActivity {
 //    private void loadData(String data) {
 //        Query query = dataRef.orderByChild("Item_Name").startAt(data).endAt(data + "\uf8ff");
 
+
+    private void initWidgets()
+    {
+        sorting = findViewById(R.id.sorting);
+        sortView = (LinearLayout) findViewById(R.id.sortTabsLayout2);
+
+    }
+//
+    public void showSortTapped(View view)
+    {
+        if(sortHidden == true)
+        {
+            sortHidden = false;
+            showSort();
+        }
+        else
+        {
+            sortHidden = true;
+            hideSort();
+        }
+    }
+
+    private void hideSort()
+    {
+        sortView.setVisibility(View.GONE);
+    }
+
+    private void showSort()
+    {
+        sortView.setVisibility(View.VISIBLE);
+    }
 
 //    public void showPopup(View v){
 //        PopupMenu popup = new PopupMenu(this,v);

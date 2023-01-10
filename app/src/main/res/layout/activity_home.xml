@@ -11,8 +11,8 @@
 
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:layout_marginTop="165dp"
+        android:layout_height="530dp"
+        android:layout_marginTop="155dp"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
