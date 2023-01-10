@@ -81,8 +81,8 @@ public class Admin_Home extends AppCompatActivity {
 //             Laymanager.setReverseLayout(true);
 //             Laymanager.setStackFromEnd(true);
 //         }
-//         initWidgets();
-//        hideSort();
+         initWidgets();
+        hideSort();
 
 
         //BottomNavigation
@@ -142,38 +142,38 @@ public class Admin_Home extends AppCompatActivity {
         });
 
 
-//        lostdata ("Lost");
-//
-//        lostfilter.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                    lostdata("Lost");
-//            }
-//
-//        });
-//
-//        founddata ("Found");
-//
-//        foundfilter.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                    founddata("Found");
-//
-//            }
-//
-//        });
-//
-//
-//        allfilter.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                loadData("");
-//            }
-//
-//        });
+        lostdata ("Lost");
+
+        lostfilter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                    lostdata("Lost");
+            }
+
+        });
+
+        founddata ("Found");
+
+        foundfilter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                    founddata("Found");
+
+            }
+
+        });
+
+
+        allfilter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                loadData("");
+            }
+
+        });
 
         loadData("");
 
@@ -301,130 +301,103 @@ public class Admin_Home extends AppCompatActivity {
 //            if(itemDescription_single_view)
 //        }
 //    }
-//    private void initWidgets()
-//    {
-//        sorting = findViewById(R.id.sorting);
-//        sortView = (LinearLayout) findViewById(R.id.sortTabsLayout2);
-//
-//    }
-//
-//    public void showSortTapped(View view)
-//    {
-//        if(sortHidden == true)
-//        {
-//            sortHidden = false;
-//            showSort();
-//        }
-//        else
-//        {
-//            sortHidden = true;
-//            hideSort();
-//        }
-//    }
-//
-//    private void hideSort()
-//    {
-//        sortView.setVisibility(View.GONE);
-//    }
-//
-//    private void showSort()
-//    {
-//        sortView.setVisibility(View.VISIBLE);
-//    }
-//
-//        //SORTING SHITSS
+    private void initWidgets()
+    {
+        sorting = findViewById(R.id.sorting);
+        sortView = (LinearLayout) findViewById(R.id.sortTabsLayout2);
+
+    }
+
+    public void showSortTapped(View view)
+    {
+        if(sortHidden == true)
+        {
+            sortHidden = false;
+            showSort();
+        }
+        else
+        {
+            sortHidden = true;
+            hideSort();
+        }
+    }
+
+    private void hideSort()
+    {
+        sortView.setVisibility(View.GONE);
+    }
+
+    private void showSort()
+    {
+        sortView.setVisibility(View.VISIBLE);
+    }
+
+        //SORTING SHITSS
 
 
-//    private void founddata(String data) {
-//        Query query = dataRef.orderByChild("Status").startAt(data).endAt(data + "\uf8ff");
-//
-//        options = new FirebaseRecyclerOptions.Builder<Items>().setQuery(query, Items.class).build();
-//        adapter = new FirebaseRecyclerAdapter<Items, MyViewHolder>(options) {
-//
-//            @Override
-//            protected void onBindViewHolder(@NonNull MyViewHolder holder, int position, @NonNull Items model) {
-//
-//                Picasso.get().load(model.getImage_Url()).into(holder.image_single_view);
-//                holder.itemName_single_view.setText(model.getItem_Name());
-//                holder.itemDescription_single_view.setText(model.getStatus());
-//                holder.itemDate_single_view.setText(model.getDate_Reported());
-//                holder.itemLocation_single_view.setText(model.getLocation());
-//
-//
-//            }
-//            @NonNull
-//            @Override
-//            public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-//
-//                View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.single_view,parent,false);
-//
-//                return new MyViewHolder(v);
-//            }
-//        };
-//
-//        adapter.startListening();
-//        recyclerView.setAdapter(adapter);
-//    }
-//
-//    private void lostdata(String data) {
-//        Query query = dataRef.orderByChild("Status").startAt(data).endAt(data + "\uf8ff");
-//
-//        options = new FirebaseRecyclerOptions.Builder<Items>().setQuery(query, Items.class).build();
-//        adapter = new FirebaseRecyclerAdapter<Items, MyViewHolder>(options) {
-//
-//            @Override
-//            protected void onBindViewHolder(@NonNull MyViewHolder holder, int position, @NonNull Items model) {
-//
-//                Picasso.get().load(model.getImage_Url()).into(holder.image_single_view);
-//                holder.itemName_single_view.setText(model.getItem_Name());
-//                holder.itemDescription_single_view.setText(model.getStatus());
-//                holder.itemDate_single_view.setText(model.getDate_Reported());
-//                holder.itemLocation_single_view.setText(model.getLocation());
-//
-//
-//            }
-//            @NonNull
-//            @Override
-//            public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-//
-//                View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.single_view,parent,false);
-//
-//                return new MyViewHolder(v);
-//            }
-//        };
-//
-//        adapter.startListening();
-//        recyclerView.setAdapter(adapter);
-//    }
+    private void founddata(String data) {
+        Query query = dataRef.orderByChild("Status").startAt(data).endAt(data + "\uf8ff");
 
-//    private void allfilter(String data) {
-//        Query query = dataRef.orderByChild("Status").startAt(data).endAt(data + "\uf8ff");
+        options = new FirebaseRecyclerOptions.Builder<Items>().setQuery(query, Items.class).build();
+        adapter = new FirebaseRecyclerAdapter<Items, MyViewHolder>(options) {
+
+            @Override
+            protected void onBindViewHolder(@NonNull MyViewHolder holder, int position, @NonNull Items model) {
+
+                Picasso.get().load(model.getImage_Url()).into(holder.image_single_view);
+                holder.itemName_single_view.setText(model.getItem_Name());
+                holder.itemDescription_single_view.setText(model.getStatus());
+                holder.itemDate_single_view.setText(model.getDate_Reported());
+                holder.itemLocation_single_view.setText(model.getLocation());
+
+
+            }
+            @NonNull
+            @Override
+            public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
+                View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.single_view,parent,false);
+
+                return new MyViewHolder(v);
+            }
+        };
+
+        adapter.startListening();
+        recyclerView.setAdapter(adapter);
+    }
 //
-//        options = new FirebaseRecyclerOptions.Builder<Items>().setQuery(query, Items.class).build();
-//        adapter = new FirebaseRecyclerAdapter<Items, MyViewHolder>(options) {
-//
-//            @Override
-//            protected void onBindViewHolder(@NonNull MyViewHolder holder, int position, @NonNull Items model) {
-//
-//                Picasso.get().load(model.getImage_Url()).into(holder.image_single_view);
-//                holder.itemName_single_view.setText(model.getItem_Name());
-//                holder.itemDescription_single_view.setText(model.getStatus());
-//                holder.itemDate_single_view.setText(model.getDate_Reported());
-//                holder.itemLocation_single_view.setText(model.getLocation());
-//
-//
-//            }
-//
-//            @NonNull
-//            @Override
-//            public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-//
-//                View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.single_view, parent, false);
-//
-//                return new MyViewHolder(v);
-//            }
-//        };
- //   }
+    private void lostdata(String data) {
+        Query query = dataRef.orderByChild("Status").startAt(data).endAt(data + "\uf8ff");
+
+        options = new FirebaseRecyclerOptions.Builder<Items>().setQuery(query, Items.class).build();
+        adapter = new FirebaseRecyclerAdapter<Items, MyViewHolder>(options) {
+
+            @Override
+            protected void onBindViewHolder(@NonNull MyViewHolder holder, int position, @NonNull Items model) {
+
+                Picasso.get().load(model.getImage_Url()).into(holder.image_single_view);
+                holder.itemName_single_view.setText(model.getItem_Name());
+                holder.itemDescription_single_view.setText(model.getStatus());
+                holder.itemDate_single_view.setText(model.getDate_Reported());
+                holder.itemLocation_single_view.setText(model.getLocation());
+
+
+            }
+            @NonNull
+            @Override
+            public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
+                View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.single_view,parent,false);
+
+                return new MyViewHolder(v);
+            }
+        };
+
+        adapter.startListening();
+        recyclerView.setAdapter(adapter);
+    }
+
+
 
         private void loadData (String data){
             Query query = dataRef.orderByChild("Item_Name").startAt(data).endAt(data + "\uf8ff");

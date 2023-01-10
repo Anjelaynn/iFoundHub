@@ -114,7 +114,7 @@ public class Admin_Notification extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         recyclerView.setHasFixedSize(true);
 
-
+        DatabaseReference itemList = FirebaseDatabase.getInstance().getReference("Items");
 
 
 
@@ -205,7 +205,7 @@ public class Admin_Notification extends AppCompatActivity {
 
                                     Picasso.get().load(imageUrl).into(imageUrl1);
                                     itemName.setText(itemName1);
-                                    itemStatus.setText(itemStatus1);
+                                    itemStatus.setText(model.getStatus());
                                     itemLocation.setText(itemLocation1);
                                     itemDateReported.setText(itemDate);
                                     itemDescription.setText(itemDescription1);
@@ -304,14 +304,33 @@ public class Admin_Notification extends AppCompatActivity {
                         buttonClose.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                alertDialog.dismiss();
+
+
+
+
+                                itemList.child(key2).addValueEventListener(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                        Intent intent = new Intent(Admin_Notification.this, Admin_EditDeleteItem.class);
+                                        intent.putExtra("ItemKey", getRef(position).getKey());
+                                        startActivity(intent);
+                                    }
+
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError error) {
+
+                                    }
+                                });
+
+
+
+
+
+                               // alertDialog.dismiss();
                             }
                         });
 
 
-//                        Intent intent = new Intent(Admin_Notification.this, .class);
-//                        intent.putExtra("ItemKey", getRef(position).getKey());
-//                        startActivity(intent);
                     }
                 });
 
