@@ -104,44 +104,57 @@ public class Student_ListOfClaim extends AppCompatActivity {
         userId = user.getUid();
 
 
-        reference = FirebaseDatabase.getInstance().getReference("ListOfClaims").child(userId);
+        reference = FirebaseDatabase.getInstance().getReference(userId);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         recyclerView.setHasFixedSize(true);
 
-        loadData();
+        loadData("");
     }
 
 
-    private void loadData(){
+    private void loadData(String data){
 
-        options = new FirebaseRecyclerOptions.Builder<Items>().setQuery(reference.child(userId), Items.class).build();
+        Query query = reference.orderByChild("Student_ID").startAt(data).endAt(data + "\uf8ff");
 
-        options1 = new FirebaseRecyclerOptions.Builder<FirebaseUser>().setQuery(reference, FirebaseUser.class).build();
+        String userId1 = user.getUid();
 
+        options = new FirebaseRecyclerOptions.Builder<Items>().setQuery(reference, Items.class).build();
         adapter = new FirebaseRecyclerAdapter<Items, ListOfItemViewHolder>(options) {
             @Override
             protected void onBindViewHolder(@NonNull ListOfItemViewHolder holder, int position, @NonNull Items model) {
 
-//                reference.addValueEventListener(new ValueEventListener() {
-//                    @Override
-//                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-//
-////                        if(snapshot.exists()){
-////                            String itemNAme2 = snapshot.child("Item_Name").getValue().toString();
-////                            String imageUrl2 = snapshot.child("Image_Url").getValue().toString();
-////
-////                            holder.itemName_listOfClaims.setText(itemNAme2);
-////
-////                            Picasso.get().load(imageUrl2).into(holder.image_single_view_listOfClaims);
-////                            Toast.makeText(Student_ListOfClaim.this, userId, Toast.LENGTH_LONG).show();
-////                        }
-//                    }
-//
-//                    @Override
-//                    public void onCancelled(@NonNull DatabaseError error) {
-//
-//                    }
-//                });
+
+
+
+
+//                Picasso.get().load(model.getImage_Url()).into(holder.image_single_view_listOfClaims);
+//                holder.single_view_notification_studentName.Text(model.get);
+//                holder.itemDescription_single_view.setText(model.getStatus());
+//                holder.itemDate_single_view.setText(model.getDate_Reported());
+//                holder.itemLocation_single_view.setText(model.getLocation());
+                    String itemKey =  getRef(position).getKey();
+
+                reference.child(itemKey).addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                        if(snapshot.exists()){
+                            String itemNAme2 = snapshot.child("Item_Name").getValue().toString();
+                            String imageUrl2 = snapshot.child("Image_Url").getValue().toString();
+                            String dateReported = snapshot.child("Date_Reported").getValue().toString();
+
+                            holder.itemName_listOfClaims.setText(itemNAme2);
+                            holder.itemDateReported_listOfClaims.setText(dateReported);
+                            Picasso.get().load(imageUrl2).into(holder.image_single_view_listOfClaims);
+
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
 
             }
 

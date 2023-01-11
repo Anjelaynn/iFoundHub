@@ -83,8 +83,7 @@ public class Admin_Home extends AppCompatActivity {
 //             Laymanager.setReverseLayout(true);
 //             Laymanager.setStackFromEnd(true);
 //         }
-         initWidgets();
-        hideSort();
+
 
 
         //BottomNavigation
@@ -216,29 +215,8 @@ public class Admin_Home extends AppCompatActivity {
 
     }
 //
-    public void showSortTapped(View view)
-    {
-        if(sortHidden == true)
-        {
-            sortHidden = false;
-            showSort();
-        }
-        else
-        {
-            sortHidden = true;
-            hideSort();
-        }
-    }
 
-    private void hideSort()
-    {
-        sortView.setVisibility(View.GONE);
-    }
 
-    private void showSort()
-    {
-        sortView.setVisibility(View.VISIBLE);
-    }
 
 //    public void showPopup(View v){
 //        PopupMenu popup = new PopupMenu(this,v);
@@ -334,12 +312,7 @@ public class Admin_Home extends AppCompatActivity {
 //            if(itemDescription_single_view)
 //        }
 //    }
-    private void initWidgets()
-    {
-        sorting = findViewById(R.id.sorting);
-        sortView = (LinearLayout) findViewById(R.id.sortTabsLayout2);
 
-    }
 
     public void showSortTapped(View view)
     {

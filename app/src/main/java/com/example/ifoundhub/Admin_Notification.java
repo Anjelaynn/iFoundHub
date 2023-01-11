@@ -114,7 +114,6 @@ public class Admin_Notification extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         recyclerView.setHasFixedSize(true);
 
-        DatabaseReference itemList = FirebaseDatabase.getInstance().getReference("Items");
 
 
 
@@ -149,6 +148,7 @@ public class Admin_Notification extends AppCompatActivity {
             protected void onBindViewHolder(@NonNull NotificationViewholder holder, int position, @NonNull Items model) {
 
 
+
                 String key =  getRef(position).getKey();
                 notification.child(key).addValueEventListener(new ValueEventListener() {
                     @Override
@@ -166,9 +166,9 @@ public class Admin_Notification extends AppCompatActivity {
                     }
                 });
 
-
                 Picasso.get().load(model.getImage_Url()).into(holder.image_single_view_notification);
-                holder.single_view_notification_DateReported.setText(model.getItem_Name());
+                holder.single_view_notification_DateReported.setText(model.getDate_Reported());
+
 
 
                 //To edit or delete, open view of the item
@@ -205,7 +205,26 @@ public class Admin_Notification extends AppCompatActivity {
 
                                     Picasso.get().load(imageUrl).into(imageUrl1);
                                     itemName.setText(itemName1);
-                                    itemStatus.setText(model.getStatus());
+
+                                    DatabaseReference itemList1 = FirebaseDatabase.getInstance().getReference("Items");
+
+                                    itemList1.child(key).addValueEventListener(new ValueEventListener() {
+                                        @Override
+                                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                            if(snapshot.exists()) {
+                                                String itemSTATUS = snapshot.child("Status").getValue().toString();
+                                                itemStatus.setText(itemSTATUS);
+                                            }
+                                        }
+
+                                        @Override
+                                        public void onCancelled(@NonNull DatabaseError error) {
+
+                                        }
+                                    });
+
+
+
                                     itemLocation.setText(itemLocation1);
                                     itemDateReported.setText(itemDate);
                                     itemDescription.setText(itemDescription1);
@@ -241,13 +260,11 @@ public class Admin_Notification extends AppCompatActivity {
                             @Override
                             public void onClick(View view) {
 
-                                DatabaseReference listOfClaims;
-                                listOfClaims = FirebaseDatabase.getInstance().getReference().child("ListOfClaims");
 
                                 notification.child(key2).addValueEventListener(new ValueEventListener() {
                                     @Override
                                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-
+                                        FirebaseDatabase.getInstance().getReference().child("ListOfClaims");
                                         if(snapshot.exists()) {
                                             String studentID = snapshot.child("Student_ID").getValue().toString();
                                             String itemName2 = snapshot.child("Item_Name").getValue().toString();
@@ -260,8 +277,11 @@ public class Admin_Notification extends AppCompatActivity {
                                             hashMap.put("Date_Reported", itemDateReported2.toString());
                                             hashMap.put("Image_Url", URl1.toString());
                                             hashMap.put("Student_ID", studentID);
+                                            DatabaseReference listOfClaims = FirebaseDatabase.getInstance().getReference(studentID);
 
-                                            listOfClaims.child(studentID).setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                            String key = listOfClaims.push().getKey();
+
+                                            listOfClaims.child(key).setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
                                                 @Override
                                                 public void onSuccess(Void unused) {
 
@@ -306,6 +326,7 @@ public class Admin_Notification extends AppCompatActivity {
                             public void onClick(View view) {
 
 
+                                DatabaseReference itemList = FirebaseDatabase.getInstance().getReference("Items");
 
 
                                 itemList.child(key2).addValueEventListener(new ValueEventListener() {
