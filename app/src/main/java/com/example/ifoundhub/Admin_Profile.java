@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -32,7 +34,7 @@ public class Admin_Profile extends AppCompatActivity {
     private DatabaseReference reference;
     private String userId;
 
-
+    FloatingActionButton plus;
     private TextView student_fullname, student_number, student_contactNumber;
     private ImageButton btnback;
 
@@ -44,7 +46,15 @@ public class Admin_Profile extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 //        getSupportActionBar().hide(); //this line hides the action bar
         setContentView(R.layout.activity_admin_profile);
+        plus = findViewById(R.id.plus);
 
+        plus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), Admin_NewReport.class));
+
+            }
+        });
 
         //BottomNavigation
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);

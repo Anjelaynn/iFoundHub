@@ -20,20 +20,7 @@
             app:civ_border_color="#FF000000"
             app:civ_border_width="2dp" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/buttonClaimed"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/image_single_view_notification"
-            android:background="@drawable/button_signin"
-            android:fontFamily="@font/montserrat_medium"
-            android:text="Claim"
-            android:textAllCaps="false"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp" />
+
 
 
     </RelativeLayout>
@@ -147,14 +134,29 @@
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/button_signin"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="22dp"
+            android:background="@drawable/button_delete"
             android:fontFamily="@font/montserrat_medium"
-            android:text="Close"
+            android:text="Edit"
             android:textAllCaps="false"
             android:textColor="#FFFFFF"
             android:textSize="20sp" />
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonClaimed"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="-48dp"
+            android:layout_marginRight="60dp"
+            android:layout_toRightOf="@+id/image_single_view_notification"
+            android:background="@drawable/button_signin"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="Claim"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
 
     </LinearLayout>
 

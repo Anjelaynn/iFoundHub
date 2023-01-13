@@ -26,6 +26,7 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -50,6 +51,7 @@ public class Admin_Notification extends AppCompatActivity {
     private DatabaseReference reference;
     private String userId;
 
+    FloatingActionButton plus;
     RecyclerView recyclerView;
     FirebaseRecyclerOptions<Items> options;
 
@@ -59,6 +61,7 @@ public class Admin_Notification extends AppCompatActivity {
 
 
     DatabaseReference Items_dataRef, notification;
+
 
 
 
@@ -106,6 +109,15 @@ public class Admin_Notification extends AppCompatActivity {
             }
         });
 
+        plus = findViewById(R.id.plus);
+
+        plus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), Admin_NewReport.class));
+
+            }
+        });
 
         recyclerView = findViewById(R.id.recyclerView);
         notification = FirebaseDatabase.getInstance().getReference().child("Notification");

@@ -53,7 +53,7 @@
             app:itemIconTint="@color/bottom_item_backgroundcolor"
             app:itemTextColor="@color/bottom_item_backgroundcolor"
             android:elevation="2dp"
-            android:layout_marginRight="13dp"
+
             app:itemIconSize="22dp"
             app:menu="@menu/bottom_nav_menu">
 

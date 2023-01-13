@@ -12,6 +12,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -22,7 +23,7 @@ public class Admin_Settings extends AppCompatActivity {
     private Button logoutadmin;
     Button privacysettingsadmin,aboutussettingsadmin;
 
-
+    FloatingActionButton plus;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,6 +67,16 @@ public class Admin_Settings extends AppCompatActivity {
                 }
 
                 return true;
+            }
+        });
+
+        plus = findViewById(R.id.plus);
+
+        plus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), Admin_NewReport.class));
+
             }
         });
 

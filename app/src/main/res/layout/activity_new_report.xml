@@ -23,7 +23,7 @@
         android:paddingLeft="1dp"
         android:paddingEnd="1dp"
         android:paddingRight="1dp"
-        android:paddingBottom="50dp"
+        android:paddingBottom="20dp"
         tools:context=".NewReport">
 
 
@@ -549,6 +549,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/textViewProgress"
             android:layout_below="@id/contactNumber_view"
+            android:fontFamily="@font/montserrat_medium"
             android:text="0.0%"
             android:gravity="center"
             android:textSize="25dp"
@@ -574,10 +575,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Submit"
+            android:background="@drawable/button_signin"
             android:textAllCaps="false"
             android:textColor="#FFFFFF"
+
             android:id="@+id/btnUpload"
             android:textSize="16dp"
+            android:layout_marginTop="15dp"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
             app:layout_constraintEnd_toEndOf="parent"
