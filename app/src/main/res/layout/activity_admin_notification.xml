@@ -8,6 +8,15 @@
     tools:context=".Admin_Notification">
 
     <!--    Recylcer view for notif-->
+    <TextView
+        android:id="@+id/rectanglehide"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:layout_marginTop="0dp"
+        android:background="#FFF9E3"
+        />
+
+
     <androidx.recyclerview.widget.RecyclerView
 
         android:id="@+id/recyclerView"
