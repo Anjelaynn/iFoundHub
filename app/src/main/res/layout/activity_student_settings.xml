@@ -65,9 +65,24 @@
         android:textAllCaps="true"
         android:textColor="#FFFFFF"
         android:textSize="16sp"
-        android:layout_marginLeft="130dp"
+        android:layout_marginLeft="40dp"
         android:layout_marginTop="500dp"
       />
+
+    <Button
+        android:id="@+id/btnUpdate"
+        android:layout_width="149dp"
+        android:layout_height="40dp"
+        android:background="@drawable/button_delete"
+        android:fontFamily="@font/montserrat_medium"
+        android:text="Update"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:layout_marginLeft="220dp"
+        android:layout_marginTop="500dp"
+
+        />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
