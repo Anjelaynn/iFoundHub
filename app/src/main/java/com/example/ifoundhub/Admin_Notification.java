@@ -199,7 +199,7 @@ public class Admin_Notification extends AppCompatActivity {
 
                                 if(snapshot.exists()){
                                     TextView itemName = layoutview.findViewById(R.id.txt_itemname);
-                                    TextView itemNumber = layoutview.findViewById(R.id.txt_itemnumber);
+
                                     TextView itemStatus = layoutview.findViewById(R.id.txt_itemstatus);
                                     TextView itemLocation = layoutview.findViewById(R.id.editTextItemLocation);
                                     TextView itemDateReported= layoutview.findViewById(R.id.editTextDateReported);

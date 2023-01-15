@@ -50,7 +50,8 @@ public class Student_viewItemInformation extends AppCompatActivity {
     ImageView itemImageView;
 
     TextView user_itemName, user_itemStatus, user_itemLocation, user_itemDateReported, user_itemDescription;
-    TextView imageTextUrl;
+    TextView imageTextUrl, itemKeyNumber;
+
 
     private TextView editTextUserName;
 
@@ -147,7 +148,6 @@ public class Student_viewItemInformation extends AppCompatActivity {
                     String itemDateReported = snapshot.child("Date_Reported").getValue().toString();
                     String itemLocation = snapshot.child("Location").getValue().toString();
                     String status = snapshot.child("Status").getValue().toString();
-
 
 
 

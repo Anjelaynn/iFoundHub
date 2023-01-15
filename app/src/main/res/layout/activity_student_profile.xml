@@ -31,7 +31,7 @@
     <TextView
         android:id="@+id/textView2"
         android:layout_width="410dp"
-        android:layout_height="548dp"
+        android:layout_height="570dp"
         android:layout_marginTop="200dp"
         android:background="@drawable/shape_profile" />
 
@@ -40,7 +40,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="325dp"
+        android:layout_marginTop="390dp"
         android:fontFamily="@font/montserrat_medium"
         android:text="Student Name"
         android:textColor="#8C979B"
@@ -50,7 +50,7 @@
         android:id="@+id/line"
         android:layout_width="210dp"
         android:layout_height="496dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="210dp"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/lineshape_profile"
         />
@@ -59,7 +59,7 @@
         android:id="@+id/student_fullname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="365dp"
+        android:layout_marginTop="425dp"
         android:layout_gravity="center_horizontal"
         android:fontFamily="@font/montserrat_bold"
         android:text="[Name]"
@@ -71,7 +71,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="425dp"
+        android:layout_marginTop="480dp"
         android:textColor="#8C979B"
         android:fontFamily="@font/montserrat_medium"
         android:text="Student Number"
@@ -84,7 +84,7 @@
         android:id="@+id/student_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="465dp"
+        android:layout_marginTop="510dp"
         android:layout_gravity="center_horizontal"
         android:fontFamily="@font/montserrat_bold"
         android:text="[Student Number]"
@@ -94,7 +94,7 @@
         android:id="@+id/line2"
         android:layout_width="210dp"
         android:layout_height="496dp"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="300dp"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/lineshape_profile"
         />
@@ -105,7 +105,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:textColor="#8C979B"
-        android:layout_marginTop="530dp"
+        android:layout_marginTop="580dp"
         android:fontFamily="@font/montserrat_medium"
         android:text="Contact Number"
         android:textSize="17sp"
@@ -114,7 +114,7 @@
         android:id="@+id/student_contactNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="565dp"
+        android:layout_marginTop="610dp"
         android:layout_gravity="center_horizontal"
         android:fontFamily="@font/montserrat_bold"
         android:text="[Contact Number]"
@@ -126,7 +126,7 @@
         android:layout_width="210dp"
         android:layout_height="496dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="350dp"
+        android:layout_marginTop="400dp"
         android:background="@drawable/lineshape_profile" />
 
     <ImageView
@@ -134,14 +134,14 @@
         android:layout_width="197dp"
         android:layout_height="291dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="70dp"
         app:srcCompat="@drawable/userprofile" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="725dp"
+        android:layout_marginTop="750dp"
         android:background="@drawable/bottom_nav_student"
 
         app:itemIconSize="25dp"

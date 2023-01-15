@@ -70,20 +70,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
+
     <EditText
         android:id="@+id/editTextpassword"
         android:layout_width="360dp"
         android:layout_height="50dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/bgshape_inputtextlogin"
-        android:drawableStart="@drawable/ic_baseline_password_24"
+        android:drawableLeft="@drawable/ic_baseline_password_24"
         android:drawablePadding="10dp"
         android:ems="10"
         android:fontFamily="@font/montserrat_light"
         android:hint="••••••••••••••••••"
+        android:drawableRight="@drawable/ic_visibility_off_24"
         android:inputType="textPassword"
-        android:paddingStart="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
         android:textSize="18sp"
+        android:longClickable="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
@@ -92,14 +96,15 @@
         android:id="@+id/active"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
         android:fontFamily="@font/montserrat_medium"
-        android:textColor="#17395C"
         android:gravity="end"
+        android:layout_marginRight="25dp"
         android:text="Remember me"
-        app:layout_constraintTop_toBottomOf="@+id/editTextpassword"/>
+        android:textColor="#17395C"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.767" />
 
     <TextView
         android:id="@+id/textView6"
@@ -146,10 +151,10 @@
         android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.527"
+        app:layout_constraintHorizontal_bias="0.645"
         app:layout_constraintStart_toEndOf="@+id/btnSignUp"
-        app:layout_constraintTop_toBottomOf="@+id/active"
-        app:layout_constraintVertical_bias="0.256" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.842" />
 
     <TextView
         android:id="@+id/textView8"

@@ -110,72 +110,72 @@ public class Student_Settings extends AppCompatActivity {
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+           showChangePassword();
             }
         });
     }
 
-//    private void showChangePassword() {
-//        View view = LayoutInflater.from(getContext()).inflate(R.layout.changepassword, null);
-//        EditText passwordEt = view.findViewById(R.id.passwordEt);
-//        EditText cPasswordEt = view.findViewById(R.id.cPasswordEt);
-//        Button buttonOkay = view.findViewById(R.id.buttonOkay);
-//
-//
-//        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-//        builder.setView(view);
-//        AlertDialog dialog = builder.create();
-//        dialog.show();
-//
-//
-//        buttonOkay.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                String oldPassword = passwordEt.getText().toString().trim();
-//                String newPassword = cPasswordEt.getText().toString().trim();
-//                if (TextUtils.isEmpty(oldPassword)){
-//                    Toast.makeText(getApplicationContext(), "Enter your current password...", Toast.LENGTH_SHORT).show();
-//                    return;
-//                }
-//                if (newPassword.length()<6){
-//                    Toast.makeText(getApplicationContext(), "Password length must atleast 6 characters...", Toast.LENGTH_SHORT).show();
-//                    return;
-//                }
-//
-//                dialog.dismiss();
-//                buttonOkay(oldPassword, newPassword);
-//            }
-//        });
-//    }
-//
-//    private void buttonOkay(String oldPassword, String newPassword) {
-//        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-//
-//        AuthCredential authCredential = EmailAuthProvider.getCredential(user.getEmail(), oldPassword);
-//        user.reauthenticate(authCredential)
-//                .addOnSuccessListener(new OnSuccessListener<Void>() {
-//                    @Override
-//                    public void onSuccess(Void unused) {
-//                        user.updatePassword(newPassword)
-//                                .addOnSuccessListener(new OnSuccessListener<Void>() {
-//                                    @Override
-//                                    public void onSuccess(Void unused) {
-//                                        Toast.makeText(getApplicationContext(), "Password Updated...", Toast.LENGTH_SHORT).show();
-//                                    }
-//                                })
-//                                .addOnFailureListener(new OnFailureListener() {
-//                                    @Override
-//                                    public void onFailure(@NonNull Exception e) {
-//                                        Toast.makeText(getApplicationContext(), ""+e.getMessage(),Toast.LENGTH_SHORT).show();
-//                                    }
-//                                });
-//                    }
-//                })
-//                .addOnFailureListener(new OnFailureListener() {
-//                    @Override
-//                    public void onFailure(@NonNull Exception e) {
-//                    Toast.makeText(getApplicationContext(), ""+e.getMessage(),Toast.LENGTH_SHORT).show();
-//                    }
-//                });
- //   }
+    private void showChangePassword() {
+        View view = getLayoutInflater().inflate(R.layout.changepassword, null);
+        EditText passwordEt = view.findViewById(R.id.passwordEt);
+        EditText cPasswordEt = view.findViewById(R.id.cPasswordEt);
+        Button buttonOkay = view.findViewById(R.id.buttonOkay);
+
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(Student_Settings.this);
+        builder.setView(view);
+        AlertDialog dialog = builder.create();
+        dialog.show();
+
+
+        buttonOkay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String oldPassword = passwordEt.getText().toString().trim();
+                String newPassword = cPasswordEt.getText().toString().trim();
+                if (TextUtils.isEmpty(oldPassword)){
+                    Toast.makeText(getApplicationContext(), "Enter your current password...", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (newPassword.length()<6){
+                    Toast.makeText(getApplicationContext(), "Password length must atleast 6 characters...", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                dialog.dismiss();
+                buttonOkay(oldPassword, newPassword);
+            }
+        });
+    }
+
+    private void buttonOkay(String oldPassword, String newPassword) {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        AuthCredential authCredential = EmailAuthProvider.getCredential(user.getEmail(), oldPassword);
+        user.reauthenticate(authCredential)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        user.updatePassword(newPassword)
+                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void unused) {
+                                        Toast.makeText(getApplicationContext(), "Password Updated...", Toast.LENGTH_SHORT).show();
+                                    }
+                                })
+                                .addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Toast.makeText(getApplicationContext(), ""+e.getMessage(),Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(getApplicationContext(), ""+e.getMessage(),Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
 }

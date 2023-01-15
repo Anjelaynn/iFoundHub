@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:layout_width="357dp"
+    android:layout_width="370dp"
     android:layout_height="166dp"
     android:layout_alignParentLeft="true"
     android:layout_marginLeft="20dp"
@@ -23,12 +23,12 @@
     <de.hdodenhof.circleimageview.CircleImageView
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/image_single_view_notification"
-        android:layout_width="115dp"
-        android:layout_height="115dp"
+        android:layout_width="108dp"
+        android:layout_height="108dp"
         android:src="@drawable/ic_add"
         app:civ_border_width="2dp"
         app:civ_border_color="#FF000000"
-        android:layout_marginTop="26dp"
+        android:layout_marginTop="30dp"
         android:layout_marginLeft="28dp" />
 
 
@@ -50,8 +50,9 @@
         android:id="@+id/itemName_single_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="48dp"
+        android:layout_marginLeft="32dp"
         android:paddingLeft="28dp"
+
         android:layout_marginTop="25dp"
         android:layout_toRightOf="@id/image_single_view_notification"
 
@@ -64,7 +65,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="23dp"
-        android:layout_marginLeft="167dp"
+        android:layout_marginLeft="160dp"
 
         app:srcCompat="@drawable/ic_phone" />
 
@@ -74,7 +75,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/itemName_single_view"
-        android:layout_marginLeft="75dp"
+        android:layout_marginLeft="60dp"
         android:layout_marginTop="13.5dp"
         android:layout_toRightOf="@id/image_single_view_notification"
 
@@ -87,7 +88,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="55dp"
-        android:layout_marginLeft="167dp"
+        android:layout_marginLeft="160dp"
         app:srcCompat="@drawable/ic_calendar" />
 
 
@@ -98,7 +99,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_below="@id/imageView4"
-        android:layout_marginLeft="167dp"
+        android:layout_marginLeft="160dp"
         app:srcCompat="@drawable/ic_location" />
 
 
@@ -107,7 +108,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/itemDate_single_view"
-        android:layout_marginLeft="75dp"
+        android:layout_marginLeft="60dp"
         android:layout_marginTop="15dp"
         android:layout_toRightOf="@id/image_single_view_notification"
         android:hint="Location" />
@@ -119,7 +120,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_below="@id/itemImageView"
-        android:layout_marginLeft="167dp"
+        android:layout_marginLeft="160dp"
         app:srcCompat="@drawable/ic_description" />
 
     <TextView
@@ -127,7 +128,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/itemLocation_single_view"
-        android:layout_marginLeft="75dp"
+        android:layout_marginLeft="60dp"
         android:layout_marginTop="13dp"
         android:layout_toRightOf="@id/image_single_view_notification"
         android:hint="Lost/Found" />

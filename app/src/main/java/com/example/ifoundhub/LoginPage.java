@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -25,6 +28,7 @@ public class LoginPage extends AppCompatActivity {
     private FirebaseAuth mAuth;
 
     private EditText editTextusername, editTextpassword;
+//    boolean passwordVisible;
 
     Switch active;
 
@@ -47,6 +51,31 @@ public class LoginPage extends AppCompatActivity {
 
         editTextusername = findViewById(R.id.editTextusername);
         editTextpassword = findViewById(R.id.editTextpassword);
+
+//        editTextpassword.setOnTouchListener(new View.OnTouchListener() {
+//            @Override
+//            public boolean onTouch(View v, MotionEvent event) {
+//                final int Right = 2;
+//                if (event.getAction() == MotionEvent.ACTION_UP) {
+//                    if (event.getRawX() >= editTextpassword.getRight() - editTextpassword.getCompoundDrawables()[Right].getBounds().width()) {
+//                        int selection = editTextpassword.getSelectionEnd();
+//                        if (passwordVisible) {
+//                            editTextpassword.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, R.drawable.ic_visibility_off_24);
+//                            editTextpassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+//                            passwordVisible = false;
+//                        } else {
+//                            editTextpassword.setCompoundDrawablesRelativeWithIntrinsicBounsd(0, 0, R.drawable.ic_visibility_24);
+//                            editTextpassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+//                            passwordVisible = true;
+//                        }
+//                        editTextpassword.setSelection(selection);
+//                        return true;
+//                    }
+//                }
+//                return false;
+//            }
+//        });
+
         btnSignIn = (Button) findViewById(R.id.btnSignIn);
         active = findViewById(R.id.active);
 
