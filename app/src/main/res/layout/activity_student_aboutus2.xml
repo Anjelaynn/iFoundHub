@@ -88,7 +88,7 @@
     <TextView
         android:id="@+id/textView120"
         android:layout_width="330dp"
-        android:layout_height="150dp"
+        android:layout_height="75dp"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/montserrat_light"
         android:text="Our Privacy Policy explains how we collect and use your personal data to determine and provide all of the other services described. We don’t sell your personal data nor do we share information that directly identifies you (such as your name, student number, password or other contact information)."
