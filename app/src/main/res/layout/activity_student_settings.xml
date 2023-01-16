@@ -11,7 +11,7 @@
     <TextView
         android:id="@+id/textView2"
         android:layout_width="410dp"
-        android:layout_height="650dp"
+        android:layout_height="700dp"
         android:layout_marginTop="110dp"
         android:background="@drawable/shape_profile" />
 
@@ -29,7 +29,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="130dp"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="30dp"
         android:fontFamily="@font/montserrat_semibold"
         android:text="Settings"
         android:textColor="#17395C"
@@ -89,7 +89,7 @@
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="750dp"
+        android:layout_marginTop="780dp"
         android:background="@drawable/bottom_nav_student"
 
         app:itemIconSize="25dp"
