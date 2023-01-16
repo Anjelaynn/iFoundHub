@@ -24,6 +24,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
@@ -31,6 +33,9 @@ import com.squareup.picasso.Picasso;
 import java.util.HashMap;
 
 public class Student_viewItemInformation extends AppCompatActivity {
+
+    //FireStore Database
+//    private FirebaseFirestore fireStoreDatabaseReference;
 
 
     //user information
@@ -227,10 +232,20 @@ public class Student_viewItemInformation extends AppCompatActivity {
                 hashMap.put("Status", user_itemStatus.getText().toString());
                 hashMap.put("Student_Name", editTextUserName.getText().toString());
                 hashMap.put("Student_ID", userId);
+                hashMap.put("isClaim", "Not Claim");
 
 
 
-
+//                fireStoreDatabaseReference = FirebaseFirestore.getInstance();
+//
+//                fireStoreDatabaseReference.collection(itemKey).add(hashMap).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+//                    @Override
+//                    public void onSuccess(DocumentReference documentReference) {
+//                        showAlertDialog(R.layout.custom_founddialog);
+//                        Toast.makeText(Student_viewItemInformation.this, "Admin have been notified", Toast.LENGTH_SHORT).show();
+//
+//                    }
+//                });
 
 
                 notificationReference1.child(itemKey).setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {

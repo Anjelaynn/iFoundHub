@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -24,13 +25,26 @@ import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
 
 public class Student_Settings extends AppCompatActivity {
 
     private Button btnlogout;
      private Button btnUpdate;
 
+
+    //User
+    private FirebaseUser user;
+    private DatabaseReference reference;
+    private String userId;
+    private FirebaseAuth fAuth;
+
+
     Button privacysettingsstudent,aboutussettingsstudent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -110,13 +124,24 @@ public class Student_Settings extends AppCompatActivity {
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-           showChangePassword();
+
+         showChangePassword();
             }
         });
     }
 
+//    private void showChangePassword() {
+//        View view = getLayoutInflater().inflate(R.layout.changepassword, null);
+//
+//                showChangePassword();
+//            }
+
+
+
+
     private void showChangePassword() {
-        View view = getLayoutInflater().inflate(R.layout.changepassword, null);
+        View view = getLayoutInflater().inflate(R.layout.custom_change_password, null);
+
         EditText passwordEt = view.findViewById(R.id.passwordEt);
         EditText cPasswordEt = view.findViewById(R.id.cPasswordEt);
         Button buttonOkay = view.findViewById(R.id.buttonOkay);
@@ -160,6 +185,14 @@ public class Student_Settings extends AppCompatActivity {
                                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
                                     public void onSuccess(Void unused) {
+
+                                        DatabaseReference reference =  FirebaseDatabase.getInstance().getReference().child("UsersLoginInformation");
+                                        userId = user.getUid();
+
+                                        HashMap hashMap = new HashMap();
+                                        hashMap.put("password", newPassword );
+                                        reference.child(userId).updateChildren(hashMap);
+
                                         Toast.makeText(getApplicationContext(), "Password Updated...", Toast.LENGTH_SHORT).show();
                                     }
                                 })
@@ -174,8 +207,14 @@ public class Student_Settings extends AppCompatActivity {
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
+
                     Toast.makeText(getApplicationContext(), ""+e.getMessage(),Toast.LENGTH_SHORT).show();
+
+                        Toast.makeText(getApplicationContext(), ""+e.getMessage(),Toast.LENGTH_SHORT).show();
+
                     }
                 });
     }
+
+
 }

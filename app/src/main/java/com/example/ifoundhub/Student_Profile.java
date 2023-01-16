@@ -38,12 +38,13 @@ public class Student_Profile extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         //code for removing action bar and title bar
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-//        getSupportActionBar().hide(); //this line hides the action bar
-        setContentView(R.layout.activity_student_profile);
+      //  getSupportActionBar().hide(); //this line hides the action bar
+
+        super.onCreate(savedInstanceState);
+           setContentView(R.layout.activity_student_profile);
 
 
 

@@ -82,7 +82,6 @@
         android:ems="10"
         android:fontFamily="@font/montserrat_light"
         android:hint="••••••••••••••••••"
-        android:drawableRight="@drawable/ic_visibility_off_24"
         android:inputType="textPassword"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"

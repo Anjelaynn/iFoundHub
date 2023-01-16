@@ -55,11 +55,24 @@
         android:hint="[Item Name]" />
     <!--        android:drawableLeft="@drawable/ic_phone"/>-->
 
+
+
+    <TextView
+        android:id="@+id/itemDateReported_listOfClaims1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/itemName_listOfClaims"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/image_single_view_listOfClaims"
+        android:fontFamily="@font/montserrat_semibold"
+        android:hint="Date Reported:" />
+
     <TextView
         android:id="@+id/itemDateReported_listOfClaims"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/itemName_listOfClaims"
+        android:layout_below="@id/itemDateReported_listOfClaims1"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
         android:layout_toRightOf="@id/image_single_view_listOfClaims"
