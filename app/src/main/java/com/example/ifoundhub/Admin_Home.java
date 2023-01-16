@@ -356,18 +356,8 @@ public class Admin_Home extends AppCompatActivity {
                 holder.itemDate_single_view.setText(model.getDate_Reported());
                 holder.itemLocation_single_view.setText(model.getLocation());
 
-                //To edit or delete, open view of the item
-                holder.view.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent intent = new Intent(Admin_Home.this, Admin_EditDeleteItem.class);
-                        intent.putExtra("ItemKey", getRef(position).getKey());
-                        startActivity(intent);
-                    }
-                });
 
             }
-
             @NonNull
             @Override
             public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -397,19 +387,8 @@ public class Admin_Home extends AppCompatActivity {
                 holder.itemDate_single_view.setText(model.getDate_Reported());
                 holder.itemLocation_single_view.setText(model.getLocation());
 
-                //To edit or delete, open view of the item
-                holder.view.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent intent = new Intent(Admin_Home.this, Admin_EditDeleteItem.class);
-                        intent.putExtra("ItemKey", getRef(position).getKey());
-                        startActivity(intent);
-                    }
-                });
 
             }
-
-
             @NonNull
             @Override
             public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
