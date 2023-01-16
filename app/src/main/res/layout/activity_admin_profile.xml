@@ -140,20 +140,15 @@
         app:srcCompat="@drawable/userprofile" />
 
 
-<!--    <com.google.android.material.bottomappbar.BottomAppBar-->
-<!--        android:id="@+id/bottomAppBar"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--<<<<<<< HEAD-->
-<!--        android:layout_gravity="bottom"-->
-<!--=======-->
-
-<!--        android:layout_marginTop="780dp"-->
-<!--&gt;>>>>>> 5d58494f1bd6b0a1103a29fec4227bab7c99cd95-->
-<!--        app:backgroundTint="#17395C"-->
-<!--        app:fabCradleMargin="14dp"-->
-<!--        app:fabCradleRoundedCornerRadius="38dp"-->
-<!--        app:fabCradleVerticalOffset="10dp">-->
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:backgroundTint="#17395C"
+        app:fabCradleMargin="14dp"
+        app:fabCradleRoundedCornerRadius="38dp"
+        app:fabCradleVerticalOffset="10dp">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomNavigationView"
@@ -168,7 +163,7 @@
 
         </com.google.android.material.bottomnavigation.BottomNavigationView>
 
-<!--    </com.google.android.material.bottomappbar.BottomAppBar>-->
+    </com.google.android.material.bottomappbar.BottomAppBar>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/plus"
