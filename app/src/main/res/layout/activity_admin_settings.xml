@@ -10,7 +10,7 @@
     <TextView
         android:id="@+id/textView2"
         android:layout_width="410dp"
-        android:layout_height="700dp"
+        android:layout_height="720dp"
         android:layout_marginTop="110dp"
         android:background="@drawable/shape_profile" />
 

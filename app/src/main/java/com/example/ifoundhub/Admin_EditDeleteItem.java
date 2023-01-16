@@ -558,38 +558,38 @@ public class Admin_EditDeleteItem extends AppCompatActivity implements AdapterVi
 
     private String makeDateString(int day, int month, int year)
     {
-        return getMonthFormat(month) + " " + day + " " + year;
+        return getMonthFormat(month) + " " + day + ", " + year;
     }
 
     private String getMonthFormat(int month)
     {
         if(month == 1)
-            return "JAN";
+            return "January";
         if(month == 2)
-            return "FEB";
+            return "February";
         if(month == 3)
-            return "MAR";
+            return "March";
         if(month == 4)
-            return "APR";
+            return "April";
         if(month == 5)
-            return "MAY";
+            return "May";
         if(month == 6)
-            return "JUN";
+            return "June";
         if(month == 7)
-            return "JUL";
+            return "July";
         if(month == 8)
-            return "AUG";
+            return "August";
         if(month == 9)
-            return "SEP";
+            return "September";
         if(month == 10)
-            return "OCT";
+            return "October";
         if(month == 11)
-            return "NOV";
+            return "November";
         if(month == 12)
-            return "DEC";
+            return "December";
 
         //default should never happen
-        return "JAN";
+        return "January";
     }
 
     public void openDatePicker(View view)
