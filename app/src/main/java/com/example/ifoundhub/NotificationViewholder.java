@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 public class NotificationViewholder extends RecyclerView.ViewHolder{
 
     ImageView image_single_view_notification;
-    TextView single_view_notification_studentName,  single_view_notification_DateReported, single_view_notification_isClaim;
+    TextView single_view_notification_studentName,  single_view_notification_DateReported;
 
     //Open View event Listener
     View view;
@@ -20,7 +20,6 @@ public class NotificationViewholder extends RecyclerView.ViewHolder{
         image_single_view_notification = itemView.findViewById(R.id.image_single_view_notification);
         single_view_notification_studentName  = itemView.findViewById(R.id.single_view_notification_studentName);
         single_view_notification_DateReported = itemView.findViewById(R.id.single_view_notification_DateReported);
-        single_view_notification_isClaim = itemView.findViewById(R.id.single_view_notification_isClaim);
 
         view = itemView;
     }

@@ -3,11 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/gray02"
-    android:gravity="left"
-    android:padding="16dp">
+    android:orientation="vertical">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gray02"
+        android:gravity="left"
+        android:orientation="vertical"
+        android:padding="16dp">
 
 
         <de.hdodenhof.circleimageview.CircleImageView
@@ -20,13 +24,6 @@
             android:src="@drawable/ic_add"
             app:civ_border_color="#FF000000"
             app:civ_border_width="2dp" />
-
-
-
-
-
-
-
 
         <TextView
             android:id="@+id/txt_itemname"
@@ -146,3 +143,4 @@
 
     </LinearLayout>
 
+</LinearLayout>

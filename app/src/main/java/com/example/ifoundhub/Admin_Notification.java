@@ -35,17 +35,11 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.FirebaseFirestore;
 import com.squareup.picasso.Picasso;
 
 import java.util.HashMap;
 
 public class Admin_Notification extends AppCompatActivity {
-
-
-    //FireStore Database
-    private FirebaseFirestore fireStoreDatabaseReference;
 
 
     //Dialog Variables
@@ -174,9 +168,7 @@ public class Admin_Notification extends AppCompatActivity {
 
                         if(snapshot.exists()){
                             String studentName = snapshot.child("Student_Name").getValue().toString();
-                            String isclaim =  snapshot.child("isClaim").getValue().toString();
                             holder.single_view_notification_studentName.setText(studentName);
-                            holder.single_view_notification_isClaim.setText(isclaim);
                         }
                     }
 
@@ -206,7 +198,6 @@ public class Admin_Notification extends AppCompatActivity {
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                                 if(snapshot.exists()){
-
                                     TextView itemName = layoutview.findViewById(R.id.txt_itemname);
 
                                     TextView itemStatus = layoutview.findViewById(R.id.txt_itemstatus);
@@ -293,24 +284,11 @@ public class Admin_Notification extends AppCompatActivity {
                                             String URl1 = snapshot.child("Image_Url").getValue().toString();
                                             String student_name = snapshot.child("Student_Name").getValue().toString();
 
-
                                             HashMap hashMap = new HashMap();
                                             hashMap.put("Item_Name", itemName2.toString());
                                             hashMap.put("Date_Reported", itemDateReported2.toString());
                                             hashMap.put("Image_Url", URl1.toString());
                                             hashMap.put("Student_ID", studentID);
-
-
-                                            String key3 =  getRef(position).getKey();
-                                            HashMap hashMap1 = new HashMap();
-                                                        String isclaim1 =  "Picked";
-                                                        String isclaim =  snapshot.child("isClaim").getValue().toString();
-                                                        holder.single_view_notification_isClaim.setText(isclaim1);
-                                                        hashMap1.put("isClaim", isclaim1);
-
-
-
-
                                             DatabaseReference listOfClaims = FirebaseDatabase.getInstance().getReference(studentID);
 
                                             String key = listOfClaims.push().getKey();
@@ -318,46 +296,13 @@ public class Admin_Notification extends AppCompatActivity {
                                             listOfClaims.child(key).setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
                                                 @Override
                                                 public void onSuccess(Void unused) {
-//                                                    if(snapshot.exists()) {
-//                                                        snapshot.child("isClaim").getValue().toString();
-                                                        buttonClaimed.setEnabled(false);
-//                                                    }
+
+
 
                                                     //startActivity(new Intent(getApplicationContext(), Admin_Home.class));
                                                     Toast.makeText(Admin_Notification.this, "Data Successfully Uploaded!", Toast.LENGTH_SHORT).show();
                                                 }
                                             });
-
-
-//                                            String key3 =  getRef(position).getKey();
-//                                            notification.child(key3).addValueEventListener(new ValueEventListener() {
-//                                                @Override
-//                                                public void onDataChange(@NonNull DataSnapshot snapshot) {
-//
-//                                                    if(snapshot.exists()){
-//                                                        HashMap hashMap1 = new HashMap();
-//                                                        String isclaim1 =  "Picked";
-//                                                        String isclaim =  snapshot.child("isClaim").getValue().toString();
-//                                                        holder.single_view_notification_isClaim.setText(isclaim1);
-//                                                        hashMap1.put("isClaim", isclaim1);
-//
-//                                                        notification.child(key3).updateChildren(hashMap1);
-//
-////                                                    notification.child(key3).updateChildren(hashMap1).addOnSuccessListener(new OnSuccessListener() {
-////                                                        @Override
-////                                                        public void onSuccess(Object o) {
-////                                                            Toast.makeText(Admin_Notification.this, "Your Data is Succesfully Updated", Toast.LENGTH_SHORT).show();
-////
-////                                                        }
-////                                                    });
-//                                                    }
-//                                                }
-//
-//                                                @Override
-//                                                public void onCancelled(@NonNull DatabaseError error) {
-//
-//                                                }
-//                                            });
 //
 //                                            listOfClaims.child(studentID).child("ListOfClaims").setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
 //                                                @Override
@@ -370,15 +315,7 @@ public class Admin_Notification extends AppCompatActivity {
 //                                                }
 //                                            });
 //
-
-
-
-
-
                                         }
-
-
-
 
 
 
@@ -391,7 +328,6 @@ public class Admin_Notification extends AppCompatActivity {
                                 });
 
                             }
-
                         });
 
 

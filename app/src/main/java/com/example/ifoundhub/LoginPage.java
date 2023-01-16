@@ -293,11 +293,11 @@ public class LoginPage extends AppCompatActivity {
                     if(email.equals("admin@gmail.com") && password.equals("admin123")) {
                         Toast.makeText(LoginPage.this, "This is admin site", Toast.LENGTH_SHORT).show();
 
-                        startActivity(new Intent(LoginPage.this, Admin_Home.class));
+                        startActivity(new Intent(LoginPage.this, Admin_Profile.class));
                     }
                     else{
                         Toast.makeText(LoginPage.this, "This is user side", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(LoginPage.this, Student_Home.class));
+                        startActivity(new Intent(LoginPage.this, Student_Profile.class));
                     }
 
                 }else{

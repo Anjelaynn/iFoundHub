@@ -26,7 +26,6 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Admin_Profile extends AppCompatActivity {
 
-
 //    private FirebaseDatabase database;
 //    private DatabaseReference databaseReference;
 //    private static final String LOGIN = "Users";
@@ -38,7 +37,6 @@ public class Admin_Profile extends AppCompatActivity {
     FloatingActionButton plus;
     private TextView student_fullname, student_number, student_contactNumber;
     private ImageButton btnback;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -243,17 +243,6 @@ public class Admin_NewReport extends AppCompatActivity implements AdapterView.On
 
 
 
-                if (contactNumber.getText().toString().length() < 11  ){
-                    contactNumber.setError("The number must be 11 digits");
-                    return;
-                }
-
-                if (contactNumber.getText().toString().length() >= 11  ){
-                    contactNumber.setError("The number must be 11 digits");
-                    return;
-                }
-
-
 
 
                 String imageItem  = inputItemName.getText().toString();

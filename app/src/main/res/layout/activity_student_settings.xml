@@ -15,14 +15,14 @@
         android:layout_marginTop="110dp"
         android:background="@drawable/shape_profile" />
 
-    <!--    <ImageButton-->
-    <!--        android:id="@+id/backbuttonnotif"-->
-    <!--        android:layout_width="44dp"-->
-    <!--        android:layout_height="54dp"-->
-    <!--        android:layout_marginStart="16dp"-->
-    <!--        android:layout_marginTop="22dp"-->
-    <!--        android:background="@drawable/bg_newreport"-->
-    <!--        app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24" />-->
+<!--    <ImageButton-->
+<!--        android:id="@+id/backbuttonnotif"-->
+<!--        android:layout_width="44dp"-->
+<!--        android:layout_height="54dp"-->
+<!--        android:layout_marginStart="16dp"-->
+<!--        android:layout_marginTop="22dp"-->
+<!--        android:background="@drawable/bg_newreport"-->
+<!--        app:srcCompat="@drawable/ic_baseline_arrow_back_ios_new_24" />-->
 
     <TextView
         android:id="@+id/textView11"
@@ -67,7 +67,7 @@
         android:textSize="16sp"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="500dp"
-        />
+      />
 
     <Button
         android:id="@+id/btnUpdate"
@@ -83,7 +83,6 @@
         android:layout_marginTop="500dp"
 
         />
-
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"

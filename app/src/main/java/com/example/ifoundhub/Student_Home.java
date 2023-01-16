@@ -212,22 +212,11 @@ public class Student_Home extends AppCompatActivity {
             @Override
             protected void onBindViewHolder(@NonNull MyViewHolder holder, int position, @NonNull Items model) {
 
-
                 Picasso.get().load(model.getImage_Url()).into(holder.image_single_view);
                 holder.itemName_single_view.setText(model.getItem_Name());
                 holder.itemDescription_single_view.setText(model.getStatus());
                 holder.itemDate_single_view.setText(model.getDate_Reported());
                 holder.itemLocation_single_view.setText(model.getLocation());
-
-                //To edit or delete, open view of the item
-                holder.view.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent intent = new Intent(Student_Home.this, Student_viewItemInformation.class);
-                        intent.putExtra("ItemKey", getRef(position).getKey());
-                        startActivity(intent);
-                    }
-                });
 
 
             }
@@ -254,23 +243,11 @@ public class Student_Home extends AppCompatActivity {
             @Override
             protected void onBindViewHolder(@NonNull MyViewHolder holder, int position, @NonNull Items model) {
 
-
-
                 Picasso.get().load(model.getImage_Url()).into(holder.image_single_view);
                 holder.itemName_single_view.setText(model.getItem_Name());
                 holder.itemDescription_single_view.setText(model.getStatus());
                 holder.itemDate_single_view.setText(model.getDate_Reported());
                 holder.itemLocation_single_view.setText(model.getLocation());
-
-                //To edit or delete, open view of the item
-                holder.view.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent intent = new Intent(Student_Home.this, Student_viewItemInformation.class);
-                        intent.putExtra("ItemKey", getRef(position).getKey());
-                        startActivity(intent);
-                    }
-                });
 
 
             }

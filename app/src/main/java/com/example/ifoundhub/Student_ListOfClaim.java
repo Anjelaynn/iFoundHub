@@ -18,7 +18,6 @@ import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -29,26 +28,18 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.FirebaseFirestore;
 import com.squareup.picasso.Picasso;
 
 import java.util.HashMap;
 
 public class Student_ListOfClaim extends AppCompatActivity {
 
-
-    //FireStore Database
-    FirebaseFirestore fireStoreDatabaseReference;
-
-
-
     //Dialog Variables
     AlertDialog.Builder builderDialog;
     AlertDialog alertDialog;
 
     //user information
-    FirebaseUser FireBaseUser;
+    FirebaseUser user;
     DatabaseReference reference;
      String userId;
 
@@ -108,15 +99,9 @@ public class Student_ListOfClaim extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recyclerView);
 
-        FireBaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        user = FirebaseAuth.getInstance().getCurrentUser();
 
-        userId = FireBaseUser.getUid();
-
-
-
-        //FireStoreDatabase
-        fireStoreDatabaseReference = FirebaseFirestore.getInstance();
-
+        userId = user.getUid();
 
 
         reference = FirebaseDatabase.getInstance().getReference(userId);
@@ -131,7 +116,7 @@ public class Student_ListOfClaim extends AppCompatActivity {
 
         Query query = reference.orderByChild("Student_ID").startAt(data).endAt(data + "\uf8ff");
 
-        String userId1 = FireBaseUser.getUid();
+        String userId1 = user.getUid();
 
         options = new FirebaseRecyclerOptions.Builder<Items>().setQuery(reference, Items.class).build();
         adapter = new FirebaseRecyclerAdapter<Items, ListOfItemViewHolder>(options) {
@@ -154,15 +139,6 @@ public class Student_ListOfClaim extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                         if(snapshot.exists()){
-
-//                            fireStoreDatabaseReferene.collection("listOfClaims").add(user).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-//                                @Override
-//                                public void onSuccess(DocumentReference documentReference) {
-//
-//                                }
-//                            });
-
-
                             String itemNAme2 = snapshot.child("Item_Name").getValue().toString();
                             String imageUrl2 = snapshot.child("Image_Url").getValue().toString();
                             String dateReported = snapshot.child("Date_Reported").getValue().toString();
