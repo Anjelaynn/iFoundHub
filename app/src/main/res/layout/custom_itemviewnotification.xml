@@ -5,6 +5,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -12,6 +14,21 @@
         android:gravity="left"
         android:orientation="vertical"
         android:padding="16dp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonConfirmed"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="2dp"
+            android:layout_marginLeft="140dp"
+            android:layout_toRightOf="@+id/image_single_view_notification"
+            android:background="@drawable/button_signin"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="✓"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
 
 
         <de.hdodenhof.circleimageview.CircleImageView
@@ -140,6 +157,7 @@
             android:textAllCaps="false"
             android:textColor="#FFFFFF"
             android:textSize="20sp" />
+
 
     </LinearLayout>
 

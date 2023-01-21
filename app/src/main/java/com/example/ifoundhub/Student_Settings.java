@@ -24,11 +24,22 @@ import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
 
 public class Student_Settings extends AppCompatActivity {
 
     private Button btnlogout;
      private Button btnUpdate;
+
+    //User
+    private FirebaseUser user;
+    private DatabaseReference reference;
+    private String userId;
+    private FirebaseAuth fAuth;
+
 
     Button privacysettingsstudent,aboutussettingsstudent;
     @Override
@@ -160,6 +171,14 @@ public class Student_Settings extends AppCompatActivity {
                                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
                                     public void onSuccess(Void unused) {
+
+                                        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("UsersLoginInformation");
+                                        userId = user.getUid();
+
+                                        HashMap hashMap = new HashMap();
+                                        hashMap.put("password", newPassword );
+                                        reference.child(userId).updateChildren(hashMap);
+
                                         Toast.makeText(getApplicationContext(), "Password Updated...", Toast.LENGTH_SHORT).show();
                                     }
                                 })

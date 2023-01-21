@@ -178,6 +178,23 @@ public class Admin_Notification extends AppCompatActivity {
                     }
                 });
 
+                String key3 =  getRef(position).getKey();
+                notification.child(key3).addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if(snapshot.exists()){
+                            String isclaim =  snapshot.child("isClaim").getValue().toString();
+                            holder.textViewisClaim.setText(isclaim);
+                        }
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
                 Picasso.get().load(model.getImage_Url()).into(holder.image_single_view_notification);
                 holder.single_view_notification_DateReported.setText(model.getDate_Reported());
 
@@ -188,21 +205,21 @@ public class Admin_Notification extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
 
-                        String key2 =  getRef(position).getKey();
+                        String key2 = getRef(position).getKey();
 
                         builderDialog = new AlertDialog.Builder(Admin_Notification.this);
-                        View layoutview = getLayoutInflater().inflate(R.layout.custom_itemviewnotification,null);
+                        View layoutview = getLayoutInflater().inflate(R.layout.custom_itemviewnotification, null);
 
                         notification.child(key2).addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                                if(snapshot.exists()){
+                                if (snapshot.exists()) {
                                     TextView itemName = layoutview.findViewById(R.id.txt_itemname);
 
                                     TextView itemStatus = layoutview.findViewById(R.id.txt_itemstatus);
                                     TextView itemLocation = layoutview.findViewById(R.id.editTextItemLocation);
-                                    TextView itemDateReported= layoutview.findViewById(R.id.editTextDateReported);
+                                    TextView itemDateReported = layoutview.findViewById(R.id.editTextDateReported);
                                     TextView itemDescription = layoutview.findViewById(R.id.editTextDescription);
                                     ImageView imageUrl1 = layoutview.findViewById(R.id.image_single_view_notification);
 
@@ -223,7 +240,7 @@ public class Admin_Notification extends AppCompatActivity {
                                     itemList1.child(key).addValueEventListener(new ValueEventListener() {
                                         @Override
                                         public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                            if(snapshot.exists()) {
+                                            if (snapshot.exists()) {
                                                 String itemSTATUS = snapshot.child("Status").getValue().toString();
                                                 itemStatus.setText(itemSTATUS);
                                             }
@@ -234,7 +251,6 @@ public class Admin_Notification extends AppCompatActivity {
 
                                         }
                                     });
-
 
 
                                     itemLocation.setText(itemLocation1);
@@ -252,8 +268,6 @@ public class Admin_Notification extends AppCompatActivity {
                         });
 
 
-
-
 //                        AppCompatButton itemName = layoutview.findViewById(R.id.txt_itemname);
 //                        AppCompatButton itemNumber = layoutview.findViewById(R.id.txt_itemnumber);
 //                        AppCompatButton itemStatus = layoutview.findViewById(R.id.txt_itemstatus);
@@ -261,10 +275,10 @@ public class Admin_Notification extends AppCompatActivity {
 //                        AppCompatButton itemDateReported = layoutview.findViewById(R.id.editTextDateReported);
                         AppCompatButton buttonClaimed = layoutview.findViewById(R.id.buttonClaimed);
                         AppCompatButton buttonClose = layoutview.findViewById(R.id.buttonClose);
-
+                       AppCompatButton buttonConfirmed = layoutview.findViewById(R.id.buttonConfirmed);
 
                         builderDialog.setView(layoutview);
-                        alertDialog=builderDialog.create();
+                        alertDialog = builderDialog.create();
                         alertDialog.show();
 
 
@@ -272,12 +286,11 @@ public class Admin_Notification extends AppCompatActivity {
                             @Override
                             public void onClick(View view) {
 
-
                                 notification.child(key2).addValueEventListener(new ValueEventListener() {
                                     @Override
                                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                        FirebaseDatabase.getInstance().getReference().child("ListOfClaims");
-                                        if(snapshot.exists()) {
+                                     //   FirebaseDatabase.getInstance().getReference().child("ListOfClaims");
+                                        if (snapshot.exists()) {
                                             String studentID = snapshot.child("Student_ID").getValue().toString();
                                             String itemName2 = snapshot.child("Item_Name").getValue().toString();
                                             String itemDateReported2 = snapshot.child("Date_Reported").getValue().toString();
@@ -289,6 +302,11 @@ public class Admin_Notification extends AppCompatActivity {
                                             hashMap.put("Date_Reported", itemDateReported2.toString());
                                             hashMap.put("Image_Url", URl1.toString());
                                             hashMap.put("Student_ID", studentID);
+                                            hashMap.put("Status", "Claimed");
+
+
+
+
                                             DatabaseReference listOfClaims = FirebaseDatabase.getInstance().getReference(studentID);
 
                                             String key = listOfClaims.push().getKey();
@@ -297,27 +315,83 @@ public class Admin_Notification extends AppCompatActivity {
                                                 @Override
                                                 public void onSuccess(Void unused) {
 
+                                                    buttonClaimed.setEnabled(false);
+
+                                                    String key3 =  getRef(position).getKey();
 
 
                                                     //startActivity(new Intent(getApplicationContext(), Admin_Home.class));
                                                     Toast.makeText(Admin_Notification.this, "Data Successfully Uploaded!", Toast.LENGTH_SHORT).show();
                                                 }
                                             });
-//
-//                                            listOfClaims.child(studentID).child("ListOfClaims").setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
-//                                                @Override
-//                                                public void onSuccess(Void unused) {
-//
-//
-//
-//                                                    //startActivity(new Intent(getApplicationContext(), Admin_Home.class));
-//                                                    Toast.makeText(Admin_Notification.this, "Data Successfully Uploaded!", Toast.LENGTH_SHORT).show();
-//                                                }
-//                                            });
+
+
+
+
+
+
 //
                                         }
 
 
+//                                        buttonClaimed.setEnabled(false);
+                                    }
+
+
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError error) {
+
+                                    }
+                                });
+
+                            }
+
+
+
+
+
+                        });
+
+
+
+
+                        buttonConfirmed.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+
+                                //                                            String key3 =  getRef(position).getKey();
+                                notification.child(key3).addValueEventListener(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                                        if(snapshot.exists()){
+                                            HashMap hashMap1 = new HashMap();
+                                            String isclaim1 =  "Claimed!";
+                                            String isclaim =  snapshot.child("isClaim").getValue().toString();
+                                            hashMap1.put("isClaim", isclaim1);
+
+                                            notification.child(key3).updateChildren(hashMap1);
+
+                                        }
+                                    }
+
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError error) {
+
+                                    }
+                                });
+
+
+                                notification.child(key3).addValueEventListener(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                        if(snapshot.exists()){
+                                            String isclaim =  snapshot.child("isClaim").getValue().toString();
+                                            holder.textViewisClaim.setText(isclaim);
+                                            Toast.makeText(Admin_Notification.this, "Item Confirmed!", Toast.LENGTH_SHORT).show();
+
+
+                                        }
 
                                     }
 
@@ -329,6 +403,14 @@ public class Admin_Notification extends AppCompatActivity {
 
                             }
                         });
+
+
+
+
+
+
+
+
 
 
 

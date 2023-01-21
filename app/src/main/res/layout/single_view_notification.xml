@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:paddingLeft="28dp"
-        android:layout_marginTop="47dp"
+        android:layout_marginTop="30dp"
         android:layout_toRightOf="@id/image_single_view_notification"
         android:hint="[Student Name]" />
 
@@ -47,14 +47,38 @@
 
 
     <TextView
-        android:id="@+id/single_view_notification_DateReported"
+        android:id="@+id/single_view_notification_DateReported1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:paddingLeft="28dp"
         android:layout_below="@id/randomText"
         android:layout_toRightOf="@id/image_single_view_notification"
+        android:hint="Date Reported:"/>
+
+    <TextView
+        android:id="@+id/single_view_notification_DateReported"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:paddingLeft="28dp"
+        android:textStyle="bold"
+        android:layout_below="@id/single_view_notification_DateReported1"
+        android:layout_toRightOf="@id/image_single_view_notification"
         android:hint="[Date Reported]"/>
+
+
+    <TextView
+    android:id="@+id/textViewisClaim"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="20dp"
+    android:paddingLeft="28dp"
+    android:textStyle="bold"
+    android:layout_marginTop="10dp"
+    android:layout_below="@id/single_view_notification_DateReported"
+    android:layout_toRightOf="@id/image_single_view_notification"
+    android:hint="[Not Claim]"/>
 
     <View
         android:layout_width="wrap_content"

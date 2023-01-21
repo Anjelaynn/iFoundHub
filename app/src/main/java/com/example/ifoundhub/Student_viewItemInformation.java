@@ -50,7 +50,7 @@ public class Student_viewItemInformation extends AppCompatActivity {
     ImageView itemImageView;
 
     TextView user_itemName, user_itemStatus, user_itemLocation, user_itemDateReported, user_itemDescription;
-    TextView imageTextUrl, itemKeyNumber;
+    TextView imageTextUrl, itemKeyNumber, textViewStudentNumber;
 
 
     private TextView editTextUserName;
@@ -58,7 +58,7 @@ public class Student_viewItemInformation extends AppCompatActivity {
     ImageButton btnback;
     Button btnFound;
 
-    DatabaseReference ref, DataRef, notificationReference1, notificationReference2;
+    DatabaseReference ref, DataRef, notificationReference1, notificationReference2, usersLoginInformation;
     StorageReference storageRef, notificationReferencePic;
 
 
@@ -80,6 +80,7 @@ public class Student_viewItemInformation extends AppCompatActivity {
         user_itemDescription = findViewById(R.id.user_itemDescription);
         imageTextUrl = findViewById(R.id.imageTextUrl);
         editTextUserName = findViewById(R.id.editTextUserName);
+        textViewStudentNumber = findViewById(R.id.textViewStudentNumber);
 
 
         btnback = findViewById(R.id.userBtnBack);
@@ -130,7 +131,7 @@ public class Student_viewItemInformation extends AppCompatActivity {
         String itemKey = getIntent().getStringExtra("ItemKey");
 
         DataRef = FirebaseDatabase.getInstance().getReference().child("Items").child(itemKey);
-
+        usersLoginInformation = FirebaseDatabase.getInstance().getReference().child("UsersLoginInformation");
         storageRef = FirebaseStorage.getInstance().getReference().child("ItemImage").child(itemKey+".jpg");
 
 
@@ -149,6 +150,18 @@ public class Student_viewItemInformation extends AppCompatActivity {
                     String itemLocation = snapshot.child("Location").getValue().toString();
                     String status = snapshot.child("Status").getValue().toString();
 
+//                usersLoginInformation.child(userId).addValueEventListener(new ValueEventListener() {
+//                    @Override
+//                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                        String studentNumber = snapshot.child("student_number").getValue().toString();
+//                        textViewStudentNumber.setText(studentNumber);
+//                    }
+//
+//                    @Override
+//                    public void onCancelled(@NonNull DatabaseError error) {
+//
+//                    }
+//                });
 
 
 
@@ -227,9 +240,7 @@ public class Student_viewItemInformation extends AppCompatActivity {
                 hashMap.put("Status", user_itemStatus.getText().toString());
                 hashMap.put("Student_Name", editTextUserName.getText().toString());
                 hashMap.put("Student_ID", userId);
-
-
-
+                hashMap.put("isClaim", "Not Claimed");
 
 
 
@@ -237,7 +248,7 @@ public class Student_viewItemInformation extends AppCompatActivity {
                     @Override
                     public void onSuccess(Void unused) {
 
-
+                        btnFound.setEnabled(false);
                         showAlertDialog(R.layout.custom_founddialog);
                         Toast.makeText(Student_viewItemInformation.this, "Admin have been notified", Toast.LENGTH_SHORT).show();
 

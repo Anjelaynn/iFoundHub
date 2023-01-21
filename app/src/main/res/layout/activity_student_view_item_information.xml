@@ -24,6 +24,23 @@
         app:layout_constraintVertical_bias="0.041" />
 
     <TextView
+        android:id="@+id/textViewStudentNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_semibold"
+        android:text="StudNum"
+        android:textColor="#17395C"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        android:layout_marginRight="130dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.041" />
+
+
+    <TextView
         android:id="@+id/editTextUserName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -46,7 +63,7 @@
         android:layout_height="54dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="22dp"
-        android:background="#F9F9F9"
+        android:background="#FFF9E3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.017"
         app:layout_constraintStart_toStartOf="parent"

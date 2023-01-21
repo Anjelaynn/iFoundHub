@@ -86,7 +86,7 @@
     <TextView
         android:id="@+id/textView119"
         android:layout_width="330dp"
-        android:layout_height="58dp"
+        android:layout_height="120dp"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/montserrat_light"
         android:text="Questions or concerns? Reading this privacy notice will help you understand your privacy rights and choices. If you do not agree with our policies and practices, please do not use our Services. If you still have any questions or concerns, please contact us at appdevemergency.20222023@gmail.com. "

@@ -3,7 +3,9 @@ package com.example.ifoundhub;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
@@ -11,7 +13,10 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Switch;
@@ -40,6 +45,18 @@ public class LoginPage extends AppCompatActivity {
 
 
 
+
+
+    //Remember Me
+    public static final String SHARED_PRES = "sharedPrefs";
+    String username, password1;
+    private CheckBox CheckBox;
+    private SharedPreferences loginPreferences;
+    private SharedPreferences.Editor loginPrefsEditor;
+    private Boolean saveLogin;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +68,13 @@ public class LoginPage extends AppCompatActivity {
 
         editTextusername = findViewById(R.id.editTextusername);
         editTextpassword = findViewById(R.id.editTextpassword);
+        CheckBox = findViewById(R.id.checkBox_remember_me);
+        loginPreferences = getSharedPreferences("loginPrefs", MODE_PRIVATE);
+        loginPrefsEditor = loginPreferences.edit();
+
+        saveLogin = loginPreferences.getBoolean("saveLogin", false);
+
+
 
 //        editTextpassword.setOnTouchListener(new View.OnTouchListener() {
 //            @Override
@@ -100,6 +124,26 @@ public class LoginPage extends AppCompatActivity {
                 userLogin();
             }
         });
+
+
+
+//        CheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+//                if (CheckBox.isChecked()) {
+//
+//                    Toast.makeText(LoginPage.this, "Checked", Toast.LENGTH_SHORT).show();
+//
+//                } else {
+//
+//                    Toast.makeText(LoginPage.this, "UnChecked", Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//        });
+
+
+        //Remember ME
+        //checkBox();
 
 
 
@@ -227,6 +271,8 @@ public class LoginPage extends AppCompatActivity {
 //        });
     }
 
+
+
 //    @Override
 //    protected void onStart() {
 //        super.onStart();
@@ -243,7 +289,17 @@ public class LoginPage extends AppCompatActivity {
 
 
 
+    private void checkBox() {
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PRES, MODE_PRIVATE);
+        String check = sharedPreferences.getString("name", "");
 
+        if(check.equals("true")){
+            Toast.makeText(LoginPage.this, "This is admin site", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(LoginPage.this, Admin_Home.class));
+            finish();
+        }
+
+    }
 
     public void openHome(){
         Intent intent=new Intent(this, Admin_Home.class);
@@ -282,7 +338,38 @@ public class LoginPage extends AppCompatActivity {
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
+
                 if(task.isSuccessful()){
+
+                    InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                    inputMethodManager.hideSoftInputFromWindow(editTextusername.getWindowToken(), 0);
+
+                    username = editTextusername.getText().toString();
+                    password1 = editTextpassword.getText().toString();
+
+                    if (CheckBox.isChecked()) {
+                        loginPrefsEditor.putBoolean("saveLogin", true);
+                        loginPrefsEditor.putString("username", username);
+                        loginPrefsEditor.putString("password", password);
+                        loginPrefsEditor.commit();
+
+                    } else {
+                        loginPrefsEditor.clear();
+                        loginPrefsEditor.commit();
+                    }
+
+
+                    //Remember Me
+//                    SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PRES, MODE_PRIVATE);
+//                    SharedPreferences.Editor editor = sharedPreferences.edit();
+//
+//                    editor.putString("name", "true");
+//                    editor.apply();
+
+
+
+
+
 //                    if(mAuth.getCurrentUser().isEmailVerified()){
 //                        Toast.makeText(LoginPage.this, "This is user side", Toast.LENGTH_SHORT).show();
 //                        startActivity(new Intent(LoginPage.this, Student_Home.class));
@@ -290,14 +377,14 @@ public class LoginPage extends AppCompatActivity {
 //                        Toast.makeText(LoginPage.this, "Please verify your email address.", Toast.LENGTH_SHORT).show();
 //                    }
                         //redirect to user profile
-                    if(email.equals("admin@gmail.com") && password.equals("admin123")) {
+                    if(email.equals("admin@plm.edu.ph") && password.equals("useradmin123")) {
                         Toast.makeText(LoginPage.this, "This is admin site", Toast.LENGTH_SHORT).show();
 
-                        startActivity(new Intent(LoginPage.this, Admin_Profile.class));
+                        startActivity(new Intent(LoginPage.this, Admin_Home.class));
                     }
                     else{
                         Toast.makeText(LoginPage.this, "This is user side", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(LoginPage.this, Student_Profile.class));
+                        startActivity(new Intent(LoginPage.this, Student_Home.class));
                     }
 
                 }else{
