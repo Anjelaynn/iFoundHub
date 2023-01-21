@@ -73,8 +73,11 @@ public class LoginPage extends AppCompatActivity {
         loginPrefsEditor = loginPreferences.edit();
 
         saveLogin = loginPreferences.getBoolean("saveLogin", false);
-
-
+        if (saveLogin) {
+            editTextusername.setText(loginPreferences.getString("username", ""));
+            editTextpassword.setText(loginPreferences.getString("password", ""));
+            CheckBox.setChecked(true);
+        }
 
 //        editTextpassword.setOnTouchListener(new View.OnTouchListener() {
 //            @Override
