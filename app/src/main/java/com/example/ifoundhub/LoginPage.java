@@ -130,19 +130,19 @@ public class LoginPage extends AppCompatActivity {
 
 
 
-//        CheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-//                if (CheckBox.isChecked()) {
-//
-//                    Toast.makeText(LoginPage.this, "Checked", Toast.LENGTH_SHORT).show();
-//
-//                } else {
-//
-//                    Toast.makeText(LoginPage.this, "UnChecked", Toast.LENGTH_SHORT).show();
-//                }
-//            }
-//        });
+        CheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (CheckBox.isChecked()) {
+
+                    Toast.makeText(LoginPage.this, "Checked", Toast.LENGTH_SHORT).show();
+
+                } else {
+
+                    Toast.makeText(LoginPage.this, "UnChecked", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
 
         //Remember ME

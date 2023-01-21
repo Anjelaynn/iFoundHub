@@ -41,9 +41,8 @@
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="780dp"
+        android:layout_marginTop="720dp"
         android:background="@drawable/bottom_nav_student"
-
         app:itemIconSize="25dp"
         app:itemIconTint="@color/bottom_item_backgroundcolor"
         app:itemTextColor="@color/bottom_item_backgroundcolor"

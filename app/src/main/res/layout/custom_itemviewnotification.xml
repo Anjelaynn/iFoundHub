@@ -17,11 +17,11 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/buttonConfirmed"
-            android:layout_width="35dp"
+            android:layout_width="37dp"
             android:layout_height="35dp"
             android:layout_gravity="center"
             android:layout_marginTop="2dp"
-            android:layout_marginLeft="140dp"
+            android:layout_marginLeft="130dp"
             android:layout_toRightOf="@+id/image_single_view_notification"
             android:background="@drawable/button_signin"
             android:fontFamily="@font/montserrat_medium"

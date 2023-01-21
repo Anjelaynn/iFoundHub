@@ -32,38 +32,42 @@
         android:id="@+id/textView2"
         android:layout_width="410dp"
         android:layout_height="700dp"
-        android:layout_marginTop="200dp"
-        android:background="@drawable/shape_profile" />
+        android:layout_marginTop="150dp"
+        android:background="@drawable/shape_profile"
+        app:layout_anchor="@+id/line3"
+        app:layout_anchorGravity="end|top" />
 
     <TextView
         android:id="@+id/EmployeeName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="360dp"
+        android:layout_marginTop="330dp"
         android:fontFamily="@font/montserrat_medium"
         android:text="Employee Name"
         android:textColor="#8C979B"
         android:textSize="17sp" />
 
-    <TextView
-        android:id="@+id/line"
-        android:layout_width="210dp"
-        android:layout_height="800dp"
-        android:layout_marginTop="40dp"
-        android:layout_gravity="center_horizontal"
-        android:background="@drawable/lineshape_profile"
-        />
+
 
     <TextView
         android:id="@+id/student_fullname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="400dp"
+        android:layout_marginTop="360dp"
         android:layout_gravity="center_horizontal"
         android:fontFamily="@font/montserrat_bold"
         android:text="[Name]"
         android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/line"
+        android:layout_width="210dp"
+        android:layout_height="800dp"
+        android:layout_marginTop="-5dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/lineshape_profile"
+        />
 
 
     <TextView
@@ -71,12 +75,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="470dp"
+        android:layout_marginTop="420dp"
         android:textColor="#8C979B"
         android:fontFamily="@font/montserrat_medium"
         android:text="Employee Number"
         android:textSize="17sp"
-
         />
 
 
@@ -84,7 +87,7 @@
         android:id="@+id/student_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="510dp"
+        android:layout_marginTop="450dp"
         android:layout_gravity="center_horizontal"
         android:fontFamily="@font/montserrat_bold"
         android:text="[Employee Number]"
@@ -94,7 +97,7 @@
         android:id="@+id/line2"
         android:layout_width="210dp"
         android:layout_height="496dp"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="240dp"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/lineshape_profile"
         />
@@ -105,7 +108,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:textColor="#8C979B"
-        android:layout_marginTop="570dp"
+        android:layout_marginTop="520dp"
         android:fontFamily="@font/montserrat_medium"
         android:text="Contact Number"
         android:textSize="17sp"
@@ -114,41 +117,44 @@
         android:id="@+id/student_contactNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="610dp"
+        android:layout_marginTop="550dp"
         android:layout_gravity="center_horizontal"
         android:fontFamily="@font/montserrat_bold"
         android:text="[Contact Number]"
         android:textSize="18sp"/>
 
+
     <TextView
         android:id="@+id/line3"
         android:layout_width="210dp"
         android:layout_height="496dp"
-        android:layout_marginTop="400dp"
         android:layout_gravity="center_horizontal"
+        android:layout_marginTop="350dp"
         android:background="@drawable/lineshape_profile"
-        />
-
-
+        app:layout_anchor="@+id/line2"
+        app:layout_anchorGravity="center" />
 
     <ImageView
         android:id="@+id/userprofile"
         android:layout_width="197dp"
         android:layout_height="291dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="90dp"
+        android:layout_marginTop="50dp"
         app:srcCompat="@drawable/userprofile" />
+
+
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottomAppBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
-        android:layout_marginTop="780dp"
+        android:layout_marginTop="720dp"
         app:backgroundTint="#17395C"
         app:fabCradleMargin="14dp"
         app:fabCradleRoundedCornerRadius="38dp"
         app:fabCradleVerticalOffset="10dp">
+
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomNavigationView"
@@ -158,11 +164,11 @@
             app:itemIconTint="@color/bottom_item_backgroundcolor"
             app:itemTextColor="@color/bottom_item_backgroundcolor"
             android:layout_marginRight="13dp"
-
             app:itemIconSize="22dp"
             app:menu="@menu/bottom_nav_menu">
 
         </com.google.android.material.bottomnavigation.BottomNavigationView>
+
 
     </com.google.android.material.bottomappbar.BottomAppBar>
 
@@ -174,8 +180,6 @@
         app:maxImageSize="50dp"
         app:backgroundTint="#EFB758"
         app:layout_anchor="@id/bottomAppBar" />
-
-
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
